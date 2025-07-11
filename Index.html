@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags: Crucial for Google Ranking -->
+    <title>Finanzas Claras - Guía Completa de Ahorro, Inversión y Deudas con Asesor IA</title>
+    <meta name="description" content="Tu guía definitiva de finanzas personales en español. Usa nuestro asesor con IA para resolver tus dudas. Aprende a ahorrar, salir de deudas, invertir y alcanzar tu libertad financiera.">
+    <meta name="keywords" content="finanzas personales, asesor ia, ahorrar dinero, salir de deudas, invertir, presupuesto, libertad financiera, tarjeta de crédito, ingresos extra, finanzas para jóvenes">
+    <meta name="author" content="Finanzas Claras">
+    <link rel="canonical" href="https://www.finanzasclaras.com"> <!-- TODO: Reemplazar con tu dominio real -->
+
+    <!-- Open Graph / Social Media Meta Tags: For Virality -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.finanzasclaras.com"> <!-- TODO: Reemplazar con tu dominio real -->
+    <meta property="og:title" content="Finanzas Claras - Tu Guía Financiera con Asesor IA">
+    <meta property="og:description" content="Aprende a ahorrar, salir de deudas e invertir. Ahora con un asesor de IA para responder tus preguntas financieras.">
+    <meta property="og:image" content="https://placehold.co/1200x630/10B981/FFFFFF?text=Finanzas+Claras+con+IA"> <!-- TODO: Reemplazar con una imagen tuya -->
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.finanzasclaras.com"> <!-- TODO: Reemplazar con tu dominio real -->
+    <meta name="twitter:title" content="Finanzas Claras - Tu Guía Financiera con Asesor IA">
+    <meta name="twitter:description" content="Aprende a ahorrar, salir de deudas e invertir. Ahora con un asesor de IA para responder tus preguntas financieras.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/10B981/FFFFFF?text=Finanzas+Claras+con+IA"> <!-- TODO: Reemplazar con una imagen tuya -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://placehold.co/32x32/10B981/FFFFFF?text=FC" type="image/png">
+
+    <!-- Styles and Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1400x700/10B981/FFFFFF?text=Libertad+Financiera');
+            background-size: cover; background-position: center;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1);
+        }
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 1000; opacity: 0; visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal-content {
+            background: white; padding: 1.5rem 2rem 2rem 2rem; border-radius: 0.75rem;
+            max-width: 800px; width: 95%; max-height: 90vh;
+            overflow-y: auto; position: relative;
+            transform: translateY(20px) scale(0.95); transition: transform 0.3s ease;
+        }
+        .modal-overlay.active .modal-content { transform: translateY(0) scale(1); }
+        .modal-close {
+            position: absolute; top: 0.5rem; right: 0.75rem;
+            background: #f1f5f9; border-radius: 9999px; width: 2rem; height: 2rem;
+            border: none; font-size: 1.25rem; line-height: 2rem;
+            cursor: pointer; color: #4b5563; transition: all 0.2s;
+        }
+        .modal-close:hover { background: #e2e8f0; transform: rotate(90deg); }
+        /* Article Styles inside Modal */
+        .article-body h3 { font-size: 1.25em; font-weight: bold; margin-top: 1.75rem; margin-bottom: 0.75rem; color: #10B981; }
+        .article-body p, .article-body li { margin-bottom: 1rem; line-height: 1.7; color: #374151; }
+        .article-body ul { list-style-type: disc; margin-left: 1.5rem; }
+        .article-body strong { color: #1f2937; }
+        /* Share Buttons */
+        .share-buttons { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; text-align: center; }
+        .share-buttons p { font-weight: bold; margin-bottom: 1rem; }
+        .share-btn { display: inline-block; padding: 0.5rem 1rem; margin: 0 0.25rem; border-radius: 9999px; color: white; text-decoration: none; transition: transform 0.2s; }
+        .share-btn:hover { transform: scale(1.05); }
+        .share-btn.whatsapp { background-color: #25D366; }
+        .share-btn.facebook { background-color: #1877F2; }
+        .share-btn.twitter { background-color: #1DA1F2; }
+        /* Scroll to top button */
+        #scrollTopBtn {
+            position: fixed; bottom: 20px; right: 20px;
+            background-color: #10B981; color: white;
+            border: none; border-radius: 50%;
+            width: 50px; height: 50px;
+            font-size: 24px; cursor: pointer;
+            display: none; z-index: 999;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        /* AI Response formatting */
+        #ai-response p, #ai-response ul {
+            white-space: pre-wrap; /* Allows line breaks to be displayed */
+        }
+        #ai-response ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-emerald-600">Finanzas Claras</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#ai-advisor" class="text-gray-600 hover:text-emerald-500 transition duration-300">Asesor IA</a>
+                <a href="#ahorro" class="text-gray-600 hover:text-emerald-500 transition duration-300">Ahorro</a>
+                <a href="#inversion" class="text-gray-600 hover:text-emerald-500 transition duration-300">Inversión</a>
+                <a href="#deudas" class="text-gray-600 hover:text-emerald-500 transition duration-300">Deudas</a>
+                <a href="#" data-legal-id="about" class="open-legal-btn bg-emerald-500 text-white py-2 px-4 rounded-full hover:bg-emerald-600 transition duration-300">Sobre Nosotros</a>
+            </div>
+            <button class="md:hidden" id="mobile-menu-button"><i class="fas fa-bars text-2xl text-gray-600"></i></button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <a href="#ai-advisor" class="block py-3 px-6 text-gray-600 hover:bg-emerald-50">Asesor IA</a>
+            <a href="#ahorro" class="block py-3 px-6 text-gray-600 hover:bg-emerald-50">Ahorro</a>
+            <a href="#inversion" class="block py-3 px-6 text-gray-600 hover:bg-emerald-50">Inversión</a>
+            <a href="#deudas" class="block py-3 px-6 text-gray-600 hover:bg-emerald-50">Deudas</a>
+            <a href="#" data-legal-id="about" class="open-legal-btn block py-3 px-6 text-gray-600 hover:bg-emerald-50">Sobre Nosotros</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg">
+            <div class="container mx-auto px-6 py-20 md:py-32 text-center text-white">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Toma el Control de tu Dinero y tu Futuro</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">La guía de finanzas personales que sí entiendes. Te enseñamos a ahorrar, invertir y pagar tus deudas paso a paso.</p>
+                <a href="#ai-advisor" class="bg-white text-emerald-600 font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition duration-300 text-lg shadow-lg">Pregúntale a nuestro Asesor IA</a>
+            </div>
+        </section>
+
+        <!-- AI Advisor Section -->
+        <section id="ai-advisor" class="bg-white">
+            <div class="container mx-auto px-6 py-16">
+                <div class="max-w-4xl mx-auto text-center">
+                    <i class="fas fa-robot text-4xl text-emerald-500 mb-4"></i>
+                    <h2 class="text-3xl font-bold mb-2">Tu Asesor Financiero con IA</h2>
+                    <p class="text-gray-600 mb-8">¿Tienes una pregunta sobre finanzas? Escríbela abajo y nuestra IA te dará una respuesta educativa y clara. (Versión Beta)</p>
+                </div>
+                <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-6 md:p-8 border">
+                    <div class="space-y-4">
+                        <label for="ai-question" class="font-semibold text-gray-700">Tu pregunta financiera:</label>
+                        <textarea id="ai-question" rows="3" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition" placeholder="Ej: ¿Cómo puedo empezar a invertir si tengo poco dinero?"></textarea>
+                        <button id="ask-ai-btn" class="w-full bg-emerald-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-emerald-600 transition duration-300 flex items-center justify-center space-x-2">
+                            <i class="fas fa-magic"></i>
+                            <span>Preguntar a la IA</span>
+                        </button>
+                    </div>
+                    <div id="ai-response-container" class="mt-6 border-t pt-6" style="display: none;">
+                        <h4 class="font-bold text-lg mb-2 text-gray-800">Respuesta de la IA:</h4>
+                        <div id="ai-response" class="p-4 bg-gray-100 rounded-lg text-gray-700 prose">
+                            <!-- AI response will be injected here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container mx-auto px-6 py-12">
+            <!-- AdSense Placeholder 1: High-performance spot -->
+            <div class="my-8 p-4 bg-gray-200 rounded-lg text-center text-gray-500 min-h-[100px] flex items-center justify-center">
+                <p class="text-sm">Espacio para Anuncio de Google AdSense (Ej: Leaderboard 728x90)</p>
+            </div>
+
+            <!-- Articles Section -->
+            <section id="deudas">
+                <h2 class="text-3xl font-bold mb-2 text-center">Libérate de las Deudas</h2>
+                <p class="text-center text-gray-600 mb-8">Estrategias probadas para pagar lo que debes y recuperar tu tranquilidad.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Article Cards -->
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                        <img src="https://placehold.co/400x250/EF4444/FFFFFF?text=Salir+de+Deudas" alt="[Imagen de una persona rompiendo una tarjeta de crédito como símbolo de salir de deudas.]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-red-500">GUÍA PRINCIPAL</span>
+                            <h3 class="font-bold text-lg my-2">La Guía Definitiva para Salir de Deudas</h3>
+                            <a href="#" data-article-id="deudas-guia" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Leer guía completa &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                        <img src="https://placehold.co/400x250/F87171/FFFFFF?text=Bola+vs+Avalancha" alt="[Imagen de una balanza comparando dos métodos de pago de deudas.]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-red-500">ESTRATEGIA</span>
+                            <h3 class="font-bold text-lg my-2">"Bola de Nieve" vs "Avalancha": ¿Cuál es mejor para ti?</h3>
+                            <a href="#" data-article-id="bola-avalancha" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Descubre tu método &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                        <img src="https://placehold.co/400x250/FB923C/FFFFFF?text=Consolidar+Deudas" alt="[Imagen de varias deudas pequeñas convirtiéndose en una grande.]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-red-500">AVANZADO</span>
+                            <h3 class="font-bold text-lg my-2">¿Vale la pena consolidar tus deudas? Pros y contras</h3>
+                            <a href="#" data-article-id="consolidar-deudas" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Analizar la opción &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            
+            <section id="ahorro" class="mt-16">
+                <h2 class="text-3xl font-bold mb-2 text-center">Domina el Arte del Ahorro</h2>
+                <p class="text-center text-gray-600 mb-8">Aprende a gastar de forma inteligente y a construir tu patrimonio.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Article Cards -->
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                        <img src="https://placehold.co/400x250/3B82F6/FFFFFF?text=Presupuesto+50/30/20" alt="[Imagen de un gráfico circular mostrando la regla 50/30/20.]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-blue-500">PRESUPUESTO</span>
+                            <h3 class="font-bold text-lg my-2">Cómo crear un presupuesto que sí funciona: El método 50/30/20</h3>
+                            <a href="#" data-article-id="presupuesto-50-30-20" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Aprender el método &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                        <img src="https://placehold.co/400x250/EC4899/FFFFFF?text=Gastos+Hormiga" alt="[Imagen de pequeñas hormigas llevándose monedas.]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-pink-500">AHORRO DIARIO</span>
+                            <h3 class="font-bold text-lg my-2">10 "Gastos Hormiga" que están saboteando tu ahorro</h3>
+                            <a href="#" data-article-id="gastos-hormiga" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Eliminar gastos &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                        <img src="https://placehold.co/400x250/A855F7/FFFFFF?text=Fondo+de+Emergencia" alt="[Imagen de un salvavidas con un símbolo de dólar.]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-purple-500">SEGURIDAD</span>
+                            <h3 class="font-bold text-lg my-2">Cómo crear un fondo de emergencia: Tu colchón financiero</h3>
+                            <a href="#" data-article-id="fondo-emergencia" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Construir mi fondo &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- AdSense Placeholder 2: Integrated in the content flow -->
+            <div class="my-12 p-4 bg-gray-200 rounded-lg text-center text-gray-500 min-h-[250px] flex items-center justify-center">
+                <p class="text-sm">Espacio para Anuncio de Google AdSense (Ej: Medium Rectangle 300x250)</p>
+            </div>
+
+            <section id="inversion" class="mt-16">
+                <h2 class="text-3xl font-bold mb-2 text-center">Haz que tu Dinero Trabaje para Ti</h2>
+                <p class="text-center text-gray-600 mb-8">Invertir es para todos. Descubre cómo empezar, incluso con poco dinero.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Article Cards -->
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                        <img src="https://placehold.co/400x250/FBBF24/FFFFFF?text=Invertir+con+<100" alt="[Imagen de una pequeña planta creciendo de unas monedas.]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-amber-500">PRINCIPIANTES</span>
+                            <h3 class="font-bold text-lg my-2">5 Inversiones para empezar con menos de $100 USD</h3>
+                            <a href="#" data-article-id="inversion-principiantes" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Descubrir opciones &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                        <img src="https://placehold.co/400x250/F59E0B/FFFFFF?text=ETFs" alt="[Imagen de una canasta llena de logos de diferentes empresas.]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-amber-500">DIVERSIFICACIÓN</span>
+                            <h3 class="font-bold text-lg my-2">¿Qué son los ETFs y por qué son ideales para empezar?</h3>
+                            <a href="#" data-article-id="que-son-etfs" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Entender los ETFs &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                        <img src="https://placehold.co/400x250/84CC16/FFFFFF?text=Psicología+del+Dinero" alt="[Imagen de un cerebro con símbolos de dinero dentro.]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-lime-500">MENTALIDAD</span>
+                            <h3 class="font-bold text-lg my-2">Psicología del dinero: Cómo tus emociones afectan tus finanzas</h3>
+                            <a href="#" data-article-id="psicologia-dinero" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Controlar mis emociones &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer: CRITICAL for AdSense approval -->
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="container mx-auto px-6 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+                <div class="md:col-span-2">
+                    <h3 class="text-xl font-bold">Finanzas Claras</h3>
+                    <p class="text-sm text-gray-400 mt-2 max-w-md">Empoderando tus decisiones financieras con conocimiento claro, práctico y sin rodeos. Creemos que todos merecen tener el control de su futuro financiero.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold">Categorías</h4>
+                    <ul class="mt-2 space-y-2">
+                        <li><a href="#ahorro" class="text-gray-400 hover:text-white transition duration-300">Ahorro y Presupuesto</a></li>
+                        <li><a href="#inversion" class="text-gray-400 hover:text-white transition duration-300">Inversión para Todos</a></li>
+                        <li><a href="#deudas" class="text-gray-400 hover:text-white transition duration-300">Salir de Deudas</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold">Información Legal</h4>
+                    <ul class="mt-2 space-y-2">
+                        <li><a href="#" data-legal-id="about" class="open-legal-btn text-gray-400 hover:text-white">Sobre Nosotros</a></li>
+                        <li><a href="#" data-legal-id="contact" class="open-legal-btn text-gray-400 hover:text-white">Contacto</a></li>
+                        <li><a href="#" data-legal-id="privacy" class="open-legal-btn text-gray-400 hover:text-white">Política de Privacidad</a></li>
+                        <li><a href="#" data-legal-id="cookies" class="open-legal-btn text-gray-400 hover:text-white">Política de Cookies</a></li>
+                        <li><a href="#" data-legal-id="terms" class="open-legal-btn text-gray-400 hover:text-white">Términos de Servicio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">&copy; 2024 Finanzas Claras. Todos los derechos reservados.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div id="modal" class="modal-overlay">
+        <div id="modal-content" class="modal-content">
+            <button id="modal-close-btn" class="modal-close">&times;</button>
+            <h2 id="modal-title" class="text-3xl font-bold mb-4 text-gray-800"></h2>
+            <div id="modal-body" class="article-body"></div>
+        </div>
+    </div>
+    
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+
+    <script>
+    // --- CONTENT DATABASE ---
+    // In a real site, this would come from a CMS. For this example, it's a JS object.
+    const contentData = {
+        articles: {
+            'deudas-guia': {
+                title: 'La Guía Definitiva para Salir de Deudas (Incluso con un Salario Bajo)',
+                content: `
+                    <p>Sentir que el dinero no alcanza y que las deudas te ahogan es una de las peores sensaciones. Te acuestas pensando en lo que debes y te levantas con la misma angustia. Pero déjame decirte algo: no estás solo y, lo más importante, <strong>hay una salida</strong>. Salir de deudas, incluso ganando poco, no es un sueño imposible; es un plan que requiere disciplina, estrategia y un cambio de mentalidad.</p>
+                    <p>En esta guía definitiva, te llevaremos de la mano, paso a paso, para que recuperes el control de tus finanzas y te liberes de las deudas para siempre.</p>
+                    <h3>Paso 1: Afronta la Realidad (Sin Miedo)</h3>
+                    <p>El primer paso es el más difícil: saber exactamente a qué te enfrentas. No puedes ganar una batalla si no conoces el tamaño del enemigo. Haz una lista de TODAS tus deudas con su saldo total, tasa de interés y pago mínimo. La claridad es poder.</p>
+                    <h3>Paso 2: Crea un Presupuesto de "Modo Guerra"</h3>
+                    <p>Para atacar la deuda, necesitas liberar la mayor cantidad de dinero posible. Rastrea tus gastos, clasifícalos en <strong>necesidades</strong> (vivienda, comida, transporte) y <strong>deseos</strong> (salidas, suscripciones, delivery), y recorta sin piedad de la columna de "deseos". Recuerda, es temporal. No es para siempre, es hasta que ganes la guerra a la deuda.</p>
+                    <h3>Paso 3: Elige tu Estrategia de Ataque: Bola de Nieve vs. Avalancha</h3>
+                    <p>Existen dos métodos probados para eliminar deudas. Ninguno es mejor que el otro; depende de tu personalidad.</p>
+                    <ul>
+                        <li><strong>Método Bola de Nieve (El Motivacional):</strong> Ordena tus deudas de la más pequeña a la más grande. Paga el mínimo en todas excepto en la más pequeña, a la que atacas con todo tu dinero extra. Al eliminarla, la victoria te da un impulso psicológico increíble para seguir con la próxima.</li>
+                        <li><strong>Método Avalancha (El Matemático):</strong> Ordena tus deudas de la tasa de interés más alta a la más baja. Ataca primero la de interés más alto. Ahorrarás más dinero en intereses a largo plazo con este método, aunque puede que tardes más en ver la primera deuda desaparecer.</li>
+                    </ul>
+                    <h3>Paso 4: Aumenta tus Ingresos (La Ofensiva)</h3>
+                    <p>Recortar gastos tiene un límite, pero aumentar ingresos no. Busca formas de ganar un extra: vende cosas que no usas, haz trabajos puntuales (pasear perros, delivery), o monetiza una habilidad online. Cada peso extra debe ir DIRECTAMENTE a tu plan de pago de deudas.</p>
+                    <p>Salir de deudas es un maratón, no un sprint. Pero con este plan, tienes el mapa exacto para llegar a la meta. ¡El sentimiento de hacer tu último pago y ser finalmente libre vale cada segundo de esfuerzo!</p>
+                `
+            },
+            'bola-avalancha': {
+                title: '"Bola de Nieve" vs "Avalancha": ¿Cuál es mejor para ti?',
+                content: `
+                    <p>Cuando decides atacar tus deudas, elegir el método correcto es clave para mantener la motivación y la eficiencia. Los dos más populares son la "Bola de Nieve" y la "Avalancha". Analicemos cada uno para que puedas decidir cuál resuena más contigo.</p>
+                    <h3>El Método "Bola de Nieve": El Poder de la Psicología</h3>
+                    <p>Este método se enfoca en la <strong>motivación</strong>. La idea es obtener pequeñas victorias rápidas que te impulsen a seguir adelante.</p>
+                    <ul>
+                        <li><strong>Cómo funciona:</strong> Ordenas tus deudas de la más pequeña a la más grande, sin importar la tasa de interés. Haces el pago mínimo en todas, pero destinas todo el dinero extra posible a la deuda más pequeña hasta liquidarla.</li>
+                        <li><strong>El efecto:</strong> Una vez que eliminas esa primera deuda, tomas todo el dinero que le pagabas (el mínimo más el extra) y lo sumas al pago de la siguiente deuda más pequeña. Así, creas una "bola de nieve" de dinero que se hace más y más grande con cada deuda que eliminas.</li>
+                        <li><strong>Ideal para ti si:</strong> Necesitas ver resultados rápidos para no desanimarte. Si la idea de eliminar una cuenta por completo te da un gran subidón de adrenalina, este es tu método.</li>
+                    </ul>
+                    <h3>El Método "Avalancha": El Poder de las Matemáticas</h3>
+                    <p>Este método se enfoca en la <strong>eficiencia financiera</strong>. El objetivo es pagar la menor cantidad de intereses posible a lo largo del tiempo.</p>
+                    <ul>
+                        <li><strong>Cómo funciona:</strong> Ordenas tus deudas de la que tiene la tasa de interés más alta a la más baja, sin importar el monto. Haces el pago mínimo en todas, pero atacas con todo tu dinero extra la deuda con el interés más alto.</li>
+                        <li><strong>El efecto:</strong> Al priorizar la deuda más "cara", te ahorras una cantidad significativa de dinero en intereses a largo plazo. Una vez liquidada, ese dinero se redirige a la deuda con el siguiente interés más alto.</li>
+                        <li><strong>Ideal para ti si:</strong> Eres una persona más analítica y te motiva más la idea de optimizar tus finanzas y ahorrar dinero, aunque tardes un poco más en ver la primera deuda desaparecer.</li>
+                    </ul>
+                    <h3>Conclusión: ¿Cuál elegir?</h3>
+                    <p>No hay una respuesta incorrecta. <strong>El mejor método es el que vas a seguir con constancia.</strong> Si la motivación es tu mayor obstáculo, empieza con la Bola de Nieve. Si te impulsa la eficiencia y ahorrar cada centavo, la Avalancha es tu camino. Lo importante es empezar hoy mismo.</p>
+                `
+            },
+            'consolidar-deudas': {
+                title: '¿Vale la pena consolidar tus deudas? Pros y contras',
+                content: `
+                    <p>La consolidación de deudas suena como una solución mágica: agrupar todas tus deudas en un solo pago mensual, a menudo con un interés más bajo. Puede ser una herramienta poderosa, pero no es para todos. Analicemos sus ventajas y desventajas.</p>
+                    <h3>¿Qué es la Consolidación de Deudas?</h3>
+                    <p>Consolidar significa tomar un nuevo préstamo para pagar un conjunto de deudas existentes. Las formas más comunes son a través de un <strong>préstamo personal</strong> o una <strong>transferencia de saldo a una tarjeta de crédito</strong> con una tasa de interés introductoria del 0%.</p>
+                    <h3>Pros: Las Ventajas de Consolidar</h3>
+                    <ul>
+                        <li><strong>Simplificación:</strong> En lugar de hacer malabares con múltiples fechas de pago y acreedores, solo tienes una cuota mensual. Esto reduce el estrés y la posibilidad de olvidar un pago.</li>
+                        <li><strong>Ahorro en Intereses:</strong> Si puedes conseguir una tasa de interés más baja que el promedio de tus deudas actuales (especialmente las de tarjetas de crédito), pagarás menos dinero a largo plazo.</li>
+                        <li><strong>Pago Fijo:</strong> Un préstamo personal te da un plazo y una cuota fijos, lo que facilita la planificación de tu presupuesto. Sabrás exactamente cuándo terminarás de pagar.</li>
+                    </ul>
+                    <h3>Contras: Los Riesgos a Considerar</h3>
+                    <ul>
+                        <li><strong>No resuelve la causa raíz:</strong> La consolidación organiza tu deuda, pero no soluciona los hábitos de gasto que te llevaron a ella. Si no cambias tu comportamiento, podrías terminar con el nuevo préstamo Y nuevas deudas en tus tarjetas.</li>
+                        <li><strong>Costos ocultos:</strong> Algunos préstamos tienen comisiones de apertura. Las transferencias de saldo a tarjetas de crédito suelen tener una comisión de entre el 3% y el 5% del monto transferido.</li>
+                        <li><strong>Plazo más largo:</strong> Para conseguir una cuota mensual baja, a veces se alarga el plazo del préstamo. Esto podría significar que, aunque la tasa de interés sea menor, termines pagando más intereses en total a lo largo de la vida del préstamo.</li>
+                    </ul>
+                    <h3>¿Es para ti?</h3>
+                    <p>La consolidación de deudas es una buena opción si:</p>
+                    <ul>
+                        <li>Tienes un buen puntaje de crédito para calificar a una tasa de interés baja.</li>
+                        <li>Estás comprometido a no usar el crédito que liberas en tus tarjetas.</li>
+                        <li>Las matemáticas funcionan: la nueva tasa y las comisiones realmente te ahorran dinero.</li>
+                    </ul>
+                    <p>Antes de decidir, haz los cálculos y, lo más importante, asegúrate de tener un plan para controlar tus gastos a futuro.</p>
+                `
+            },
+            'presupuesto-50-30-20': {
+                title: 'Cómo crear un presupuesto que sí funciona: El método 50/30/20',
+                content: `
+                    <p>La mayoría de los presupuestos fallan porque son demasiado complicados y restrictivos. Te sientes culpable por cada pequeño gusto. El método 50/30/20 es diferente: es simple, flexible y te da permiso para disfrutar de la vida mientras construyes tu futuro.</p>
+                    <h3>¿En qué consiste la regla 50/30/20?</h3>
+                    <p>Es una forma sencilla de dividir tus ingresos mensuales netos (el dinero que llega a tu bolsillo):</p>
+                    <ul>
+                        <li><strong>50% para Necesidades:</strong> Gastos que no puedes evitar.</li>
+                        <li><strong>30% para Deseos:</strong> Todo lo que hace la vida más divertida.</li>
+                        <li><strong>20% para Ahorro y Deudas:</strong> El dinero que trabaja para tu futuro.</li>
+                    </ul>
+                    <h3>Paso 1: Calcula tu 50% para Necesidades</h3>
+                    <p>Aquí va todo lo esencial: alquiler o hipoteca, cuentas de servicios (luz, agua, internet), comida básica del supermercado, transporte para ir a trabajar y seguros. Si estos gastos superan el 50% de tus ingresos, es una señal de que necesitas buscar formas de reducirlos (ej. buscar un alquiler más barato, optimizar el uso de servicios).</p>
+                    <h3>Paso 2: Disfruta de tu 30% para Deseos</h3>
+                    <p>Esta es la categoría flexible. Incluye salidas a comer, hobbies, suscripciones (Netflix, Spotify), viajes, compras de ropa no esencial, etc. Este 30% es clave para no sentirte ahogado por el presupuesto y abandonarlo. ¡No se trata de no disfrutar, sino de hacerlo con control!</p>
+                    <h3>Paso 3: Prioriza tu 20% para el Futuro (Págate a ti mismo primero)</h3>
+                    <p>Este es el porcentaje más importante para tu salud financiera. Debe destinarse a: pagar deudas (más allá del pago mínimo), ahorrar para tu fondo de emergencia e invertir para tu retiro u otras metas. La clave es automatizar este 20% para que se transfiera a una cuenta de ahorros o inversión apenas recibas tu salario.</p>
+                    <h3>Ejemplo Práctico</h3>
+                    <p>Si ganas $1,500 netos al mes:</p>
+                    <ul>
+                        <li><strong>$750</strong> irían a tus necesidades.</li>
+                        <li><strong>$450</strong> irían a tus deseos.</li>
+                        <li><strong>$300</strong> irían directamente a ahorro y pago de deudas.</li>
+                    </ul>
+                    <p>¡Empieza hoy! Calcula tus porcentajes y ajusta tus gastos. Este simple método puede transformar tu relación con el dinero.</p>
+                `
+            },
+            'gastos-hormiga': {
+                title: '10 "Gastos Hormiga" que están saboteando tu ahorro',
+                content: `
+                    <p>Los "gastos hormiga" son esas pequeñas compras diarias que parecen insignificantes, pero que, sumadas, se comen una parte enorme de tu presupuesto sin que te des cuenta. Identificarlos y eliminarlos es una de las formas más rápidas de liberar dinero para tus metas.</p>
+                    <h3>¿Reconoces alguno de estos?</h3>
+                    <ul>
+                        <li><strong>1. El café de la mañana:</strong> Un clásico. Si gastas $3 al día en un café, son $60 al mes y $720 al año. Prepararlo en casa puede ahorrarte una fortuna.</li>
+                        <li><strong>2. Botellas de agua:</strong> Comprar agua embotellada por $1.50 cada día suma $45 al mes. Una botella reutilizable se paga sola en una semana.</li>
+                        <li><strong>3. Comisiones de cajero automático:</strong> Sacar dinero de un cajero que no es de tu banco puede costarte $3 o más por transacción. Planifica tus retiros para evitarlas.</li>
+                        <li><strong>4. Compras impulsivas en la caja:</strong> Ese chocolate o refresco mientras esperas en la fila. Parece poco, pero si lo haces varias veces a la semana, se acumula.</li>
+                        <li><strong>5. Suscripciones que no usas:</strong> ¿Realmente usas esa app de fitness, esa revista digital o ese servicio de streaming extra? Revisa tus extractos bancarios y cancela lo que no necesites.</li>
+                        <li><strong>6. Delivery y comida para llevar:</strong> La comodidad tiene un precio. Los gastos de envío y las propinas inflan enormemente el costo de una comida que podrías haber cocinado por una fracción del precio.</li>
+                        <li><strong>7. Microtransacciones en juegos:</strong> Esos pequeños pagos para avanzar en un juego de móvil pueden sumar cientos de dólares al año sin que te percates.</li>
+                        <li><strong>8. No aprovechar descuentos o cupones:</strong> Pagar el precio completo cuando podrías haber obtenido un descuento con un simple código o cupón es regalar dinero.</li>
+                        <li><strong>9. Propinas excesivas o por costumbre:</strong> Dar propina es importante en muchos servicios, pero a veces lo hacemos por inercia en situaciones donde no es necesario.</li>
+                        <li><strong>10. Lotería y juegos de azar:</strong> La probabilidad de ganar es mínima. Ese dinero está mucho mejor invertido en tu fondo de emergencia o pagando deudas.</li>
+                    </ul>
+                    <p>Elige uno o dos de esta lista y concéntrate en eliminarlos esta semana. Verás cómo, sin grandes sacrificios, tu capacidad de ahorro aumenta drásticamente.</p>
+                `
+            },
+            'fondo-emergencia': {
+                title: 'Cómo crear un fondo de emergencia: Tu colchón financiero',
+                content: `
+                    <p>Un fondo de emergencia es la base de cualquier plan financiero sólido. Es tu red de seguridad, el dinero que te protege de los imprevistos de la vida sin tener que recurrir a deudas caras o vender tus inversiones en el peor momento. Es, literalmente, el dinero que te permite dormir tranquilo.</p>
+                    <h3>¿Qué es y para qué sirve?</h3>
+                    <p>Es una cantidad de dinero ahorrada específicamente para cubrir gastos inesperados y urgentes. No es para vacaciones ni para comprar un nuevo móvil. Es para emergencias reales, como:</p>
+                    <ul>
+                        <li>Una pérdida de empleo.</li>
+                        <li>Una emergencia médica no cubierta por el seguro.</li>
+                        <li>Una reparación urgente del coche o de la casa.</li>
+                    </ul>
+                    <h3>Paso 1: Define tu Meta</h3>
+                    <p>El objetivo estándar es tener ahorrados entre <strong>3 y 6 meses de tus gastos de vida esenciales</strong>. No de tus ingresos, sino de lo que necesitas para sobrevivir (alquiler, comida, servicios, transporte). Si ganas $2,000 pero tus gastos esenciales son $1,200, tu meta será entre $3,600 y $7,200.</p>
+                    <h3>Paso 2: Empieza Pequeño, pero Empieza YA</h3>
+                    <p>La meta puede parecer abrumadora, pero no dejes que eso te paralice. El primer objetivo es conseguir $500 o $1,000. Esa pequeña cantidad ya te protege de la mayoría de los "pequeños desastres". Abre una cuenta de ahorros separada, ponle el nombre "Fondo de Emergencia" y haz tu primer depósito hoy, aunque sean solo $20.</p>
+                    <h3>Paso 3: Automatiza el Proceso</h3>
+                    <p>La forma más efectiva de construir tu fondo es "pagarte a ti mismo primero". Configura una transferencia automática desde tu cuenta corriente a tu cuenta de emergencia para el día después de que cobres. Así, el dinero se ahorra antes de que tengas la tentación de gastarlo.</p>
+                    <h3>Paso 4: Guárdalo en el Lugar Correcto</h3>
+                    <p>Este dinero debe ser <strong>líquido y seguro</strong>. El mejor lugar es una cuenta de ahorros de alto rendimiento. Estará separado de tu dinero diario (para no gastarlo por error), no tiene riesgo de perder valor y te generará algo de interés. No lo inviertas en la bolsa, ya que podrías necesitarlo justo cuando el mercado haya caído.</p>
+                    <p>Construir tu fondo de emergencia es un acto de amor propio. Es la decisión que te dará paz mental y el poder de afrontar cualquier crisis sin que se convierta en una catástrofe financiera.</p>
+                `
+            },
+            'inversion-principiantes': {
+                title: '5 Inversiones para empezar con menos de $100 USD',
+                content: `
+                    <p>¿Crees que necesitas ser millonario para invertir? ¡Piénsalo de nuevo! Gracias a la tecnología, hoy cualquiera puede empezar a construir su futuro financiero con muy poco dinero. Aquí te presentamos 5 opciones ideales para empezar con menos de $100 USD.</p>
+                    <h3>1. Fondos Indexados o ETFs (La opción inteligente)</h3>
+                    <p>Son la joya de la corona para principiantes. En lugar de comprar una sola acción (como Apple o Amazon), un ETF (Exchange Traded Fund) te permite comprar una pequeña parte de cientos o miles de empresas a la vez. Es como comprar una canasta con los mejores productos del mercado. Esto diversifica tu riesgo automáticamente y sus costos de administración son bajísimos.</p>
+                    <h3>2. Cuentas de Ahorro de Alto Rendimiento</h3>
+                    <p>Aunque técnicamente no es una "inversión" que te hará rico, es el lugar más seguro para tu dinero y te pagará un interés mucho mayor que una cuenta bancaria tradicional. Es el sitio perfecto para tu fondo de emergencia mientras aprendes más sobre inversiones de mayor riesgo.</p>
+                    <h3>3. Crowdfunding Inmobiliario (Ladrillos Digitales)</h3>
+                    <p>Plataformas online te permiten unirte a otros pequeños inversores para financiar proyectos inmobiliarios (como la construcción de un edificio). Puedes invertir desde $100 y recibir una parte de las ganancias por alquiler o venta. Es una forma de acceder al mercado inmobiliario sin necesidad de comprar una propiedad entera.</p>
+                    <h3>4. Criptomonedas (Con mucha precaución)</h3>
+                    <p>Son activos de muy alto riesgo y volatilidad, pero no se pueden ignorar. Si decides entrar, hazlo con una cantidad de dinero muy pequeña que estés dispuesto a perder (ej. $20 o $50). Compra las más conocidas como Bitcoin o Ethereum y considéralo un aprendizaje más que una inversión seria al principio.</p>
+                    <h3>5. Invierte en ti mismo (La mejor inversión de todas)</h3>
+                    <p>Usa esos $100 para comprar libros sobre finanzas, tomar un curso online que mejore tus habilidades laborales o certifícate en algo nuevo. El conocimiento que adquieras puede generar un retorno de tu inversión mucho mayor que cualquier acción en el mercado. ¡Nunca subestimes el poder de tu propio crecimiento!</p>
+                `
+            },
+            'que-son-etfs': {
+                title: '¿Qué son los ETFs y por qué son ideales para empezar?',
+                content: `
+                    <p>Si estás empezando a invertir, es probable que hayas oído hablar de los ETFs. Y por una buena razón: son una de las herramientas más poderosas, simples y económicas para construir riqueza a largo plazo. Desmitifiquemos qué son y por qué son tan recomendados.</p>
+                    <h3>¿Qué es un ETF? La analogía de la canasta de frutas</h3>
+                    <p>Imagina que vas al mercado. En lugar de elegir y comprar cada fruta por separado (una manzana, una banana, una naranja...), puedes comprar una <strong>canasta ya preparada</strong> que contiene una selección de las mejores frutas. Un ETF (Exchange Traded Fund o Fondo Cotizado en Bolsa) es exactamente eso, pero para inversiones.</p>
+                    <p>En lugar de comprar una acción de una sola empresa (como Apple), un ETF te permite comprar una "canasta" que contiene acciones de cientos o incluso miles de empresas diferentes. Por ejemplo, un ETF que sigue al índice S&P 500 te da una pequeña porción de las 500 empresas más grandes de EE. UU. con una sola compra.</p>
+                    <h3>Ventajas Clave de los ETFs para Principiantes</h3>
+                    <ul>
+                        <li><strong>Diversificación Instantánea:</strong> Este es su mayor superpoder. Al comprar un solo ETF, tu dinero se distribuye entre muchas empresas. Si a una le va mal, el impacto en tu inversión total es mínimo. Reduces drásticamente el riesgo en comparación con comprar acciones individuales.</li>
+                        <li><strong>Bajos Costos:</strong> Los ETFs, especialmente los que siguen un índice (indexados), son gestionados pasivamente por ordenadores, por lo que sus comisiones de administración son extremadamente bajas. Esto significa que una mayor parte de tu dinero se queda trabajando para ti.</li>
+                        <li><strong>Simplicidad y Transparencia:</strong> Se compran y venden en la bolsa de valores como si fueran una acción normal, a lo largo de todo el día. Es muy fácil empezar, y siempre puedes ver exactamente qué activos contiene tu ETF.</li>
+                        <li><strong>Accesibilidad:</strong> Puedes empezar a invertir en ETFs con muy poco dinero. Muchos brokers permiten comprar "acciones fraccionadas", por lo que puedes invertir desde $10 o $20.</li>
+                    </ul>
+                    <h3>¿Cómo empezar?</h3>
+                    <p>Para invertir en ETFs, solo necesitas abrir una cuenta en un broker online, depositar fondos y buscar el ETF que te interese (por ejemplo, uno que siga un índice global como el MSCI World o uno local de tu país). Por su simplicidad, bajo costo y diversificación, los ETFs son, sin duda, el punto de partida ideal para la mayoría de los nuevos inversores.</p>
+                `
+            },
+            'psicologia-dinero': {
+                title: 'Psicología del dinero: Cómo tus emociones afectan tus finanzas',
+                content: `
+                    <p>Manejar el dinero es solo un 20% conocimiento técnico y un 80% comportamiento. Puedes saber qué es un ETF o cómo hacer un presupuesto, pero si no entiendes cómo tus emociones y tu cerebro influyen en tus decisiones, es probable que cometas errores costosos. La psicología del dinero es el estudio de esta relación entre tu mente y tu billetera.</p>
+                    <h3>1. Miedo a Perder (Aversión a la Pérdida)</h3>
+                    <p>Los estudios demuestran que el dolor de perder $100 es dos veces más fuerte que la alegría de ganar $100. Este miedo nos lleva a tomar malas decisiones, como <strong>vender nuestras inversiones en pánico</strong> cuando el mercado baja (consolidando una pérdida temporal) o <strong>mantener una inversión perdedora</strong> demasiado tiempo, esperando que "se recupere", por no querer aceptar el error.</p>
+                    <p><strong>Cómo combatirlo:</strong> Ten un plan de inversión a largo plazo y automatiza tus contribuciones. No mires tu cartera todos los días. Recuerda que la volatilidad es el precio que pagas por obtener rendimientos a largo plazo.</p>
+                    <h3>2. Exceso de Confianza y el Miedo a Quedarse Fuera (FOMO)</h3>
+                    <p>Cuando el mercado está en auge o una criptomoneda está de moda, sentimos la necesidad urgente de entrar para no perdernos las ganancias. Este "Fear Of Missing Out" (FOMO) nos lleva a <strong>comprar caro</strong>, a menudo en el pico del mercado, sin investigar y guiados solo por la euforia colectiva.</p>
+                    <p><strong>Cómo combatirlo:</strong> No inviertas en algo que no entiendes. Si parece demasiado bueno para ser verdad, probablemente lo sea. Apégate a tu estrategia de inversión diversificada y aburrida. La inversión exitosa es como ver la hierba crecer, no es un casino.</p>
+                    <h3>3. Anclaje y Sesgo de Confirmación</h3>
+                    <p>El "anclaje" ocurre cuando nos aferramos a la primera información que recibimos. Por ejemplo, si compramos una acción a $50, ese precio se convierte en nuestro ancla mental y nos cuesta venderla por menos, aunque la empresa ya no sea una buena inversión. El "sesgo de confirmación" nos hace buscar solo información que confirme nuestras creencias existentes, ignorando las señales de advertencia.</p>
+                    <p><strong>Cómo combatirlo:</strong> Busca activamente opiniones contrarias a la tuya. Revisa tus inversiones basándote en los fundamentos actuales de la empresa o el activo, no en el precio que pagaste por él.</p>
+                    <p>Entender que no somos seres 100% racionales es el primer paso para tomar mejores decisiones financieras. Crear sistemas (como la automatización) y tener un plan claro te ayudará a protegerte de tu peor enemigo financiero: tú mismo.</p>
+                `
+            }
+        },
+        legal: {
+            'about': {
+                title: 'Sobre Nosotros',
+                content: `<h3>Nuestra Misión en Finanzas Claras</h3><p>Finanzas Claras nació de una idea simple: la educación financiera debe ser accesible para todos. Estamos cansados del lenguaje complicado, los consejos poco prácticos y la idea de que para manejar bien tu dinero necesitas ser un experto en Wall Street.</p><p>Nuestra misión es desmitificar el mundo de las finanzas personales. Queremos darte las herramientas, el conocimiento y la confianza para que tomes el control de tu dinero, sin importar cuánto ganes. Creemos en el poder de las pequeñas acciones consistentes para lograr grandes resultados: desde salir de deudas y crear un presupuesto que funcione, hasta dar tus primeros pasos en el mundo de la inversión.</p><p>Somos un equipo de apasionados por las finanzas y la comunicación, y estamos aquí para acompañarte en tu viaje hacia la libertad financiera.</p>`
+            },
+            'contact': {
+                title: 'Contacto',
+                content: `<h3>¡Hablemos!</h3><p>Si tienes preguntas, sugerencias o simplemente quieres saludar, nos encantaría saber de ti. Puedes contactarnos a través del siguiente correo electrónico:</p><p><strong>Email:</strong> contacto@finanzasclaras.com (reemplazar con tu email real)</p><p>Hacemos nuestro mejor esfuerzo por responder a todos los mensajes en un plazo de 48 horas hábiles.</p>`
+            },
+            'privacy': {
+                title: 'Política de Privacidad',
+                content: `<h3>1. Introducción</h3><p>En Finanzas Claras, tu privacidad es de suma importancia para nosotros. Esta política detalla qué información recopilamos y cómo la utilizamos.</p><h3>2. Información que Recopilamos</h3><p>Podemos recopilar información personal como tu nombre y correo electrónico si te suscribes voluntariamente a nuestro boletín informativo. También recopilamos datos anónimos de navegación a través de cookies para mejorar la experiencia del usuario.</p><h3>3. Google AdSense</h3><p>Utilizamos Google AdSense para mostrar anuncios en nuestro sitio. Google, como proveedor externo, utiliza cookies (como la cookie DART) para publicar anuncios basados en las visitas anteriores de un usuario a nuestro sitio web o a otros sitios web. Puedes inhabilitar el uso de la cookie DART a través de la configuración de anuncios de Google.</p><h3>4. Tus Derechos</h3><p>Tienes derecho a acceder, rectificar o eliminar tu información personal en cualquier momento poniéndote en contacto con nosotros.</p>`
+            },
+            'cookies': {
+                title: 'Política de Cookies',
+                content: `<h3>¿Qué son las cookies?</h3><p>Una cookie es un pequeño fichero de texto que se almacena en tu navegador cuando visitas una página web. Su utilidad es que la web sea capaz de recordar tu visita cuando vuelvas a navegar por esa página.</p><h3>¿Qué cookies utilizamos?</h3><ul><li><strong>Cookies técnicas:</strong> Esenciales para el funcionamiento de la web.</li><li><strong>Cookies de análisis (Google Analytics):</strong> Nos ayudan a entender cómo los usuarios interactúan con el sitio web de forma anónima.</li><li><strong>Cookies publicitarias (Google AdSense):</strong> Permiten gestionar de la forma más eficaz posible la oferta de los espacios publicitarios que hay en la página web, adecuando el contenido del anuncio al contenido del servicio solicitado o al uso que realice de nuestra página web.</li></ul><p>Puedes desactivar el uso de cookies en la configuración de tu navegador.</p>`
+            },
+            'terms': {
+                title: 'Términos de Servicio',
+                content: `<h3>1. Aceptación de los términos</h3><p>Al acceder y utilizar Finanzas Claras, aceptas estar sujeto a estos Términos de Servicio. El contenido proporcionado en este sitio es solo para fines informativos y educativos. No constituye asesoramiento financiero profesional.</p><h3>2. Uso del Contenido</h3><p>Todo el contenido de este sitio es propiedad de Finanzas Claras. Se permite el uso personal y no comercial. Queda prohibida la reproducción total o parcial sin autorización previa.</p><h3>3. Limitación de Responsabilidad</h3><p>No nos hacemos responsables de las decisiones financieras que tomes basadas en la información de este sitio. Siempre recomendamos consultar a un asesor financiero certificado para tu situación particular.</p>`
+            }
+        }
+    };
+
+    // --- MODAL & INTERACTIVITY LOGIC ---
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        const closeModalBtn = document.getElementById('modal-close-btn');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+        function generateShareLinks(articleId, title) {
+            const url = `https://www.finanzasclaras.com/#${articleId}`; // Replace with your domain
+            const text = encodeURIComponent(`¡Mira este artículo sobre "${title}" en Finanzas Claras!`);
+            return `
+                <div class="share-buttons">
+                    <p>¡Si te gustó, compártelo!</p>
+                    <a href="https://api.whatsapp.com/send?text=${text}%20${encodeURIComponent(url)}" target="_blank" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}" target="_blank" class="share-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${text}" target="_blank" class="share-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+                </div>
+            `;
+        }
+
+        function openModal(type, id) {
+            const data = contentData[type][id];
+            if (!data) return;
+
+            modalTitle.textContent = data.title;
+            let finalContent = data.content;
+            if (type === 'articles') {
+                finalContent += generateShareLinks(id, data.title);
+            }
+            modalBody.innerHTML = finalContent;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.querySelectorAll('.open-modal-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal('articles', button.dataset.articleId);
+            });
+        });
+
+        document.querySelectorAll('.open-legal-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal('legal', button.dataset.legalId);
+            });
+        });
+
+        closeModalBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+        
+        // Mobile menu toggle
+        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        // Scroll to top button logic
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollTopBtn.style.display = "block";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        };
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        
+        // --- AI ADVISOR LOGIC ---
+        const askAiBtn = document.getElementById('ask-ai-btn');
+        const aiQuestionInput = document.getElementById('ai-question');
+        const aiResponseContainer = document.getElementById('ai-response-container');
+        const aiResponseDiv = document.getElementById('ai-response');
+
+        askAiBtn.addEventListener('click', async () => {
+            const question = aiQuestionInput.value.trim();
+            if (!question) {
+                // Show a visual cue for error instead of an alert
+                aiQuestionInput.classList.add('border-red-500', 'ring-red-500', 'ring-2');
+                aiQuestionInput.placeholder = "Por favor, escribe una pregunta aquí.";
+                setTimeout(() => {
+                    aiQuestionInput.classList.remove('border-red-500', 'ring-red-500', 'ring-2');
+                    aiQuestionInput.placeholder = "Ej: ¿Cómo puedo empezar a invertir si tengo poco dinero?";
+                }, 3000);
+                return;
+            }
+
+            // Show loading state
+            askAiBtn.disabled = true;
+            askAiBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i><span class="ml-2">Pensando...</span>`;
+            aiResponseContainer.style.display = 'block';
+            aiResponseDiv.innerHTML = '<p>Generando una respuesta para ti...</p>';
+
+            try {
+                // Construct the prompt for the Gemini API
+                const prompt = `
+                    Eres 'Finanzas Claras IA', un asistente financiero amigable y educativo para el sitio web 'Finanzas Claras'.
+                    Tu propósito es responder las preguntas de los usuarios sobre finanzas personales de una manera sencilla, clara y alentadora.
+                    No eres un asesor financiero certificado.
+
+                    Reglas importantes:
+                    1.  **NUNCA** des consejos de inversión específicos (ej: "compra acciones de Tesla", "invierte en esta criptomoneda"). En su lugar, explica los conceptos (ej: "invertir en acciones significa comprar una parte de una empresa...", "las criptomonedas son activos digitales volátiles...").
+                    2.  **SIEMPRE** enfócate en la educación financiera y los principios generales (ahorro, presupuesto, diversificación, riesgo, etc.).
+                    3.  Usa un tono cercano, positivo y fácil de entender para alguien que no es experto. Formatea la respuesta usando Markdown simple (negritas con ** y listas con *).
+                    4.  **INDISPENSABLE**: Al final de CADA respuesta, incluye el siguiente descargo de responsabilidad en una línea separada y en negrita:
+                        **Recuerda, esta es una guía educativa y no constituye un consejo financiero profesional. Consulta siempre a un asesor certificado para tu situación personal.**
+
+                    Pregunta del usuario: "${question}"
+
+                    Responde a la pregunta del usuario en español, siguiendo todas las reglas.
+                `;
+
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // API Key is handled by the environment
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error de la API: ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                
+                let text = 'No se pudo obtener una respuesta. Por favor, intenta de nuevo.';
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    text = result.candidates[0].content.parts[0].text;
+                } else if (result.promptFeedback && result.promptFeedback.blockReason) {
+                    text = `La pregunta no pudo ser procesada debido a nuestras políticas de seguridad. Razón: ${result.promptFeedback.blockReason}. Por favor, reformula tu pregunta.`;
+                }
+
+                // Simple Markdown to HTML conversion
+                let htmlResponse = text
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold
+                    .replace(/^\* (.*$)/gm, '<li>$1</li>'); // List items at the start of a line
+                
+                // Wrap consecutive list items in a <ul> tag
+                htmlResponse = htmlResponse.replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>');
+                // Clean up extra spaces between ul tags if any
+                htmlResponse = htmlResponse.replace(/<\/ul>\s*<ul>/g, '');
+                
+                // Convert newlines to <br> tags for paragraphs
+                htmlResponse = htmlResponse.replace(/\n/g, '<br>');
+                // Remove <br> inside ul
+                htmlResponse = htmlResponse.replace(/<ul><br>/g, '<ul>').replace(/<br><\/ul>/g, '</ul>');
+                htmlResponse = htmlResponse.replace(/<li><br>/g, '<li>').replace(/<br><\/li>/g, '</li>');
+
+
+                aiResponseDiv.innerHTML = htmlResponse;
+
+            } catch (error) {
+                console.error("Error fetching AI response:", error);
+                aiResponseDiv.innerHTML = '<p class="text-red-500">Lo siento, ocurrió un error al contactar a la IA. Por favor, inténtalo de nuevo más tarde.</p>';
+            } finally {
+                // Restore button state
+                askAiBtn.disabled = false;
+                askAiBtn.innerHTML = `<i class="fas fa-magic"></i><span class="ml-2">Preguntar a la IA</span>`;
+            }
+        });
+    });
+    </script>
+</body>
+</html>
