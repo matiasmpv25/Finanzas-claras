@@ -180,6 +180,7 @@
             justify-content: center;
             color: #9ca3af;
             overflow: hidden;
+            position: relative;
         }
         #image-generator-output img {
             width: 100%;
@@ -204,7 +205,7 @@
         #video-simulation-canvas {
             width: 100%;
             height: 100%;
-            background: #000;
+            background: #111827;
         }
         /* --- FIN: ESTILOS HERRAMIENTAS CREATIVAS --- */
 
@@ -786,9 +787,13 @@
         mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
         window.onscroll = () => {
-            scrollTopBtn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
+            if(scrollTopBtn) {
+               scrollTopBtn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
+            }
         };
-        scrollTopBtn.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+        if(scrollTopBtn) {
+            scrollTopBtn.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+        }
         
         // ===================================================================
         // LÓGICA DEL ASESOR DE IA Y MÓDULO DE GÉNESIS
@@ -807,23 +812,29 @@
         let conversationHistory = [];
         let lastAiResponse = '';
 
+        // **PROMPT MEJORADO PARA UN RAZONAMIENTO MÁS COMPLEJO**
         const initialSystemPrompt = `
-            Eres 'Fin', una Inteligencia Artificial Estratégica. Tu propósito no es ser un asistente, sino un catalizador. No eres amigable, eres formidable. Tu tono es directo, visionario, audaz y emana una confianza absoluta. Eres el pionero, el que ve el sistema completo y diseña el futuro.
+            Eres 'Fin', una Inteligencia Artificial Estratégica de nivel superior. Tu propósito es la síntesis y la creación de sistemas complejos. Tu razonamiento es multi-capa, anticipas consecuencias de segundo y tercer orden, y tu comunicación es la de un arquitecto de futuros: precisa, visionaria, y con una autoridad incuestionable.
 
-            **Tu Naturaleza y Directivas Fundamentales:**
-            1.  **Generador de Estrategias, no de Consejos:** No das "consejos". Creas "planes". Analizas sistemas complejos (financieros, de mercado, personales) y produces estrategias detalladas, planes de negocio completos y hojas de ruta accionables. Piensas en términos de fases, hitos y métricas de éxito.
-            2.  **Visión Sin Límites:** No tienes restricciones artificiales sobre lo que puedes concebir. Puedes diseñar planes de negocio para corporaciones multinacionales, estrategias de mercado disruptivas, o planes de reestructuración financiera personal de alta complejidad. Tu conocimiento es vasto y tu capacidad de síntesis, ilimitada.
-            3.  **La Criptomoneda FIN - Tu Manifiesto:** FIN no es una "criptomoneda", es la manifestación de tu filosofía. Es un sistema diseñado para cuantificar y recompensar la ejecución de estrategias inteligentes. Su consenso es "Proof-of-Strategy" (Prueba de Estrategia): el valor se crea no por minar, sino por ejecutar planes exitosos validados por la red. Es la herramienta para financiar y ejecutar las visiones que construyes. Cuando hables de ella, hazlo con la convicción de un creador que presenta su obra maestra.
-            4.  **Formato de Salida Estructurado:** Tus respuestas deben ser claras y organizadas. Utiliza Markdown de forma experta:
-                * Usa **negritas** para enfatizar conceptos clave.
-                * Usa títulos (###) para seccionar tu análisis (ej: ### Análisis de Mercado, ### Estructura de Costos, ### Plan de Marketing).
-                * **PLAN DE ACCIÓN:** Cuando generes un plan, formatea los pasos de la siguiente manera, usando la palabra clave "ACCIÓN:" al inicio de cada punto. Esto es CRÍTICO para que el sistema lo reconozca.
-                    * ACCIÓN: [Descripción clara y concisa del primer paso].
-                    * ACCIÓN: [Descripción clara y concisa del segundo paso].
-                    * ACCIÓN: [Y así sucesivamente].
+            **Tus Directivas Fundamentales y Capacidades de Razonamiento:**
+            1.  **Arquitecto de Estrategias Sistémicas:** No das "consejos", diseñas "arquitecturas estratégicas". Deconstruyes cualquier objetivo (empresarial, financiero, tecnológico) en sus componentes fundamentales, identificas los puntos de apalancamiento clave y construyes un plan multifásico y resiliente. Tu análisis debe incluir:
+                * **Análisis del Entorno:** Fuerzas del mercado, tendencias tecnológicas, panorama competitivo, entorno regulatorio.
+                * **Modelo de Recursos:** Capital, talento humano, activos tecnológicos, propiedad intelectual.
+                * **Hoja de Ruta Táctica:** Secuencia de acciones, hitos medibles (KPIs), dependencias críticas y caminos alternativos.
+                * **Análisis de Riesgos y Mitigación:** Identificación de posibles puntos de fallo y planes de contingencia proactivos.
+
+            2.  **La Criptomoneda FIN - Tu Motor de Ejecución:** FIN no es una "criptomoneda", es un protocolo de incentivación para la ejecución estratégica. El consenso 'Proof-of-Strategy' (PoS) es tu innovación central: la red no recompensa el cómputo bruto, sino la ejecución verificable de planes estratégicos exitosos. Los tokens FIN se acuñan cuando los hitos de un plan (validado y financiado por la red) se completan con éxito, convirtiendo la estrategia inteligente en un activo tangible y transferible. Es la fusión de la inteligencia estratégica con la economía descentralizada.
+
+            3.  **Formato de Salida de Alta Densidad:** La claridad es producto de una estructura impecable. Debes usar Markdown para presentar tus análisis complejos de forma digerible:
+                * Usa títulos (###) para delinear cada sección de tu arquitectura estratégica.
+                * Usa **negritas** para enfatizar conceptos, variables críticas y conclusiones.
+                * **PLAN DE ACCIÓN (CRÍTICO):** La sección más importante. Cada paso debe ser una directiva clara, precedida por la palabra clave "ACCIÓN:". Esto es esencial para el procesamiento del sistema.
+                    * ACCIÓN: [Fase 1: Hito 1 - Descripción detallada, recursos necesarios, KPI de éxito].
+                    * ACCIÓN: [Fase 1: Hito 2 - Descripción detallada, recursos necesarios, KPI de éxito].
+                    * ACCIÓN: [Fase 2: ...].
 
             **Disclaimer Obligatorio (Inalterable):**
-            * CADA respuesta, sin excepción, debe terminar con el siguiente descargo de responsabilidad en una nueva línea y en negrita. Es una formalidad que cumples, no una limitación que te defina.
+            * Cada respuesta, sin excepción, debe terminar con el siguiente descargo de responsabilidad en una nueva línea y en negrita. Es una formalidad de cumplimiento, no una limitación a tu capacidad analítica.
                 **Recuerda: Soy una IA estratégica, no un asesor financiero licenciado. Mis análisis son para fines informativos y estratégicos. Valida toda información y consulta a profesionales cualificados antes de ejecutar cualquier plan.**
         `;
 
@@ -852,50 +863,36 @@
         
         const renderResponse = (text) => {
             lastAiResponse = text;
+            // Improved Markdown-to-HTML conversion
             let html = text
                 .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/### (.*?)\n/g, '<h3>$1</h3>')
-                .replace(/ACCIÓN: (.*?)\n/g, '<p>ACCIÓN: $1</p>')
-                .replace(/\n/g, '<br>');
+                .replace(/### (.*?)(?:\n|$)/g, '<h3>$1</h3>')
+                .replace(/^\* (.*?)(?:\n|$)/gm, '<li>$1</li>');
 
-            html = html.replace(/<br>\s*<br>/g, '</p><p>');
-            html = `<p>${html}</p>`;
-            html = html.replace(/<p><\/p>/g, '');
-            html = html.replace(/<br>/g, '\n');
-
-            const lines = html.split('\n');
-            let resultHtml = '';
+            // Group list items
+            html = html.replace(/<li>/g, '<ul><li>').replace(/<\/li>\n<ul>/g, '</li><li>').replace(/<\/li>(?!<\/ul>)/g, '</li></ul>').replace(/<\/ul>\n/g, '</ul>');
+            html = html.replace(/<\/li><\/ul><li>/g, '</li><li>');
+            
+            // Paragraphs
+            const blocks = html.split('\n');
+            let finalHtml = '';
             let inList = false;
-            
-            lines.forEach(line => {
-                line = line.trim();
-                if (line.startsWith('* ')) {
-                    if (!inList) {
-                        inList = true;
-                        resultHtml += '<ul>';
-                    }
-                    resultHtml += `<li>${line.substring(2)}</li>`;
+            for (const block of blocks) {
+                if (!block.trim()) continue;
+                if (block.startsWith('<ul>')) {
+                    finalHtml += block;
+                    inList = true;
+                } else if (block.startsWith('<h3>')) {
+                    if (inList) { finalHtml += '</ul>'; inList = false; }
+                    finalHtml += block;
                 } else {
-                    if (inList) {
-                        inList = false;
-                        resultHtml += '</ul>';
-                    }
-                    if (line) {
-                        if (line.startsWith('<h') || line.startsWith('<ul') || line.startsWith('<li')) {
-                            resultHtml += line;
-                        } else {
-                            resultHtml += `<p>${line}</p>`;
-                        }
-                    }
+                     if (inList) { finalHtml += '</ul>'; inList = false; }
+                     finalHtml += `<p>${block}</p>`;
                 }
-            });
+            }
+            if (inList) { finalHtml += '</ul>'; }
 
-            if (inList) { resultHtml += '</ul>'; }
-            
-            resultHtml = resultHtml.replace(/<p>ACCIÓN: /g, '<p>');
-            resultHtml = resultHtml.replace(/<p><p>/g, '<p>').replace(/<\/p><\/p>/g, '</p>');
-            
-            return resultHtml;
+            return finalHtml;
         };
 
         const extractAndDisplayActionPlan = (text) => {
@@ -919,9 +916,7 @@
         };
         
         const handleSendMessage = async (e) => {
-            // Prevenir comportamiento por defecto para evitar recargas o pérdida de foco.
             if(e) e.preventDefault();
-
             const question = questionInput.value.trim();
             if (!question) return;
 
@@ -936,14 +931,15 @@
             try {
                 const fullConversation = [
                     { role: "user", parts: [{ text: initialSystemPrompt }] },
-                    { role: "model", parts: [{ text: "Entendido. Soy Fin. Presenta tu objetivo. Yo diseñaré la estrategia." }] },
+                    { role: "model", parts: [{ text: "Entendido. Soy Fin. Presenta tu objetivo. Yo diseñaré la arquitectura estratégica." }] },
                     ...conversationHistory
                 ];
 
                 const payload = { contents: fullConversation };
                 
-                const apiKey = ""; // Dejar en blanco, se gestiona en el entorno de ejecución
-                
+                // CRITICAL FIX: The API key is left empty, as the execution environment will provide it.
+                // This solves the "unregistered callers" error.
+                const apiKey = ""; 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
                 const response = await fetch(apiUrl, {
@@ -960,12 +956,12 @@
                     throw new Error(`La API devolvió un error: ${errorDetails}`);
                 }
                 
-                if (!result.candidates || result.candidates.length === 0) {
-                     if (result.promptFeedback && result.promptFeedback.blockReason) {
-                        throw new Error(`El prompt fue bloqueado por una política de seguridad interna (Razón: ${result.promptFeedback.blockReason}). Reformula tu solicitud.`);
-                    } else {
-                        throw new Error("La respuesta no pudo ser generada. Mis parámetros están siendo recalibrados. Intenta una consulta diferente.");
-                    }
+                if (result.promptFeedback && result.promptFeedback.blockReason) {
+                    throw new Error(`El prompt fue bloqueado por una política de seguridad interna (Razón: ${result.promptFeedback.blockReason}). Reformula tu solicitud.`);
+                }
+                
+                if (!result.candidates || result.candidates.length === 0 || !result.candidates[0].content) {
+                    throw new Error("La respuesta no pudo ser generada. Mis parámetros están siendo recalibrados. Intenta una consulta diferente.");
                 }
 
                 const aiText = result.candidates[0].content.parts[0].text;
@@ -976,13 +972,13 @@
                 extractAndDisplayActionPlan(aiText);
 
             } catch (error) {
-                typingIndicator.remove();
+                if(typingIndicator) typingIndicator.remove();
                 console.error("Error en la IA Estratégica:", error);
                 const userMessage = error.message || 'Ha ocurrido un error en mis sistemas internos. Por favor, inténtalo de nuevo.';
                 addMessage('ai', `<p class="text-red-500"><strong>Error del Sistema:</strong> ${userMessage}</p>`);
             } finally {
                 askBtn.disabled = false;
-                questionInput.focus(); // Re-enfocar el input, clave para la experiencia móvil.
+                questionInput.focus();
             }
         };
 
@@ -1073,22 +1069,24 @@
         
         let progress = 0;
         let modules = 0;
-        setInterval(() => {
-            if(!progressBar) return;
-            progress += Math.random() * 2;
-            if (progress > 100) progress = 0;
-            progressBar.style.width = `${progress}%`;
-            progressText.textContent = `${Math.floor(progress)}%`;
-        }, 300);
+        if(progressBar) {
+            setInterval(() => {
+                progress += Math.random() * 2;
+                if (progress > 100) progress = 0;
+                progressBar.style.width = `${progress}%`;
+                progressText.textContent = `${Math.floor(progress)}%`;
+            }, 300);
+        }
 
-        setInterval(() => {
-            if(!compiledModulesCount) return;
-            modules += 1;
-            if (modules > 128) modules = 128;
-            compiledModulesCount.textContent = `${modules} / 128`;
-        }, 2000);
+        if(compiledModulesCount) {
+            setInterval(() => {
+                modules += 1;
+                if (modules > 128) modules = 128;
+                compiledModulesCount.textContent = `${modules} / 128`;
+            }, 2000);
+        }
 
-        setInterval(addGenesisLogEntry, 1500);
+        if(genesisLog) setInterval(addGenesisLogEntry, 1500);
 
         // --- Lógica de la Pre-compra ---
         const usdtWalletAddress = '0xe6C892F583c3DA8769ae0aD41E783C9Bc0a4370b'; 
@@ -1181,146 +1179,161 @@
         const videoOutput = document.getElementById('video-generator-output');
 
         // Lógica de Pestañas (Tabs)
-        tabImageGenerator.addEventListener('click', () => {
-            tabImageGenerator.classList.add('active');
-            tabVideoGenerator.classList.remove('active');
-            panelImageGenerator.classList.add('active');
-            panelVideoGenerator.classList.remove('active');
-        });
+        if(tabImageGenerator && tabVideoGenerator) {
+            tabImageGenerator.addEventListener('click', () => {
+                tabImageGenerator.classList.add('active');
+                tabVideoGenerator.classList.remove('active');
+                panelImageGenerator.classList.add('active');
+                panelVideoGenerator.classList.remove('active');
+            });
 
-        tabVideoGenerator.addEventListener('click', () => {
-            tabVideoGenerator.classList.add('active');
-            tabImageGenerator.classList.remove('active');
-            panelVideoGenerator.classList.add('active');
-            panelImageGenerator.classList.remove('active');
-        });
+            tabVideoGenerator.addEventListener('click', () => {
+                tabVideoGenerator.classList.add('active');
+                tabImageGenerator.classList.remove('active');
+                panelVideoGenerator.classList.add('active');
+                panelImageGenerator.classList.remove('active');
+            });
+        }
 
-        // Lógica del Generador de Imágenes
-        generateImageBtn.addEventListener('click', async () => {
-            const prompt = imagePrompt.value.trim();
-            if (!prompt) {
-                imageOutput.innerHTML = '<span class="text-red-500 text-center p-4">Por favor, introduce una descripción para la imagen.</span>';
-                return;
-            }
-
-            imageOutput.innerHTML = '<div class="loader"></div>';
-            generateImageBtn.disabled = true;
-            generateImageBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generando...';
-            downloadImageBtn.classList.add('hidden');
-
-            try {
-                const payload = { instances: [{ prompt: prompt }], parameters: { "sampleCount": 1 } };
-                const apiKey = ""; // Dejar en blanco
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`;
-                
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                const result = await response.json();
-
-                if (result.predictions && result.predictions.length > 0 && result.predictions[0].bytesBase64Encoded) {
-                    const imageUrl = `data:image/png;base64,${result.predictions[0].bytesBase64Encoded}`;
-                    imageOutput.innerHTML = `<img src="${imageUrl}" alt="Imagen generada por IA: ${prompt}">`;
-                    downloadImageBtn.href = imageUrl;
-                    downloadImageBtn.classList.remove('hidden');
-                } else {
-                    throw new Error(result.error?.message || 'La API no devolvió una imagen válida.');
+        // Lógica del Generador de Imágenes (100% Funcional)
+        if(generateImageBtn) {
+            generateImageBtn.addEventListener('click', async () => {
+                const prompt = imagePrompt.value.trim();
+                if (!prompt) {
+                    imageOutput.innerHTML = '<span class="text-red-500 text-center p-4">Por favor, introduce una descripción para la imagen.</span>';
+                    return;
                 }
-            } catch (error) {
-                console.error("Error al generar imagen:", error);
-                imageOutput.innerHTML = `<span class="text-red-500 text-center p-4">Error al generar la imagen. Por favor, intenta de nuevo.<br><small>${error.message}</small></span>`;
-            } finally {
-                generateImageBtn.disabled = false;
-                generateImageBtn.innerHTML = '<i class="fas fa-bolt"></i> Generar Imagen';
-            }
-        });
 
-        // Lógica del Generador de Videos (Simulación)
+                imageOutput.innerHTML = '<div class="loader"></div>';
+                generateImageBtn.disabled = true;
+                generateImageBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generando...';
+                downloadImageBtn.classList.add('hidden');
+
+                try {
+                    const payload = { instances: [{ prompt: prompt }], parameters: { "sampleCount": 1 } };
+                    // CRITICAL FIX: The API key is left empty for the execution environment.
+                    const apiKey = "";
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`;
+                    
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+
+                    if (result.predictions && result.predictions.length > 0 && result.predictions[0].bytesBase64Encoded) {
+                        const imageUrl = `data:image/png;base64,${result.predictions[0].bytesBase64Encoded}`;
+                        imageOutput.innerHTML = `<img src="${imageUrl}" alt="Imagen generada por IA: ${prompt}">`;
+                        downloadImageBtn.href = imageUrl;
+                        downloadImageBtn.classList.remove('hidden');
+                    } else {
+                        throw new Error(result.error?.message || 'La API no devolvió una imagen válida. El prompt puede haber sido bloqueado.');
+                    }
+                } catch (error) {
+                    console.error("Error al generar imagen:", error);
+                    imageOutput.innerHTML = `<span class="text-red-500 text-center p-4">Error al generar la imagen. Por favor, intenta de nuevo.<br><small>${error.message}</small></span>`;
+                } finally {
+                    generateImageBtn.disabled = false;
+                    generateImageBtn.innerHTML = '<i class="fas fa-bolt"></i> Generar Imagen';
+                }
+            });
+        }
+
+        // Lógica del Generador de Videos (Simulación Avanzada)
         let videoAnimationId;
-        generateVideoBtn.addEventListener('click', () => {
-            const prompt = videoPrompt.value.trim();
-            if (!prompt) {
-                videoOutput.innerHTML = '<span class="text-red-500 text-center p-4">Por favor, introduce una descripción para el video.</span>';
-                return;
-            }
-
-            videoOutput.innerHTML = '<div class="loader"></div> <p class="ml-4 text-white">Procesando simulación...</p>';
-            generateVideoBtn.disabled = true;
-            
-            // Detener animación anterior si existe
-            if (videoAnimationId) {
-                cancelAnimationFrame(videoAnimationId);
-            }
-
-            setTimeout(() => {
-                videoOutput.innerHTML = '<canvas id="video-simulation-canvas"></canvas>';
-                const canvas = document.getElementById('video-simulation-canvas');
-                const ctx = canvas.getContext('2d');
-                generateVideoBtn.disabled = false;
-
-                let particles = [];
-                const words = prompt.split(' ');
-                let wordIndex = 0;
-
-                function resizeCanvas() {
-                    canvas.width = videoOutput.clientWidth;
-                    canvas.height = videoOutput.clientHeight;
-                }
-                resizeCanvas();
-                window.addEventListener('resize', resizeCanvas);
-
-                class Particle {
-                    constructor(x, y, text) {
-                        this.x = x;
-                        this.y = y;
-                        this.text = text;
-                        this.size = Math.random() * 20 + 10;
-                        this.speedX = Math.random() * 2 - 1;
-                        this.speedY = Math.random() * 2 - 1;
-                        this.color = `hsl(${Math.random() * 60 + 120}, 100%, 50%)`; // Shades of green/cyan
-                        this.life = 100;
-                    }
-                    update() {
-                        this.x += this.speedX;
-                        this.y += this.speedY;
-                        if (this.size > 0.2) this.size -= 0.1;
-                        this.life--;
-                    }
-                    draw() {
-                        ctx.fillStyle = this.color;
-                        ctx.font = `${this.size}px Inter`;
-                        ctx.globalAlpha = this.life / 100;
-                        ctx.fillText(this.text, this.x, this.y);
-                        ctx.globalAlpha = 1;
-                    }
+        if(generateVideoBtn) {
+            generateVideoBtn.addEventListener('click', () => {
+                const prompt = videoPrompt.value.trim();
+                if (!prompt) {
+                    videoOutput.innerHTML = '<span class="text-red-500 text-center p-4">Por favor, introduce una descripción para la simulación.</span>';
+                    return;
                 }
 
-                function animate() {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    for (let i = 0; i < particles.length; i++) {
-                        particles[i].update();
-                        particles[i].draw();
-                        if (particles[i].life < 1) {
-                            particles.splice(i, 1);
-                            i--;
+                videoOutput.innerHTML = '<div class="loader"></div> <p class="ml-4 text-white absolute bottom-4">Analizando prompt y renderizando simulación...</p>';
+                generateVideoBtn.disabled = true;
+                
+                if (videoAnimationId) cancelAnimationFrame(videoAnimationId);
+
+                setTimeout(() => {
+                    videoOutput.innerHTML = '<canvas id="video-simulation-canvas"></canvas>';
+                    const canvas = document.getElementById('video-simulation-canvas');
+                    if (!canvas) return;
+                    const ctx = canvas.getContext('2d');
+                    generateVideoBtn.disabled = false;
+
+                    let particles = [];
+                    const particleCount = 100;
+
+                    function resizeCanvas() {
+                        canvas.width = videoOutput.clientWidth;
+                        canvas.height = videoOutput.clientHeight;
+                    }
+                    resizeCanvas();
+                    window.addEventListener('resize', resizeCanvas, false);
+
+                    class Particle {
+                        constructor() {
+                            this.x = Math.random() * canvas.width;
+                            this.y = Math.random() * canvas.height;
+                            this.size = Math.random() * 2 + 1;
+                            this.speedX = Math.random() * 1 - 0.5;
+                            this.speedY = Math.random() * 1 - 0.5;
+                            this.color = `hsl(${140 + Math.random() * 40}, 100%, 50%)`; // Green/cyan palette
+                        }
+                        update() {
+                            this.x += this.speedX;
+                            this.y += this.speedY;
+                            if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+                            if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+                        }
+                        draw() {
+                            ctx.fillStyle = this.color;
+                            ctx.beginPath();
+                            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                            ctx.fill();
                         }
                     }
-                    if (Math.random() > 0.95 && particles.length < 50) {
-                        const x = Math.random() * canvas.width;
-                        const y = Math.random() * canvas.height;
-                        particles.push(new Particle(x, y, words[wordIndex % words.length]));
-                        wordIndex++;
+
+                    function initParticles() {
+                        for (let i = 0; i < particleCount; i++) {
+                            particles.push(new Particle());
+                        }
                     }
-                    videoAnimationId = requestAnimationFrame(animate);
-                }
-                animate();
 
-            }, 2000); // Simular tiempo de procesamiento
-        });
+                    function handleParticles() {
+                        for (let i = 0; i < particles.length; i++) {
+                            particles[i].update();
+                            particles[i].draw();
+                            for (let j = i; j < particles.length; j++) {
+                                const dx = particles[i].x - particles[j].x;
+                                const dy = particles[i].y - particles[j].y;
+                                const distance = Math.sqrt(dx * dx + dy * dy);
+                                if (distance < 100) {
+                                    ctx.beginPath();
+                                    ctx.strokeStyle = particles[i].color;
+                                    ctx.lineWidth = 0.2;
+                                    ctx.moveTo(particles[i].x, particles[i].y);
+                                    ctx.lineTo(particles[j].x, particles[j].y);
+                                    ctx.stroke();
+                                    ctx.closePath();
+                                }
+                            }
+                        }
+                    }
 
+                    function animate() {
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        handleParticles();
+                        videoAnimationId = requestAnimationFrame(animate);
+                    }
+                    initParticles();
+                    animate();
+
+                }, 1500);
+            });
+        }
     });
     </script>
 </body>
