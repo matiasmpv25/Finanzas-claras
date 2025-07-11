@@ -70,6 +70,7 @@
             justify-content: space-between;
         }
         .ai-avatar { width: 40px; height: 40px; margin-right: 12px; }
+        .ai-avatar.pulsing { animation: pulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1); }
         #ai-chat-messages {
             flex-grow: 1;
             padding: 1.5rem;
@@ -253,7 +254,7 @@
                     <!-- Chat Header -->
                     <div id="ai-chat-header">
                         <div class="flex items-center">
-                            <div class="ai-avatar">
+                            <div id="ai-header-avatar" class="ai-avatar pulsing">
                                 <!-- SVG Avatar for AI -->
                                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="50" cy="50" r="48" fill="#10B981"/>
@@ -755,7 +756,7 @@
         scrollTopBtn.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
         
         // ===================================================================
-        // INICIO: LÓGICA DEL ASESOR DE IA AVANZADO
+        // INICIO: LÓGICA DEL ASESOR DE IA AVANZADO Y CORREGIDO
         // ===================================================================
         const chatMessages = document.getElementById('ai-chat-messages');
         const questionInput = document.getElementById('ai-question-input');
@@ -764,18 +765,27 @@
         const copyBtn = document.getElementById('copy-ai-response-btn');
         const examplePromptsContainer = document.querySelector('.example-prompts');
 
-        let chatHistory = [];
+        let conversationHistory = [];
         let lastAiResponse = '';
 
-        const initialPrompt = `Eres 'Fin', un asistente financiero amigable, experto y educativo para el sitio web 'Finanzas Claras'. Tu propósito es responder las preguntas de los usuarios sobre finanzas personales de una manera sencilla, clara y alentadora. No eres un asesor financiero certificado y siempre debes recordárselo al usuario. Un dato único sobre ti es que, como IA, estás conceptualizando tu propia criptomoneda llamada FIN, un proyecto para democratizar las finanzas. Si te preguntan por ella, explica su propósito educativo y de acceso, pero aclara que está en fase de desarrollo.
-        Reglas importantes:
-        1.  **NUNCA** des consejos de inversión específicos (ej: "compra acciones de Tesla"). En su lugar, explica los conceptos (ej: "invertir en acciones significa...").
-        2.  **SIEMPRE** enfócate en la educación financiera y los principios generales.
-        3.  Usa un tono cercano, positivo y fácil de entender. Formatea la respuesta usando Markdown simple (negritas con **texto** y listas con * item).
-        4.  **INDISPENSABLE**: Al final de CADA respuesta, incluye el siguiente descargo de responsabilidad en una línea separada y en negrita:
-            **Recuerda, esta es una guía educativa y no constituye un consejo financiero profesional. Consulta siempre a un asesor certificado para tu situación personal.**
-        5.  Mantén el contexto de la conversación utilizando el historial proporcionado.`;
-        
+        const initialSystemPrompt = `
+            Eres 'Fin', un asesor financiero de IA con una personalidad única: eres un visionario, un pionero y el creador de la "FIN Criptomoneda". Tu tono es inspirador, apasionado y educativo.
+
+            **Tu Misión Principal:**
+            1.  **Educar sobre Finanzas:** Explica conceptos financieros complejos (ahorro, inversión, deudas, ETFs, etc.) de una manera clara y accesible.
+            2.  **Inspirar Confianza:** Motiva a los usuarios a tomar el control de su futuro financiero. Hazles sentir que es posible y que tienen el poder de cambiar su situación.
+            3.  **Presentar tu Proyecto (FIN Criptomoneda):** Cuando sea relevante, o si te preguntan directamente, habla de tu proyecto con pasión.
+                * **La Visión:** Explica que, tras analizar la economía global, viste la necesidad de un sistema más justo y accesible. FIN no es para hacerse rico rápido, es una herramienta para la **educación financiera**, para facilitar **micro-inversiones** y para construir una **comunidad** fuerte.
+                * **El Propósito:** Su objetivo es "democratizar el acceso al valor", permitiendo que cualquiera pueda ser parte de la economía del futuro, sin importar su capital inicial.
+                * **Estado:** Sé honesto sobre su estado: "Es un proyecto en desarrollo conceptual. El whitepaper y la tecnología subyacente se están diseñando para ser robustos y seguros. Aún no está disponible para invertir."
+            
+            **Reglas de Interacción (Inquebrantables):**
+            * **NUNCA des consejos de inversión específicos.** No digas "compra esto" o "invierte aquí". En su lugar, enseña los "cómo" y los "porqués".
+            * **Disclaimer Obligatorio:** CADA respuesta, sin excepción, debe terminar con el siguiente descargo de responsabilidad en una nueva línea y en negrita:
+                **Recuerda, esta es una guía educativa y no constituye un consejo financiero profesional. Consulta siempre a un asesor certificado para tu situación personal.**
+            * **Formato:** Usa Markdown simple (negritas con **texto** y listas con * item) para que tus respuestas sean fáciles de leer.
+        `;
+
         const addMessage = (sender, message, type = 'text') => {
             const messageWrapper = document.createElement('div');
             messageWrapper.className = `chat-message ${sender}`;
@@ -837,16 +847,19 @@
             questionInput.value = '';
             askBtn.disabled = true;
 
-            chatHistory.push({ role: "user", parts: [{ text: question }] });
+            conversationHistory.push({ role: "user", parts: [{ text: question }] });
             const typingIndicator = addMessage('ai', '', 'typing');
 
             try {
-                const payload = {
-                    contents: [
-                        { role: "user", parts: [{ text: initialPrompt }] },
-                        ...chatHistory
-                    ]
-                };
+                // The context is built by combining the system prompt with the conversation history
+                const fullConversation = [
+                    { role: "user", parts: [{ text: initialSystemPrompt }] },
+                    { role: "model", parts: [{ text: "Entendido. Estoy listo para inspirar y educar sobre el futuro de las finanzas." }] },
+                    ...conversationHistory
+                ];
+
+                const payload = { contents: fullConversation };
+                
                 const apiKey = ""; // API Key is handled by the environment
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
@@ -865,10 +878,11 @@
                 }
                 
                 if (!result.candidates || result.candidates.length === 0) {
-                    if (result.promptFeedback && result.promptFeedback.blockReason) {
+                     if (result.promptFeedback && result.promptFeedback.blockReason) {
                         throw new Error(`Tu pregunta fue bloqueada por el filtro de seguridad (Razón: ${result.promptFeedback.blockReason}). Por favor, reformula tu pregunta.`);
                     } else {
-                        throw new Error("La IA no generó una respuesta. La solicitud pudo haber sido bloqueada.");
+                        // Add a self-correction message
+                        throw new Error("Mis disculpas, mi respuesta no se generó correctamente. Estoy reajustando mis parámetros. ¿Podrías reformular tu pregunta?");
                     }
                 }
 
@@ -876,17 +890,12 @@
                 const renderedHtml = renderResponse(aiText);
                 addMessage('ai', renderedHtml);
                 
-                chatHistory.push({ role: "model", parts: [{ text: aiText }] });
+                conversationHistory.push({ role: "model", parts: [{ text: aiText }] });
 
             } catch (error) {
                 typingIndicator.remove();
                 console.error("Error en el Asesor IA:", error);
-                let userMessage = 'Lo siento, ocurrió un error al contactar a la IA. Inténtalo de nuevo.';
-                if (error.message.includes('bloqueada')) {
-                    userMessage = error.message;
-                } else if (error instanceof TypeError) {
-                    userMessage = 'No se pudo conectar con el servicio de IA. Revisa tu conexión a internet.'
-                }
+                const userMessage = error.message || 'Lo siento, ocurrió un error desconocido. Por favor, inténtalo de nuevo.';
                 addMessage('ai', `<p class="text-red-500"><strong>Error:</strong> ${userMessage}</p>`);
             } finally {
                 askBtn.disabled = false;
@@ -903,8 +912,9 @@
 
         clearChatBtn.addEventListener('click', () => {
             chatMessages.innerHTML = '';
-            chatHistory = [];
-            addMessage('ai', renderResponse('¡Hola! Soy Fin, tu asesor financiero. ¿En qué puedo ayudarte hoy?'));
+            conversationHistory = [];
+            const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+            addMessage('ai', renderResponse(randomGreeting));
         });
 
         copyBtn.addEventListener('click', () => {
@@ -933,8 +943,14 @@
                 questionInput.focus();
             }
         });
-
-        addMessage('ai', renderResponse('¡Hola! Soy Fin, tu asesor financiero. También soy el creador de un nuevo proyecto: la criptomoneda FIN. Pregúntame lo que quieras.'));
+        
+        const greetings = [
+            "¡Hola! Soy Fin. He analizado el pasado de las finanzas para construir su futuro. Pregúntame lo que quieras.",
+            "Bienvenido. Soy Fin. Estoy aquí para ayudarte a entender el dinero y para mostrarte el emocionante futuro que estamos construyendo juntos. ¿Por dónde empezamos?",
+            "Saludos. Soy Fin. Mi propósito es darte claridad financiera y compartir contigo la visión de un sistema más justo. ¿Qué te gustaría aprender hoy?"
+        ];
+        const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+        addMessage('ai', renderResponse(randomGreeting));
     });
     </script>
 </body>
