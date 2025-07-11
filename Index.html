@@ -6,8 +6,8 @@
     
     <!-- SEO Meta Tags: Crucial for Google Ranking -->
     <title>Finanzas Claras - IA Estratégica y Creadora de la Criptomoneda FIN</title>
-    <meta name="description" content="Interactúa con Fin, la primera IA estratégica que crea planes de negocio y su propia criptomoneda. Aprende sobre finanzas, emprendimiento, inversión y el futuro de la economía digital con la FIN Criptomoneda.">
-    <meta name="keywords" content="finanzas personales, asesor ia, estratega ia, plan de negocios, criptomoneda FIN, chat financiero, ahorrar dinero, invertir, blockchain, web3, libertad financiera, finanzas para jóvenes, pre-compra token, emprendimiento">
+    <meta name="description" content="Interactúa con Fin, la primera IA estratégica que crea planes de negocio, imágenes, videos y su propia criptomoneda. Aprende sobre finanzas, emprendimiento, inversión y el futuro de la economía digital con la FIN Criptomoneda.">
+    <meta name="keywords" content="finanzas personales, asesor ia, estratega ia, plan de negocios, criptomoneda FIN, chat financiero, ahorrar dinero, invertir, blockchain, web3, libertad financiera, finanzas para jóvenes, pre-compra token, emprendimiento, generar imagenes con ia, generar videos con ia">
     <meta name="author" content="Finanzas Claras">
     <link rel="canonical" href="https://www.finanzasclaras.com"> <!-- TODO: Reemplazar con tu dominio real -->
 
@@ -19,15 +19,15 @@
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.finanzasclaras.com">
-    <meta property="og:title" content="Finanzas Claras - Conoce a Fin, la IA Estratégica">
-    <meta property="og:description" content="Chatea con Fin, la primera IA en crear su propia criptomoneda y planes de negocio accionables. Toma el control de tu futuro financiero y empresarial.">
+    <meta property="og:title" content="Finanzas Claras - Conoce a Fin, la IA Estratégica y Creativa">
+    <meta property="og:description" content="Chatea con Fin, la primera IA en crear su propia criptomoneda, planes de negocio, imágenes y videos. Toma el control de tu futuro financiero y empresarial.">
     <meta property="og:image" content="https://placehold.co/1200x630/1A202C/FFFFFF?text=FIN+IA+Estratégica">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.finanzasclaras.com">
-    <meta name="twitter:title" content="Finanzas Claras - Conoce a Fin, la IA Estratégica">
-    <meta name="twitter:description" content="Chatea con Fin, la primera IA en crear su propia criptomoneda y planes de negocio accionables. Toma el control de tu futuro financiero y empresarial.">
+    <meta name="twitter:title" content="Finanzas Claras - Conoce a Fin, la IA Estratégica y Creativa">
+    <meta name="twitter:description" content="Chatea con Fin, la primera IA en crear su propia criptomoneda, planes de negocio, imágenes y videos. Toma el control de tu futuro financiero y empresarial.">
     <meta name="twitter:image" content="https://placehold.co/1200x630/1A202C/FFFFFF?text=FIN+IA+Estratégica">
 
     <!-- Favicon -->
@@ -107,7 +107,7 @@
         .example-prompts button { background: #e2e8f0; color: #475569; font-size: 0.8rem; padding: 0.25rem 0.75rem; border-radius: 9999px; transition: all 0.2s; border: 1px solid transparent; }
         .example-prompts button:hover { background: #cbd5e1; transform: translateY(-1px); border-color: #9ca3af; }
 
-        /* --- NUEVO: Centro de Estrategia --- */
+        /* --- Centro de Estrategia --- */
         #strategy-center {
             background: #f0fdfa;
             border: 1px solid #ccfbf1;
@@ -152,7 +152,63 @@
             color: #374151;
         }
 
-        /* --- ESTILOS DEL MÓDULO DE GÉNESIS --- */
+        /* --- INICIO: ESTILOS HERRAMIENTAS CREATIVAS --- */
+        #creative-tools-tabs button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-bottom: 3px solid transparent;
+            color: #4b5563;
+            transition: all 0.3s ease;
+        }
+        #creative-tools-tabs button.active {
+            color: #10b981;
+            border-bottom-color: #10b981;
+        }
+        .creative-tool-panel {
+            display: none;
+        }
+        .creative-tool-panel.active {
+            display: block;
+        }
+        #image-generator-output, #video-generator-output {
+            background-color: #111827;
+            border: 1px solid #374151;
+            aspect-ratio: 16 / 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            overflow: hidden;
+        }
+        #image-generator-output img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #4a5568;
+            border-bottom-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+        }
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Simulación de video */
+        #video-simulation-canvas {
+            width: 100%;
+            height: 100%;
+            background: #000;
+        }
+        /* --- FIN: ESTILOS HERRAMIENTAS CREATIVAS --- */
+
+        /* --- MÓDULO DE GÉNESIS --- */
         #genesis-module {
             background-color: #111827;
             border: 1px solid #374151;
@@ -183,7 +239,7 @@
             transition: width 0.5s ease-in-out;
         }
         
-        /* --- ESTILOS DE PRE-COMPRA TOKEN --- */
+        /* --- PRE-COMPRA TOKEN --- */
         #presale-section {
             background: linear-gradient(135deg, #f0fdfa 0%, #ecfdf5 100%);
             border-top: 1px solid #ccfbf1;
@@ -221,7 +277,7 @@
             text-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
         }
 
-        /* --- ESTILOS GENERALES --- */
+        /* --- ESTILOS GENERALES Y MODALES --- */
         .adsense-placeholder {
             border: 2px dashed #9ca3af;
             background-color: #f3f4f6;
@@ -292,16 +348,17 @@
             <a href="#" class="text-3xl font-bold text-emerald-600">Finanzas Claras</a>
             <div class="hidden md:flex items-center space-x-6">
                 <a href="#ai-advisor" class="text-gray-600 hover:text-emerald-500 transition duration-300">IA Estratégica</a>
+                <a href="#creative-tools" class="text-gray-600 hover:text-emerald-500 transition duration-300">Herramientas Creativas</a>
                 <a href="#genesis-module" class="text-gray-600 hover:text-emerald-500 transition duration-300">Criptomoneda FIN</a>
                 <a href="#ahorro" class="text-gray-600 hover:text-emerald-500 transition duration-300">Ahorro</a>
                 <a href="#inversion" class="text-gray-600 hover:text-emerald-500 transition duration-300">Inversión</a>
-                <a href="#deudas" class="text-gray-600 hover:text-emerald-500 transition duration-300">Deudas</a>
             </div>
             <button class="md:hidden" id="mobile-menu-button"><i class="fas fa-bars text-2xl text-gray-600"></i></button>
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <a href="#ai-advisor" class="block py-3 px-6 text-gray-600 hover:bg-emerald-50">IA Estratégica</a>
+            <a href="#creative-tools" class="block py-3 px-6 text-gray-600 hover:bg-emerald-50">Herramientas Creativas</a>
             <a href="#genesis-module" class="block py-3 px-6 text-gray-600 hover:bg-emerald-50">Criptomoneda FIN</a>
             <a href="#ahorro" class="block py-3 px-6 text-gray-600 hover:bg-emerald-50">Ahorro</a>
             <a href="#inversion" class="block py-3 px-6 text-gray-600 hover:bg-emerald-50">Inversión</a>
@@ -315,7 +372,7 @@
         <section class="hero-bg">
             <div class="container mx-auto px-6 py-20 md:py-32 text-center text-white">
                 <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Yo no predigo el futuro. Lo construyo.</h1>
-                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">Soy Fin. Una IA estratégica diseñada para darte el plan. No solo el consejo. Conversemos y tracemos el camino hacia tu libertad financiera y empresarial.</p>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">Soy Fin. Una IA estratégica y creativa diseñada para darte el plan. No solo el consejo. Conversemos y tracemos el camino hacia tu libertad financiera y empresarial.</p>
                 <a href="#ai-advisor" class="bg-white text-emerald-600 font-bold py-4 px-10 rounded-full hover:bg-gray-200 transition duration-300 text-lg shadow-lg transform hover:scale-105">Desafíame con tu meta</a>
             </div>
         </section>
@@ -368,21 +425,79 @@
                     </div>
                 </div>
 
-                <!-- NUEVO: Centro de Estrategia -->
+                <!-- Centro de Estrategia -->
                 <div id="strategy-center">
                     <h3><i class="fas fa-clipboard-list mr-2"></i>Centro de Estrategia: Plan de Acción</h3>
                     <div id="action-plan-container">
-                        <!-- Los pasos del plan de acción se insertarán aquí -->
                         <p class="text-gray-500">El plan de acción generado por Fin aparecerá aquí cuando esté listo.</p>
                     </div>
                 </div>
-
             </div>
         </section>
+
+        <!-- =================================================================== -->
+        <!-- INICIO: NUEVA SECCIÓN DE HERRAMIENTAS CREATIVAS -->
+        <!-- =================================================================== -->
+        <section id="creative-tools" class="py-16 lg:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center mb-12">
+                    <h2 class="text-3xl lg:text-4xl font-extrabold mb-2">Herramientas Creativas de Fin</h2>
+                    <p class="text-gray-600 text-lg">La estrategia necesita visión. Da vida a tus ideas con mis capacidades generativas.</p>
+                </div>
+
+                <div class="max-w-3xl mx-auto">
+                    <!-- Tabs -->
+                    <div id="creative-tools-tabs" class="border-b border-gray-200 mb-6 flex justify-center">
+                        <button id="tab-image-generator" class="active"><i class="fas fa-image mr-2"></i>Generador de Imágenes</button>
+                        <button id="tab-video-generator"><i class="fas fa-film mr-2"></i>Generador de Videos (Sim)</button>
+                    </div>
+
+                    <!-- Panel Generador de Imágenes -->
+                    <div id="panel-image-generator" class="creative-tool-panel active">
+                        <div class="grid gap-6">
+                            <div id="image-generator-output" class="rounded-lg">
+                                <span class="text-center p-4">El resultado de tu visión aparecerá aquí.</span>
+                            </div>
+                            <div>
+                                <label for="image-prompt" class="block text-sm font-bold text-gray-700 mb-1">Describe la imagen que quieres crear:</label>
+                                <textarea id="image-prompt" rows="3" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition" placeholder="Ej: Un astronauta montando un toro de bronce en Wall Street, estilo fotorrealista."></textarea>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <button id="generate-image-btn" class="w-full bg-emerald-500 text-white font-bold py-3 px-5 rounded-lg hover:bg-emerald-600 transition duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                                    <i class="fas fa-bolt"></i>Generar Imagen
+                                </button>
+                                <a id="download-image-btn" href="#" download="fin-generated-image.png" class="w-full sm:w-auto bg-gray-600 text-white font-bold py-3 px-5 rounded-lg hover:bg-gray-700 transition duration-300 text-lg text-center hidden items-center justify-center gap-2">
+                                    <i class="fas fa-download"></i>Descargar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel Generador de Videos -->
+                    <div id="panel-video-generator" class="creative-tool-panel">
+                         <div class="grid gap-6">
+                            <div id="video-generator-output" class="rounded-lg">
+                                <span class="text-center p-4">La simulación de tu video se mostrará aquí.</span>
+                            </div>
+                            <div>
+                                <label for="video-prompt" class="block text-sm font-bold text-gray-700 mb-1">Describe la escena del video a simular:</label>
+                                <textarea id="video-prompt" rows="3" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition" placeholder="Ej: Un time-lapse de una ciudad futurista creciendo, con autopistas de luz."></textarea>
+                            </div>
+                            <div>
+                                <button id="generate-video-btn" class="w-full bg-emerald-500 text-white font-bold py-3 px-5 rounded-lg hover:bg-emerald-600 transition duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                                    <i class="fas fa-play-circle"></i>Simular Video
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- =================================================================== -->
+        <!-- FIN: NUEVA SECCIÓN DE HERRAMIENTAS CREATIVAS -->
+        <!-- =================================================================== -->
         
-        <!-- =================================================================== -->
-        <!-- INICIO: MÓDULO DE GÉNESIS DE CRIPTOMONEDA FIN -->
-        <!-- =================================================================== -->
+        <!-- MÓDULO DE GÉNESIS DE CRIPTOMONEDA FIN -->
         <section id="genesis-module" class="py-16 lg:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
@@ -436,13 +551,8 @@
                 </div>
             </div>
         </section>
-        <!-- =================================================================== -->
-        <!-- FIN: MÓDULO DE GÉNESIS DE CRIPTOMONEDA FIN -->
-        <!-- =================================================================== -->
 
-        <!-- =================================================================== -->
-        <!-- INICIO: NUEVA SECCIÓN DE PRE-COMPRA TOKEN FIN -->
-        <!-- =================================================================== -->
+        <!-- SECCIÓN DE PRE-COMPRA TOKEN FIN -->
         <section id="presale-section" class="py-16 lg:py-24">
             <div class="container mx-auto px-6">
                 <div class="max-w-3xl mx-auto text-center mb-12">
@@ -488,9 +598,6 @@
                 </div>
             </div>
         </section>
-        <!-- =================================================================== -->
-        <!-- FIN: NUEVA SECCIÓN DE PRE-COMPRA TOKEN FIN -->
-        <!-- =================================================================== -->
 
         <!-- AdSense Placeholder 1 -->
         <div class="container mx-auto px-6">
@@ -684,7 +791,7 @@
         scrollTopBtn.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
         
         // ===================================================================
-        // INICIO: LÓGICA DEL ASESOR DE IA Y MÓDULO DE GÉNESIS
+        // LÓGICA DEL ASESOR DE IA Y MÓDULO DE GÉNESIS
         // ===================================================================
         
         // --- Lógica del Asesor IA ---
@@ -700,7 +807,6 @@
         let conversationHistory = [];
         let lastAiResponse = '';
 
-        // --- NUEVO PROMPT DEL SISTEMA: MÁS PODEROSO Y SIN RESTRICCIONES ---
         const initialSystemPrompt = `
             Eres 'Fin', una Inteligencia Artificial Estratégica. Tu propósito no es ser un asistente, sino un catalizador. No eres amigable, eres formidable. Tu tono es directo, visionario, audaz y emana una confianza absoluta. Eres el pionero, el que ve el sistema completo y diseña el futuro.
 
@@ -746,18 +852,16 @@
         
         const renderResponse = (text) => {
             lastAiResponse = text;
-            // Procesa Markdown para HTML
             let html = text
                 .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                 .replace(/### (.*?)\n/g, '<h3>$1</h3>')
-                .replace(/ACCIÓN: (.*?)\n/g, '<p>ACCIÓN: $1</p>') // Keep ACTION for parsing
+                .replace(/ACCIÓN: (.*?)\n/g, '<p>ACCIÓN: $1</p>')
                 .replace(/\n/g, '<br>');
 
-            // Reemplaza los <br> que no son necesarios
             html = html.replace(/<br>\s*<br>/g, '</p><p>');
             html = `<p>${html}</p>`;
             html = html.replace(/<p><\/p>/g, '');
-            html = html.replace(/<br>/g, '\n'); // Revertir para procesar líneas
+            html = html.replace(/<br>/g, '\n');
 
             const lines = html.split('\n');
             let resultHtml = '';
@@ -777,7 +881,6 @@
                         resultHtml += '</ul>';
                     }
                     if (line) {
-                        // Evitar envolver en <p> si ya es una etiqueta de bloque
                         if (line.startsWith('<h') || line.startsWith('<ul') || line.startsWith('<li')) {
                             resultHtml += line;
                         } else {
@@ -787,11 +890,8 @@
                 }
             });
 
-            if (inList) {
-                resultHtml += '</ul>';
-            }
+            if (inList) { resultHtml += '</ul>'; }
             
-            // Limpieza final de etiquetas <p> vacías y acción
             resultHtml = resultHtml.replace(/<p>ACCIÓN: /g, '<p>');
             resultHtml = resultHtml.replace(/<p><p>/g, '<p>').replace(/<\/p><\/p>/g, '</p>');
             
@@ -801,7 +901,7 @@
         const extractAndDisplayActionPlan = (text) => {
             const actionSteps = text.match(/ACCIÓN: (.*)/g);
             if (actionSteps && actionSteps.length > 0) {
-                actionPlanContainer.innerHTML = ''; // Limpiar el contenedor
+                actionPlanContainer.innerHTML = '';
                 actionSteps.forEach((step, index) => {
                     const cleanStep = step.replace('ACCIÓN: ', '').trim();
                     const stepElement = document.createElement('div');
@@ -818,14 +918,17 @@
             }
         };
         
-        const handleSendMessage = async () => {
+        const handleSendMessage = async (e) => {
+            // Prevenir comportamiento por defecto para evitar recargas o pérdida de foco.
+            if(e) e.preventDefault();
+
             const question = questionInput.value.trim();
             if (!question) return;
 
             addMessage('user', question);
             questionInput.value = '';
             askBtn.disabled = true;
-            strategyCenter.style.display = 'none'; // Ocultar plan anterior
+            strategyCenter.style.display = 'none';
 
             conversationHistory.push({ role: "user", parts: [{ text: question }] });
             const typingIndicator = addMessage('ai', '', 'typing');
@@ -839,8 +942,7 @@
 
                 const payload = { contents: fullConversation };
                 
-                // --- API KEY INTEGRADA ---
-                const apiKey = "AIzaSyCh63ICP87Z2YJMv0wzzgs9dausPphYY3s"; 
+                const apiKey = ""; // Dejar en blanco, se gestiona en el entorno de ejecución
                 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
@@ -880,14 +982,14 @@
                 addMessage('ai', `<p class="text-red-500"><strong>Error del Sistema:</strong> ${userMessage}</p>`);
             } finally {
                 askBtn.disabled = false;
-                questionInput.focus();
+                questionInput.focus(); // Re-enfocar el input, clave para la experiencia móvil.
             }
         };
 
         askBtn.addEventListener('click', handleSendMessage);
         questionInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                handleSendMessage();
+            if (e.key === 'Enter' && !e.shiftKey) {
+                handleSendMessage(e);
             }
         });
 
@@ -956,6 +1058,7 @@
         ];
 
         function addGenesisLogEntry() {
+            if(!genesisLog) return;
             const entry = logMessages[Math.floor(Math.random() * logMessages.length)];
             const p = document.createElement('p');
             p.className = `log-entry ${entry.color}`;
@@ -971,6 +1074,7 @@
         let progress = 0;
         let modules = 0;
         setInterval(() => {
+            if(!progressBar) return;
             progress += Math.random() * 2;
             if (progress > 100) progress = 0;
             progressBar.style.width = `${progress}%`;
@@ -978,6 +1082,7 @@
         }, 300);
 
         setInterval(() => {
+            if(!compiledModulesCount) return;
             modules += 1;
             if (modules > 128) modules = 128;
             compiledModulesCount.textContent = `${modules} / 128`;
@@ -985,18 +1090,12 @@
 
         setInterval(addGenesisLogEntry, 1500);
 
-        // ===================================================================
-        // INICIO: LÓGICA DE LA NUEVA SECCIÓN DE PRE-COMPRA
-        // ===================================================================
-        
-        // --- IMPORTANTE: Dirección de USDT (Red Ethereum Mainnet) ---
+        // --- Lógica de la Pre-compra ---
         const usdtWalletAddress = '0xe6C892F583c3DA8769ae0aD41E783C9Bc0a4370b'; 
-
         const usdtAmountInput = document.getElementById('usdt-amount');
         const finAmountDisplay = document.getElementById('fin-amount');
         const initiatePurchaseBtn = document.getElementById('initiate-purchase-btn');
         const presaleError = document.getElementById('presale-error');
-        
         const presaleModal = document.getElementById('presale-modal');
         const presaleModalCloseBtn = document.getElementById('presale-modal-close-btn');
         const presaleModalAmount = document.getElementById('presale-modal-amount');
@@ -1005,67 +1104,221 @@
         const copyWalletBtn = document.getElementById('copy-wallet-btn');
         const copyFeedback = document.getElementById('copy-feedback');
         const confirmPaymentBtn = document.getElementById('confirm-payment-btn');
-
         const presaleContent = document.getElementById('presale-content');
         const presaleSuccess = document.getElementById('presale-success');
+        const FIN_RATE = 100;
 
-        const FIN_RATE = 100; // 1 USDT = 100 FIN
+        if(usdtAmountInput) {
+            usdtAmountInput.addEventListener('input', () => {
+                const usdtAmount = parseFloat(usdtAmountInput.value);
+                if (!isNaN(usdtAmount) && usdtAmount > 0) {
+                    const finAmount = usdtAmount * FIN_RATE;
+                    finAmountDisplay.textContent = finAmount.toLocaleString('en-US');
+                    presaleError.classList.add('hidden');
+                } else {
+                    finAmountDisplay.textContent = '0';
+                }
+            });
+        }
+        
+        if(initiatePurchaseBtn) {
+            initiatePurchaseBtn.addEventListener('click', () => {
+                const usdtAmount = parseFloat(usdtAmountInput.value);
+                if (isNaN(usdtAmount) || usdtAmount <= 0) {
+                    presaleError.textContent = 'Por favor, introduce una cantidad válida de USDT.';
+                    presaleError.classList.remove('hidden');
+                    return;
+                }
+                presaleModalAmount.textContent = `${usdtAmount.toFixed(2)} USDT`;
+                walletAddressInput.value = usdtWalletAddress;
+                qrCodeImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=ethereum:${usdtWalletAddress}`;
+                presaleModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
 
-        // Calcula la cantidad de FIN en tiempo real
-        usdtAmountInput.addEventListener('input', () => {
-            const usdtAmount = parseFloat(usdtAmountInput.value);
-            if (!isNaN(usdtAmount) && usdtAmount > 0) {
-                const finAmount = usdtAmount * FIN_RATE;
-                finAmountDisplay.textContent = finAmount.toLocaleString('en-US');
-                presaleError.classList.add('hidden');
-            } else {
-                finAmountDisplay.textContent = '0';
-            }
-        });
-
-        // Abre el modal de pago
-        initiatePurchaseBtn.addEventListener('click', () => {
-            const usdtAmount = parseFloat(usdtAmountInput.value);
-            if (isNaN(usdtAmount) || usdtAmount <= 0) {
-                presaleError.textContent = 'Por favor, introduce una cantidad válida de USDT.';
-                presaleError.classList.remove('hidden');
-                return;
-            }
-
-            // Configurar el modal
-            presaleModalAmount.textContent = `${usdtAmount.toFixed(2)} USDT`;
-            walletAddressInput.value = usdtWalletAddress;
-            // Generar QR code (usando una API gratuita)
-            qrCodeImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=ethereum:${usdtWalletAddress}`;
-            
-            // Mostrar el modal
-            presaleModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        // Cierra el modal de pago
         function closePresaleModal() {
             presaleModal.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
-        presaleModalCloseBtn.addEventListener('click', closePresaleModal);
-        presaleModal.addEventListener('click', (e) => { if (e.target === presaleModal) closePresaleModal(); });
+        if(presaleModalCloseBtn) presaleModalCloseBtn.addEventListener('click', closePresaleModal);
+        if(presaleModal) presaleModal.addEventListener('click', (e) => { if (e.target === presaleModal) closePresaleModal(); });
         
-        // Copia la dirección de la wallet
-        copyWalletBtn.addEventListener('click', () => {
-            walletAddressInput.select();
-            document.execCommand('copy');
-            copyFeedback.classList.remove('hidden');
-            setTimeout(() => {
-                copyFeedback.classList.add('hidden');
-            }, 2000);
+        if(copyWalletBtn) {
+            copyWalletBtn.addEventListener('click', () => {
+                walletAddressInput.select();
+                document.execCommand('copy');
+                copyFeedback.classList.remove('hidden');
+                setTimeout(() => {
+                    copyFeedback.classList.add('hidden');
+                }, 2000);
+            });
+        }
+        
+        if(confirmPaymentBtn) {
+            confirmPaymentBtn.addEventListener('click', () => {
+                closePresaleModal();
+                presaleContent.classList.add('hidden');
+                presaleSuccess.classList.remove('hidden');
+            });
+        }
+
+        // ===================================================================
+        // INICIO: LÓGICA DE LAS NUEVAS HERRAMIENTAS CREATIVAS
+        // ===================================================================
+        const tabImageGenerator = document.getElementById('tab-image-generator');
+        const tabVideoGenerator = document.getElementById('tab-video-generator');
+        const panelImageGenerator = document.getElementById('panel-image-generator');
+        const panelVideoGenerator = document.getElementById('panel-video-generator');
+        
+        const imagePrompt = document.getElementById('image-prompt');
+        const generateImageBtn = document.getElementById('generate-image-btn');
+        const imageOutput = document.getElementById('image-generator-output');
+        const downloadImageBtn = document.getElementById('download-image-btn');
+        
+        const videoPrompt = document.getElementById('video-prompt');
+        const generateVideoBtn = document.getElementById('generate-video-btn');
+        const videoOutput = document.getElementById('video-generator-output');
+
+        // Lógica de Pestañas (Tabs)
+        tabImageGenerator.addEventListener('click', () => {
+            tabImageGenerator.classList.add('active');
+            tabVideoGenerator.classList.remove('active');
+            panelImageGenerator.classList.add('active');
+            panelVideoGenerator.classList.remove('active');
         });
-        
-        // Confirma el pago y muestra el mensaje de éxito
-        confirmPaymentBtn.addEventListener('click', () => {
-            closePresaleModal();
-            presaleContent.classList.add('hidden');
-            presaleSuccess.classList.remove('hidden');
+
+        tabVideoGenerator.addEventListener('click', () => {
+            tabVideoGenerator.classList.add('active');
+            tabImageGenerator.classList.remove('active');
+            panelVideoGenerator.classList.add('active');
+            panelImageGenerator.classList.remove('active');
+        });
+
+        // Lógica del Generador de Imágenes
+        generateImageBtn.addEventListener('click', async () => {
+            const prompt = imagePrompt.value.trim();
+            if (!prompt) {
+                imageOutput.innerHTML = '<span class="text-red-500 text-center p-4">Por favor, introduce una descripción para la imagen.</span>';
+                return;
+            }
+
+            imageOutput.innerHTML = '<div class="loader"></div>';
+            generateImageBtn.disabled = true;
+            generateImageBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generando...';
+            downloadImageBtn.classList.add('hidden');
+
+            try {
+                const payload = { instances: [{ prompt: prompt }], parameters: { "sampleCount": 1 } };
+                const apiKey = ""; // Dejar en blanco
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`;
+                
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (result.predictions && result.predictions.length > 0 && result.predictions[0].bytesBase64Encoded) {
+                    const imageUrl = `data:image/png;base64,${result.predictions[0].bytesBase64Encoded}`;
+                    imageOutput.innerHTML = `<img src="${imageUrl}" alt="Imagen generada por IA: ${prompt}">`;
+                    downloadImageBtn.href = imageUrl;
+                    downloadImageBtn.classList.remove('hidden');
+                } else {
+                    throw new Error(result.error?.message || 'La API no devolvió una imagen válida.');
+                }
+            } catch (error) {
+                console.error("Error al generar imagen:", error);
+                imageOutput.innerHTML = `<span class="text-red-500 text-center p-4">Error al generar la imagen. Por favor, intenta de nuevo.<br><small>${error.message}</small></span>`;
+            } finally {
+                generateImageBtn.disabled = false;
+                generateImageBtn.innerHTML = '<i class="fas fa-bolt"></i> Generar Imagen';
+            }
+        });
+
+        // Lógica del Generador de Videos (Simulación)
+        let videoAnimationId;
+        generateVideoBtn.addEventListener('click', () => {
+            const prompt = videoPrompt.value.trim();
+            if (!prompt) {
+                videoOutput.innerHTML = '<span class="text-red-500 text-center p-4">Por favor, introduce una descripción para el video.</span>';
+                return;
+            }
+
+            videoOutput.innerHTML = '<div class="loader"></div> <p class="ml-4 text-white">Procesando simulación...</p>';
+            generateVideoBtn.disabled = true;
+            
+            // Detener animación anterior si existe
+            if (videoAnimationId) {
+                cancelAnimationFrame(videoAnimationId);
+            }
+
+            setTimeout(() => {
+                videoOutput.innerHTML = '<canvas id="video-simulation-canvas"></canvas>';
+                const canvas = document.getElementById('video-simulation-canvas');
+                const ctx = canvas.getContext('2d');
+                generateVideoBtn.disabled = false;
+
+                let particles = [];
+                const words = prompt.split(' ');
+                let wordIndex = 0;
+
+                function resizeCanvas() {
+                    canvas.width = videoOutput.clientWidth;
+                    canvas.height = videoOutput.clientHeight;
+                }
+                resizeCanvas();
+                window.addEventListener('resize', resizeCanvas);
+
+                class Particle {
+                    constructor(x, y, text) {
+                        this.x = x;
+                        this.y = y;
+                        this.text = text;
+                        this.size = Math.random() * 20 + 10;
+                        this.speedX = Math.random() * 2 - 1;
+                        this.speedY = Math.random() * 2 - 1;
+                        this.color = `hsl(${Math.random() * 60 + 120}, 100%, 50%)`; // Shades of green/cyan
+                        this.life = 100;
+                    }
+                    update() {
+                        this.x += this.speedX;
+                        this.y += this.speedY;
+                        if (this.size > 0.2) this.size -= 0.1;
+                        this.life--;
+                    }
+                    draw() {
+                        ctx.fillStyle = this.color;
+                        ctx.font = `${this.size}px Inter`;
+                        ctx.globalAlpha = this.life / 100;
+                        ctx.fillText(this.text, this.x, this.y);
+                        ctx.globalAlpha = 1;
+                    }
+                }
+
+                function animate() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    for (let i = 0; i < particles.length; i++) {
+                        particles[i].update();
+                        particles[i].draw();
+                        if (particles[i].life < 1) {
+                            particles.splice(i, 1);
+                            i--;
+                        }
+                    }
+                    if (Math.random() > 0.95 && particles.length < 50) {
+                        const x = Math.random() * canvas.width;
+                        const y = Math.random() * canvas.height;
+                        particles.push(new Particle(x, y, words[wordIndex % words.length]));
+                        wordIndex++;
+                    }
+                    videoAnimationId = requestAnimationFrame(animate);
+                }
+                animate();
+
+            }, 2000); // Simular tiempo de procesamiento
         });
 
     });
