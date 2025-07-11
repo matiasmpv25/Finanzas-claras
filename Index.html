@@ -937,9 +937,11 @@
 
                 const payload = { contents: fullConversation };
                 
-                // CRITICAL FIX: The API key is left empty, as the execution environment will provide it.
-                // This solves the "unregistered callers" error.
-                const apiKey = ""; 
+                // ===================================================================
+                // INTEGRACIÓN DE API KEY
+                // La clave que proporcionaste ha sido insertada aquí.
+                // ===================================================================
+                const apiKey = "AIzaSyCh63ICP87Z2YJMv0wzzgs9dausPphYY3s"; 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
                 const response = await fetch(apiUrl, {
@@ -1211,8 +1213,11 @@
 
                 try {
                     const payload = { instances: [{ prompt: prompt }], parameters: { "sampleCount": 1 } };
-                    // CRITICAL FIX: The API key is left empty for the execution environment.
-                    const apiKey = "";
+                    // ===================================================================
+                    // INTEGRACIÓN DE API KEY
+                    // La clave que proporcionaste ha sido insertada aquí.
+                    // ===================================================================
+                    const apiKey = "AIzaSyCh63ICP87Z2YJMv0wzzgs9dausPphYY3s";
                     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`;
                     
                     const response = await fetch(apiUrl, {
