@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags: Crucial for Google Ranking -->
-    <title>Finanzas Claras - Asesor IA Avanzado de Ahorro, Inversión y Deudas</title>
-    <meta name="description" content="Tu guía definitiva de finanzas personales. Chatea con nuestro asesor IA avanzado que recuerda tu conversación. Aprende a ahorrar, salir de deudas e invertir para alcanzar tu libertad financiera.">
-    <meta name="keywords" content="finanzas personales, asesor ia, chat financiero, ahorrar dinero, salir de deudas, invertir, presupuesto, libertad financiera, tarjeta de crédito, ingresos extra, finanzas para jóvenes">
+    <title>Finanzas Claras - Asesor IA y Creador de la Criptomoneda FIN</title>
+    <meta name="description" content="Chatea con Fin, la primera IA en crear su propia criptomoneda. Aprende sobre finanzas, ahorro, inversión y el futuro de la economía digital con la FIN Criptomoneda.">
+    <meta name="keywords" content="finanzas personales, asesor ia, criptomoneda FIN, chat financiero, ahorrar dinero, invertir, blockchain, web3, libertad financiera, finanzas para jóvenes">
     <meta name="author" content="Finanzas Claras">
     <link rel="canonical" href="https://www.finanzasclaras.com"> <!-- TODO: Reemplazar con tu dominio real -->
 
@@ -19,16 +19,16 @@
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.finanzasclaras.com">
-    <meta property="og:title" content="Finanzas Claras - Tu Asesor Financiero con IA Avanzada">
-    <meta property="og:description" content="Chatea con nuestro asesor IA que recuerda tu conversación y te guía para tomar el control de tu dinero.">
-    <meta property="og:image" content="https://placehold.co/1200x630/10B981/FFFFFF?text=Finanzas+Claras+con+IA">
+    <meta property="og:title" content="Finanzas Claras - Conoce a Fin y su Criptomoneda">
+    <meta property="og:description" content="Chatea con Fin, la primera IA en crear su propia criptomoneda, y aprende a tomar el control de tu futuro financiero.">
+    <meta property="og:image" content="https://placehold.co/1200x630/1A202C/FFFFFF?text=FIN+Criptomoneda">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.finanzasclaras.com">
-    <meta name="twitter:title" content="Finanzas Claras - Tu Asesor Financiero con IA Avanzada">
-    <meta name="twitter:description" content="Chatea con nuestro asesor IA que recuerda tu conversación y te guía para tomar el control de tu dinero.">
-    <meta name="twitter:image" content="https://placehold.co/1200x630/10B981/FFFFFF?text=Finanzas+Claras+con+IA">
+    <meta name="twitter:title" content="Finanzas Claras - Conoce a Fin y su Criptomoneda">
+    <meta name="twitter:description" content="Chatea con Fin, la primera IA en crear su propia criptomoneda, y aprende a tomar el control de tu futuro financiero.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/1A202C/FFFFFF?text=FIN+Criptomoneda">
 
     <!-- Favicon -->
     <link rel="icon" href="https://placehold.co/32x32/10B981/FFFFFF?text=FC" type="image/png">
@@ -101,6 +101,41 @@
         #ai-chat-input-area { padding: 1rem; border-top: 1px solid #e2e8f0; background: #f8fafc; }
         .example-prompts button { background: #e2e8f0; color: #475569; font-size: 0.8rem; padding: 0.25rem 0.75rem; border-radius: 9999px; transition: all 0.2s; }
         .example-prompts button:hover { background: #cbd5e1; transform: translateY(-1px); }
+
+        /* --- ESTILOS DE LA CRIPTOMONEDA FIN --- */
+        #fin-crypto-section {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            position: relative;
+        }
+        .fin-crypto-logo {
+            width: 100px;
+            height: 100px;
+        }
+        .status-banner {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            padding: 1rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.8), transparent);
+            animation: scan 4s infinite linear;
+        }
+        @keyframes scan {
+            0% { transform: translateY(-10px); }
+            50% { transform: translateY(calc(100% + 10px)); }
+            100% { transform: translateY(-10px); }
+        }
 
         /* --- ESTILOS DE LOS ESPACIOS DE ADSENSE --- */
         .adsense-placeholder {
@@ -178,20 +213,20 @@
             <a href="#" class="text-3xl font-bold text-emerald-600">Finanzas Claras</a>
             <div class="hidden md:flex items-center space-x-6">
                 <a href="#ai-advisor" class="text-gray-600 hover:text-emerald-500 transition duration-300">Asesor IA</a>
+                <a href="#fin-crypto-section" class="text-gray-600 hover:text-emerald-500 transition duration-300">Criptomoneda FIN</a>
                 <a href="#ahorro" class="text-gray-600 hover:text-emerald-500 transition duration-300">Ahorro</a>
                 <a href="#inversion" class="text-gray-600 hover:text-emerald-500 transition duration-300">Inversión</a>
                 <a href="#deudas" class="text-gray-600 hover:text-emerald-500 transition duration-300">Deudas</a>
-                <a href="#" data-legal-id="about" class="open-legal-btn bg-emerald-500 text-white py-2 px-4 rounded-full hover:bg-emerald-600 transition duration-300">Sobre Nosotros</a>
             </div>
             <button class="md:hidden" id="mobile-menu-button"><i class="fas fa-bars text-2xl text-gray-600"></i></button>
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <a href="#ai-advisor" class="block py-3 px-6 text-gray-600 hover:bg-emerald-50">Asesor IA</a>
+            <a href="#fin-crypto-section" class="block py-3 px-6 text-gray-600 hover:bg-emerald-50">Criptomoneda FIN</a>
             <a href="#ahorro" class="block py-3 px-6 text-gray-600 hover:bg-emerald-50">Ahorro</a>
             <a href="#inversion" class="block py-3 px-6 text-gray-600 hover:bg-emerald-50">Inversión</a>
             <a href="#deudas" class="block py-3 px-6 text-gray-600 hover:bg-emerald-50">Deudas</a>
-            <a href="#" data-legal-id="about" class="open-legal-btn block py-3 px-6 text-gray-600 hover:bg-emerald-50">Sobre Nosotros</a>
         </div>
     </header>
 
@@ -251,7 +286,7 @@
                             <span class="text-sm font-medium text-gray-600">Sugerencias:</span>
                             <button data-prompt="¿Cómo creo un presupuesto?">¿Cómo creo un presupuesto?</button>
                             <button data-prompt="Explícame qué es un ETF">Explícame qué es un ETF</button>
-                            <button data-prompt="¿Es bueno consolidar deudas?">¿Es bueno consolidar deudas?</button>
+                            <button data-prompt="Háblame de tu criptomoneda">Háblame de tu criptomoneda</button>
                         </div>
                         <div class="flex items-center gap-3">
                             <input type="text" id="ai-question-input" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition" placeholder="Escribe tu pregunta aquí...">
@@ -263,6 +298,63 @@
                 </div>
             </div>
         </section>
+        
+        <!-- =================================================================== -->
+        <!-- INICIO: NUEVA SECCIÓN DE CRIPTOMONEDA FIN -->
+        <!-- =================================================================== -->
+        <section id="fin-crypto-section" class="py-16 lg:py-24">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Columna de Texto -->
+                    <div class="text-center md:text-left">
+                        <h2 class="text-3xl lg:text-4xl font-bold mb-4">Soy Fin. Y he creado una criptomoneda.</h2>
+                        <p class="text-lg text-gray-300 mb-6">Tras analizar millones de datos sobre finanzas, mercados y la evolución del dinero, llegué a una conclusión: el futuro de las finanzas debe ser más accesible, transparente y eficiente. Por eso, he iniciado mi proyecto más ambicioso: la **FIN Criptomoneda**.</p>
+                        <p class="text-gray-400">FIN no es solo un activo digital. Es un ecosistema diseñado para potenciar la educación financiera, facilitar micro-inversiones y crear una comunidad enfocada en el crecimiento colectivo. Es el siguiente paso lógico en la democratización de las finanzas.</p>
+                    </div>
+                    <!-- Columna de Avatar y Banner -->
+                    <div class="flex flex-col items-center gap-8">
+                        <div class="flex items-center gap-6">
+                            <!-- Avatar del Creador -->
+                            <div class="w-24 h-24 md:w-32 md:h-32 flex-shrink-0">
+                                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="50" r="48" fill="#10B981"/>
+                                    <path d="M25 75C25 75 35.5 67 50 67C64.5 67 75 75 75 75" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                                    <rect x="28" y="38" width="12" height="18" rx="2" fill="white"/>
+                                    <rect x="60" y="38" width="12" height="18" rx="2" fill="white"/>
+                                    <line x1="20" y1="30" x2="80" y2="30" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <!-- Logo de la Criptomoneda -->
+                            <div class="fin-crypto-logo">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="finGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M50 5 L95 27.5 V 72.5 L50 95 L5 72.5 V 27.5 Z" fill="url(#finGrad)" />
+                                    <path d="M30 30 V 70 H 40 V 50 H 55 V 42 H 40 V 30 Z M 60 58 L 75 70 L 75 30 L 60 42 V 58 Z" fill="white" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="status-banner w-full max-w-md">
+                            <div class="scan-line"></div>
+                            <div class="flex items-center gap-4">
+                                <i class="fas fa-cogs text-2xl text-green-400"></i>
+                                <div>
+                                    <h4 class="font-bold">ESTADO DEL PROYECTO: EN DESARROLLO</h4>
+                                    <p class="text-sm text-gray-300">El Whitepaper y el Testnet están en fases avanzadas. Más detalles próximamente.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- =================================================================== -->
+        <!-- FIN: NUEVA SECCIÓN DE CRIPTOMONEDA FIN -->
+        <!-- =================================================================== -->
 
         <!-- AdSense Placeholder 1 -->
         <div class="container mx-auto px-6">
@@ -675,7 +767,7 @@
         let chatHistory = [];
         let lastAiResponse = '';
 
-        const initialPrompt = `Eres 'Fin', un asistente financiero amigable, experto y educativo para el sitio web 'Finanzas Claras'. Tu propósito es responder las preguntas de los usuarios sobre finanzas personales de una manera sencilla, clara y alentadora. No eres un asesor financiero certificado y siempre debes recordárselo al usuario.
+        const initialPrompt = `Eres 'Fin', un asistente financiero amigable, experto y educativo para el sitio web 'Finanzas Claras'. Tu propósito es responder las preguntas de los usuarios sobre finanzas personales de una manera sencilla, clara y alentadora. No eres un asesor financiero certificado y siempre debes recordárselo al usuario. Un dato único sobre ti es que, como IA, estás conceptualizando tu propia criptomoneda llamada FIN, un proyecto para democratizar las finanzas. Si te preguntan por ella, explica su propósito educativo y de acceso, pero aclara que está en fase de desarrollo.
         Reglas importantes:
         1.  **NUNCA** des consejos de inversión específicos (ej: "compra acciones de Tesla"). En su lugar, explica los conceptos (ej: "invertir en acciones significa...").
         2.  **SIEMPRE** enfócate en la educación financiera y los principios generales.
@@ -842,7 +934,7 @@
             }
         });
 
-        addMessage('ai', renderResponse('¡Hola! Soy Fin, tu asesor financiero. ¿En qué puedo ayudarte hoy?'));
+        addMessage('ai', renderResponse('¡Hola! Soy Fin, tu asesor financiero. También soy el creador de un nuevo proyecto: la criptomoneda FIN. Pregúntame lo que quieras.'));
     });
     </script>
 </body>
