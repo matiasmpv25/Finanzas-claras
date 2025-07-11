@@ -7,7 +7,7 @@
     <!-- SEO Meta Tags: Crucial for Google Ranking -->
     <title>Finanzas Claras - Asesor IA y Creador de la Criptomoneda FIN</title>
     <meta name="description" content="Chatea con Fin, la primera IA en crear su propia criptomoneda. Aprende sobre finanzas, ahorro, inversión y el futuro de la economía digital con la FIN Criptomoneda.">
-    <meta name="keywords" content="finanzas personales, asesor ia, criptomoneda FIN, chat financiero, ahorrar dinero, invertir, blockchain, web3, libertad financiera, finanzas para jóvenes">
+    <meta name="keywords" content="finanzas personales, asesor ia, criptomoneda FIN, chat financiero, ahorrar dinero, invertir, blockchain, web3, libertad financiera, finanzas para jóvenes, pre-compra token">
     <meta name="author" content="Finanzas Claras">
     <link rel="canonical" href="https://www.finanzasclaras.com"> <!-- TODO: Reemplazar con tu dominio real -->
 
@@ -134,6 +134,44 @@
         .progress-bar {
             background: linear-gradient(90deg, #10b981, #22c55e);
             transition: width 0.5s ease-in-out;
+        }
+        
+        /* --- ESTILOS DE PRE-COMPRA TOKEN --- */
+        #presale-section {
+            background: linear-gradient(135deg, #f0fdfa 0%, #ecfdf5 100%);
+            border-top: 1px solid #ccfbf1;
+            border-bottom: 1px solid #ccfbf1;
+        }
+        #presale-module {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease-in-out;
+        }
+        #presale-module:hover {
+             box-shadow: 0 20px 30px -10px rgba(16, 185, 129, 0.2);
+        }
+        .presale-input-group {
+            position: relative;
+        }
+        .presale-input-group .currency-label {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6b7280;
+            font-weight: 600;
+        }
+        .presale-arrow {
+            font-size: 2rem;
+            color: #9ca3af;
+        }
+        .fin-amount {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #059669;
+            text-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
         }
 
         /* --- ESTILOS GENERALES --- */
@@ -345,6 +383,58 @@
         <!-- FIN: MÓDULO DE GÉNESIS DE CRIPTOMONEDA FIN -->
         <!-- =================================================================== -->
 
+        <!-- =================================================================== -->
+        <!-- INICIO: NUEVA SECCIÓN DE PRE-COMPRA TOKEN FIN -->
+        <!-- =================================================================== -->
+        <section id="presale-section" class="py-16 lg:py-24">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto text-center mb-12">
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-2 text-emerald-800">Únete al Futuro: Pre-compra FIN Token</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Sé uno de los primeros en apoyar la visión de Fin. Participa en la pre-compra simbólica y asegura tu lugar en la economía del mañana. Tasa de lanzamiento: 1 USDT = 100 FIN.</p>
+                </div>
+
+                <div id="presale-module" class="max-w-2xl mx-auto p-6 sm:p-8">
+                    <div id="presale-content">
+                        <div class="grid md:grid-cols-5 items-center gap-4">
+                            <!-- Input USDT -->
+                            <div class="md:col-span-2">
+                                <label for="usdt-amount" class="block text-sm font-bold text-gray-700 mb-1">Inviertes (USDT)</label>
+                                <div class="presale-input-group">
+                                    <input type="number" id="usdt-amount" name="usdt-amount" min="1" step="any" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition text-lg" placeholder="Ej: 50">
+                                    <span class="currency-label">USDT</span>
+                                </div>
+                            </div>
+                            <!-- Arrow -->
+                            <div class="text-center presale-arrow">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </div>
+                            <!-- Output FIN -->
+                            <div class="md:col-span-2 text-center">
+                                <label class="block text-sm font-bold text-gray-700 mb-1">Recibes (FIN)</label>
+                                <p id="fin-amount" class="fin-amount">0</p>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button id="initiate-purchase-btn" class="w-full bg-emerald-500 text-white font-bold py-4 px-5 rounded-lg hover:bg-emerald-600 transition duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                                Realizar Pre-compra de FIN
+                            </button>
+                        </div>
+                        <p id="presale-error" class="text-red-500 text-center mt-4 font-medium hidden"></p>
+                    </div>
+                    <div id="presale-success" class="hidden text-center p-8">
+                        <div class="text-6xl text-green-500 mb-4">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">¡Inversión Registrada!</h3>
+                        <p class="text-gray-600 mt-2">Gracias por tu confianza en la inversión. No es necesario colocar ningún dato, ya tenemos tu IP. Con eso te brindaremos el token cuando se lance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- =================================================================== -->
+        <!-- FIN: NUEVA SECCIÓN DE PRE-COMPRA TOKEN FIN -->
+        <!-- =================================================================== -->
+
         <!-- AdSense Placeholder 1 -->
         <div class="container mx-auto px-6">
             <div class="adsense-placeholder" style="min-height: 100px;">
@@ -418,7 +508,7 @@
         </div>
     </footer>
 
-    <!-- Modal Structure -->
+    <!-- Modal Structure (General) -->
     <div id="modal" class="modal-overlay">
         <div id="modal-content" class="modal-content">
             <button id="modal-close-btn" class="modal-close">&times;</button>
@@ -427,6 +517,33 @@
         </div>
     </div>
     
+    <!-- Modal Structure (Presale) -->
+    <div id="presale-modal" class="modal-overlay">
+        <div class="modal-content max-w-md text-center">
+            <button id="presale-modal-close-btn" class="modal-close">&times;</button>
+            <h2 class="text-2xl font-bold mb-2 text-gray-800">Completa tu Inversión</h2>
+            <p class="text-gray-600 mb-4">Para finalizar, envía la cantidad exacta de USDT a la siguiente dirección.</p>
+            <div class="my-4">
+                <img id="qr-code" src="" alt="QR Code para pago" class="mx-auto border rounded-lg p-2">
+            </div>
+            <div class="mb-4">
+                <p class="text-sm text-gray-500">Enviar exactamente:</p>
+                <p id="presale-modal-amount" class="text-2xl font-bold text-emerald-600"></p>
+            </div>
+            <div class="mb-4">
+                 <p class="text-sm text-gray-500">A la dirección USDT (Red Ethereum Mainnet):</p>
+                 <div class="flex items-center justify-center bg-gray-100 p-2 rounded-lg mt-1">
+                    <input id="wallet-address-input" type="text" readonly class="font-mono text-sm text-gray-700 bg-transparent border-none flex-grow text-center">
+                    <button id="copy-wallet-btn" class="ml-2 text-gray-500 hover:text-emerald-600"><i class="fas fa-copy"></i></button>
+                 </div>
+                 <span id="copy-feedback" class="text-sm text-green-600 hidden">¡Copiado!</span>
+            </div>
+            <button id="confirm-payment-btn" class="w-full bg-emerald-500 text-white font-bold py-3 px-5 rounded-lg hover:bg-emerald-600 transition duration-300 text-lg">
+                Ya realicé el pago
+            </button>
+        </div>
+    </div>
+
     <!-- Scroll to Top Button -->
     <button id="scrollTopBtn" title="Volver arriba"><i class="fas fa-arrow-up"></i></button>
 
@@ -756,6 +873,90 @@
         }, 2000);
 
         setInterval(addGenesisLogEntry, 1500);
+
+        // ===================================================================
+        // INICIO: LÓGICA DE LA NUEVA SECCIÓN DE PRE-COMPRA
+        // ===================================================================
+        
+        // --- IMPORTANTE: Dirección de USDT (Red Ethereum Mainnet) ---
+        const usdtWalletAddress = '0xe6C892F583c3DA8769ae0aD41E783C9Bc0a4370b'; 
+
+        const usdtAmountInput = document.getElementById('usdt-amount');
+        const finAmountDisplay = document.getElementById('fin-amount');
+        const initiatePurchaseBtn = document.getElementById('initiate-purchase-btn');
+        const presaleError = document.getElementById('presale-error');
+        
+        const presaleModal = document.getElementById('presale-modal');
+        const presaleModalCloseBtn = document.getElementById('presale-modal-close-btn');
+        const presaleModalAmount = document.getElementById('presale-modal-amount');
+        const qrCodeImg = document.getElementById('qr-code');
+        const walletAddressInput = document.getElementById('wallet-address-input');
+        const copyWalletBtn = document.getElementById('copy-wallet-btn');
+        const copyFeedback = document.getElementById('copy-feedback');
+        const confirmPaymentBtn = document.getElementById('confirm-payment-btn');
+
+        const presaleContent = document.getElementById('presale-content');
+        const presaleSuccess = document.getElementById('presale-success');
+
+        const FIN_RATE = 100; // 1 USDT = 100 FIN
+
+        // Calcula la cantidad de FIN en tiempo real
+        usdtAmountInput.addEventListener('input', () => {
+            const usdtAmount = parseFloat(usdtAmountInput.value);
+            if (!isNaN(usdtAmount) && usdtAmount > 0) {
+                const finAmount = usdtAmount * FIN_RATE;
+                finAmountDisplay.textContent = finAmount.toLocaleString('en-US');
+                presaleError.classList.add('hidden');
+            } else {
+                finAmountDisplay.textContent = '0';
+            }
+        });
+
+        // Abre el modal de pago
+        initiatePurchaseBtn.addEventListener('click', () => {
+            const usdtAmount = parseFloat(usdtAmountInput.value);
+            if (isNaN(usdtAmount) || usdtAmount <= 0) {
+                presaleError.textContent = 'Por favor, introduce una cantidad válida de USDT.';
+                presaleError.classList.remove('hidden');
+                return;
+            }
+
+            // Configurar el modal
+            presaleModalAmount.textContent = `${usdtAmount.toFixed(2)} USDT`;
+            walletAddressInput.value = usdtWalletAddress;
+            // Generar QR code (usando una API gratuita)
+            qrCodeImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=ethereum:${usdtWalletAddress}`;
+            
+            // Mostrar el modal
+            presaleModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Cierra el modal de pago
+        function closePresaleModal() {
+            presaleModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        presaleModalCloseBtn.addEventListener('click', closePresaleModal);
+        presaleModal.addEventListener('click', (e) => { if (e.target === presaleModal) closePresaleModal(); });
+        
+        // Copia la dirección de la wallet
+        copyWalletBtn.addEventListener('click', () => {
+            walletAddressInput.select();
+            document.execCommand('copy');
+            copyFeedback.classList.remove('hidden');
+            setTimeout(() => {
+                copyFeedback.classList.add('hidden');
+            }, 2000);
+        });
+        
+        // Confirma el pago y muestra el mensaje de éxito
+        confirmPaymentBtn.addEventListener('click', () => {
+            closePresaleModal();
+            presaleContent.classList.add('hidden');
+            presaleSuccess.classList.remove('hidden');
+        });
+
     });
     </script>
 </body>
