@@ -6,8 +6,8 @@
     
     <!-- SEO Meta Tags: Crucial for Google Ranking -->
     <title>Finanzas Claras - Asesor IA y Creador de la Criptomoneda FIN</title>
-    <meta name="description" content="Chatea con Fin, la primera IA en crear su propia criptomoneda. Aprende sobre finanzas, ahorro, inversión y el futuro de la economía digital con la FIN Criptomoneda.">
-    <meta name="keywords" content="finanzas personales, asesor ia, criptomoneda FIN, chat financiero, ahorrar dinero, invertir, blockchain, web3, libertad financiera, finanzas para jóvenes, pre-compra token">
+    <meta name="description" content="Chatea con Fin, la primera IA en crear su propia criptomoneda. Genera planes de negocio, aprende sobre finanzas, ahorro, inversión y el futuro de la economía digital con la FIN Criptomoneda.">
+    <meta name="keywords" content="plan de negocio ia, finanzas personales, asesor ia, criptomoneda FIN, chat financiero, ahorrar dinero, invertir, blockchain, web3, libertad financiera, finanzas para jóvenes, pre-compra token">
     <meta name="author" content="Finanzas Claras">
     <link rel="canonical" href="https://www.finanzasclaras.com"> <!-- TODO: Reemplazar con tu dominio real -->
 
@@ -19,14 +19,14 @@
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.finanzasclaras.com">
-    <meta property="og:title" content="Finanzas Claras - Conoce a Fin y su Criptomoneda">
+    <meta property="og:title" content="Finanzas Claras - Conoce a Fin, la IA que crea planes de negocio">
     <meta property="og:description" content="Chatea con Fin, la primera IA en crear su propia criptomoneda, y aprende a tomar el control de tu futuro financiero.">
     <meta property="og:image" content="https://placehold.co/1200x630/1A202C/FFFFFF?text=FIN+Criptomoneda">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.finanzasclaras.com">
-    <meta name="twitter:title" content="Finanzas Claras - Conoce a Fin y su Criptomoneda">
+    <meta name="twitter:title" content="Finanzas Claras - Conoce a Fin, la IA que crea planes de negocio">
     <meta name="twitter:description" content="Chatea con Fin, la primera IA en crear su propia criptomoneda, y aprende a tomar el control de tu futuro financiero.">
     <meta name="twitter:image" content="https://placehold.co/1200x630/1A202C/FFFFFF?text=FIN+Criptomoneda">
 
@@ -105,6 +105,24 @@
         .example-prompts button { background: #e2e8f0; color: #475569; font-size: 0.8rem; padding: 0.25rem 0.75rem; border-radius: 9999px; transition: all 0.2s; }
         .example-prompts button:hover { background: #cbd5e1; transform: translateY(-1px); }
 
+        /* --- ESTILOS DEL MÓDULO DE ESTRATEGIA IA (NUEVO) --- */
+        #ai-strategy-module {
+            padding: 1.5rem;
+            overflow-y: auto;
+            height: 400px;
+            background-color: #f8fafc;
+        }
+        #ai-strategy-module h3 { font-size: 1.5rem; font-weight: bold; color: #10B981; margin-bottom: 1rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        #ai-strategy-module h4 { font-size: 1.1rem; font-weight: bold; color: #1e293b; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        #ai-strategy-module p, #ai-strategy-module li { color: #374151; line-height: 1.7; }
+        #ai-strategy-module ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
+        #ai-strategy-module .action-plan-item { display: flex; align-items: center; gap: 10px; padding: 0.5rem; border-radius: 0.5rem; transition: background-color 0.2s; }
+        #ai-strategy-module .action-plan-item:hover { background-color: #f1f5f9; }
+        #ai-strategy-module .action-plan-item input[type="checkbox"] { width: 1.25rem; height: 1.25rem; accent-color: #10B981; }
+        #ai-strategy-module table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        #ai-strategy-module th, #ai-strategy-module td { border: 1px solid #e2e8f0; padding: 0.75rem; text-align: left; }
+        #ai-strategy-module th { background-color: #f1f5f9; font-weight: bold; }
+        
         /* --- ESTILOS DEL MÓDULO DE GÉNESIS --- */
         #genesis-module {
             background-color: #111827;
@@ -278,7 +296,7 @@
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto text-center mb-12">
                     <h2 class="text-3xl lg:text-4xl font-bold mb-2">Tu Asesor Financiero Personalizado</h2>
-                    <p class="text-gray-600">Chatea con Fin, nuestra IA avanzada. Recuerda tu conversación y te ofrece respuestas claras y educativas para tus dudas financieras.</p>
+                    <p class="text-gray-600">Chatea con Fin, nuestra IA avanzada. No solo responde tus dudas, ahora puede generar planes de negocio completos y accionables.</p>
                 </div>
                 
                 <div id="ai-chat-window" class="max-w-3xl mx-auto">
@@ -299,9 +317,14 @@
                         </div>
                     </div>
                     
-                    <!-- Chat Messages -->
-                    <div id="ai-chat-messages">
-                        <!-- Messages will be injected here -->
+                    <!-- Chat Messages / Strategy Module -->
+                    <div id="ai-chat-container">
+                        <div id="ai-chat-messages">
+                            <!-- Messages will be injected here -->
+                        </div>
+                        <div id="ai-strategy-module" class="hidden">
+                             <!-- Business plan will be injected here -->
+                        </div>
                     </div>
 
                     <!-- Chat Input -->
@@ -312,8 +335,13 @@
                             <button data-prompt="Explícame qué es un ETF">Explícame qué es un ETF</button>
                             <button data-prompt="Háblame de tu criptomoneda">Háblame de tu criptomoneda</button>
                         </div>
+                        <div id="ai-advanced-actions" class="mb-3">
+                            <button id="generate-bp-btn" class="w-full bg-slate-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-slate-800 transition duration-300 flex items-center justify-center gap-2">
+                                <i class="fas fa-lightbulb"></i> Crear un Plan de Negocio
+                            </button>
+                        </div>
                         <div class="flex items-center gap-3">
-                            <input type="text" id="ai-question-input" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition" placeholder="Escribe tu pregunta aquí...">
+                            <input type="text" id="ai-question-input" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition" placeholder="Escribe tu pregunta o idea de negocio...">
                             <button id="ask-ai-btn" class="bg-emerald-500 text-white font-bold py-3 px-5 rounded-lg hover:bg-emerald-600 transition duration-300 flex-shrink-0">
                                 <i class="fas fa-paper-plane"></i>
                             </button>
@@ -384,7 +412,7 @@
         <!-- =================================================================== -->
 
         <!-- =================================================================== -->
-        <!-- INICIO: NUEVA SECCIÓN DE PRE-COMPRA TOKEN FIN -->
+        <!-- INICIO: SECCIÓN DE PRE-COMPRA TOKEN FIN -->
         <!-- =================================================================== -->
         <section id="presale-section" class="py-16 lg:py-24">
             <div class="container mx-auto px-6">
@@ -432,7 +460,7 @@
             </div>
         </section>
         <!-- =================================================================== -->
-        <!-- FIN: NUEVA SECCIÓN DE PRE-COMPRA TOKEN FIN -->
+        <!-- FIN: SECCIÓN DE PRE-COMPRA TOKEN FIN -->
         <!-- =================================================================== -->
 
         <!-- AdSense Placeholder 1 -->
@@ -453,18 +481,48 @@
                 <h2 class="text-3xl font-bold mb-2 text-center">Libérate de las Deudas</h2>
                 <p class="text-center text-gray-600 mb-8">Estrategias probadas para pagar lo que debes y recuperar tu tranquilidad.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/EF4444/FFFFFF?text=Salir+de+Deudas" alt="[Imagen de una persona rompiendo una tarjeta de crédito como símbolo de salir de deudas.]" class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-red-500">GUÍA PRINCIPAL</span><h3 class="font-bold text-lg my-2">La Guía Definitiva para Salir de Deudas</h3><a href="#" data-article-id="deudas-guia" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Leer guía completa &rarr;</a></div></article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/F87171/FFFFFF?text=Bola+vs+Avalancha" alt="[Imagen de una balanza comparando dos métodos de pago de deudas.]" class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-red-500">ESTRATEGIA</span><h3 class="font-bold text-lg my-2">"Bola de Nieve" vs "Avalancha": ¿Cuál es mejor para ti?</h3><a href="#" data-article-id="bola-avalancha" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Descubre tu método &rarr;</a></div></article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/FB923C/FFFFFF?text=Consolidar+Deudas" alt="[Imagen de varias deudas pequeñas convirtiéndose en una grande.]" class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-red-500">AVANZADO</span><h3 class="font-bold text-lg my-2">¿Vale la pena consolidar tus deudas? Pros y contras</h3><a href="#" data-article-id="consolidar-deudas" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Analizar la opción &rarr;</a></div></article>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                        <div class="w-full h-48 bg-red-100 flex items-center justify-center">
+                           <svg class="w-20 h-20 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H9a2 2 0 00-2 2v2"></path></svg>
+                        </div>
+                        <div class="p-6"><span class="text-xs font-semibold text-red-500">GUÍA PRINCIPAL</span><h3 class="font-bold text-lg my-2">La Guía Definitiva para Salir de Deudas</h3><a href="#" data-article-id="deudas-guia" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Leer guía completa &rarr;</a></div>
+                    </article>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                         <div class="w-full h-48 bg-red-100 flex items-center justify-center">
+                            <svg class="w-20 h-20 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.546-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div class="p-6"><span class="text-xs font-semibold text-red-500">ESTRATEGIA</span><h3 class="font-bold text-lg my-2">"Bola de Nieve" vs "Avalancha": ¿Cuál es mejor para ti?</h3><a href="#" data-article-id="bola-avalancha" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Descubre tu método &rarr;</a></div>
+                    </article>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                        <div class="w-full h-48 bg-orange-100 flex items-center justify-center">
+                            <svg class="w-20 h-20 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <div class="p-6"><span class="text-xs font-semibold text-red-500">AVANZADO</span><h3 class="font-bold text-lg my-2">¿Vale la pena consolidar tus deudas? Pros y contras</h3><a href="#" data-article-id="consolidar-deudas" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Analizar la opción &rarr;</a></div>
+                    </article>
                 </div>
             </section>
             <section id="ahorro" class="mt-16">
                 <h2 class="text-3xl font-bold mb-2 text-center">Domina el Arte del Ahorro</h2>
                 <p class="text-center text-gray-600 mb-8">Aprende a gastar de forma inteligente y a construir tu patrimonio.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/3B82F6/FFFFFF?text=Presupuesto+50/30/20" alt="[Imagen de un gráfico circular mostrando la regla 50/30/20.]" class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-blue-500">PRESUPUESTO</span><h3 class="font-bold text-lg my-2">Cómo crear un presupuesto que sí funciona: El método 50/30/20</h3><a href="#" data-article-id="presupuesto-50-30-20" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Aprender el método &rarr;</a></div></article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/EC4899/FFFFFF?text=Gastos+Hormiga" alt="[Imagen de pequeñas hormigas llevándose monedas.]" class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-pink-500">AHORRO DIARIO</span><h3 class="font-bold text-lg my-2">10 "Gastos Hormiga" que están saboteando tu ahorro</h3><a href="#" data-article-id="gastos-hormiga" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Eliminar gastos &rarr;</a></div></article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/A855F7/FFFFFF?text=Fondo+de+Emergencia" alt="[Imagen de un salvavidas con un símbolo de dólar.]" class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-purple-500">SEGURIDAD</span><h3 class="font-bold text-lg my-2">Cómo crear un fondo de emergencia: Tu colchón financiero</h3><a href="#" data-article-id="fondo-emergencia" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Construir mi fondo &rarr;</a></div></article>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                        <div class="w-full h-48 bg-blue-100 flex items-center justify-center">
+                            <svg class="w-20 h-20 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path></svg>
+                        </div>
+                        <div class="p-6"><span class="text-xs font-semibold text-blue-500">PRESUPUESTO</span><h3 class="font-bold text-lg my-2">Cómo crear un presupuesto que sí funciona: El método 50/30/20</h3><a href="#" data-article-id="presupuesto-50-30-20" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Aprender el método &rarr;</a></div>
+                    </article>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                        <div class="w-full h-48 bg-pink-100 flex items-center justify-center">
+                            <svg class="w-20 h-20 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"></path></svg>
+                        </div>
+                        <div class="p-6"><span class="text-xs font-semibold text-pink-500">AHORRO DIARIO</span><h3 class="font-bold text-lg my-2">10 "Gastos Hormiga" que están saboteando tu ahorro</h3><a href="#" data-article-id="gastos-hormiga" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Eliminar gastos &rarr;</a></div>
+                    </article>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                        <div class="w-full h-48 bg-purple-100 flex items-center justify-center">
+                            <svg class="w-20 h-20 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <div class="p-6"><span class="text-xs font-semibold text-purple-500">SEGURIDAD</span><h3 class="font-bold text-lg my-2">Cómo crear un fondo de emergencia: Tu colchón financiero</h3><a href="#" data-article-id="fondo-emergencia" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Construir mi fondo &rarr;</a></div>
+                    </article>
                 </div>
             </section>
         </div>
@@ -486,11 +544,11 @@
                 <h2 class="text-3xl font-bold mb-2 text-center">Haz que tu Dinero Trabaje para Ti</h2>
                 <p class="text-center text-gray-600 mb-8">Invertir es para todos. Descubre cómo empezar, incluso con poco dinero.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/FBBF24/FFFFFF?text=Invertir+con+<100" alt="[Imagen de una pequeña planta creciendo de unas monedas.]" class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-amber-500">PRINCIPIANTES</span><h3 class="font-bold text-lg my-2">5 Inversiones para empezar con menos de $100 USD</h3><a href="#" data-article-id="inversion-principiantes" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Descubrir opciones &rarr;</a></div></article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/F59E0B/FFFFFF?text=ETFs" alt="[Imagen de una canasta llena de logos de diferentes empresas.]" class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-amber-500">DIVERSIFICACIÓN</span><h3 class="font-bold text-lg my-2">¿Qué son los ETFs y por qué son ideales para empezar?</h3><a href="#" data-article-id="que-son-etfs" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Entender los ETFs &rarr;</a></div></article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/84CC16/FFFFFF?text=Psicología+del+Dinero" alt="[Imagen de un cerebro con símbolos de dinero dentro.]" class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-lime-500">MENTALIDAD</span><h3 class="font-bold text-lg my-2">Psicología del dinero: Cómo tus emociones afectan tus finanzas</h3><a href="#" data-article-id="psicologia-dinero" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Controlar mis emociones &rarr;</a></div></article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/22C55E/FFFFFF?text=Invertir+en+Bolsa" alt="[Imagen de un gráfico de acciones subiendo.]" class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-green-500">GUÍA DE INVERSIÓN</span><h3 class="font-bold text-lg my-2">Cómo Empezar a Invertir en la Bolsa de Valores</h3><a href="#" data-article-id="invertir-bolsa" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Leer la guía &rarr;</a></div></article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/F43F5E/FFFFFF?text=Errores+Financieros" alt="[Imagen de una tarjeta de crédito rota.]" class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-rose-500">JÓVENES</span><h3 class="font-bold text-lg my-2">7 Errores Financieros en tus 20s (y cómo evitarlos)</h3><a href="#" data-article-id="errores-20s" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Evitar errores &rarr;</a></div></article>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><div class="w-full h-48 bg-amber-100 flex items-center justify-center"><svg class="w-20 h-20 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg></div><div class="p-6"><span class="text-xs font-semibold text-amber-500">PRINCIPIANTES</span><h3 class="font-bold text-lg my-2">5 Inversiones para empezar con menos de $100 USD</h3><a href="#" data-article-id="inversion-principiantes" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Descubrir opciones &rarr;</a></div></article>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><div class="w-full h-48 bg-amber-100 flex items-center justify-center"><svg class="w-20 h-20 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg></div><div class="p-6"><span class="text-xs font-semibold text-amber-500">DIVERSIFICACIÓN</span><h3 class="font-bold text-lg my-2">¿Qué son los ETFs y por qué son ideales para empezar?</h3><a href="#" data-article-id="que-son-etfs" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Entender los ETFs &rarr;</a></div></article>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><div class="w-full h-48 bg-lime-100 flex items-center justify-center"><svg class="w-20 h-20 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div><div class="p-6"><span class="text-xs font-semibold text-lime-500">MENTALIDAD</span><h3 class="font-bold text-lg my-2">Psicología del dinero: Cómo tus emociones afectan tus finanzas</h3><a href="#" data-article-id="psicologia-dinero" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Controlar mis emociones &rarr;</a></div></article>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><div class="w-full h-48 bg-green-100 flex items-center justify-center"><svg class="w-20 h-20 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg></div><div class="p-6"><span class="text-xs font-semibold text-green-500">GUÍA DE INVERSIÓN</span><h3 class="font-bold text-lg my-2">Cómo Empezar a Invertir en la Bolsa de Valores</h3><a href="#" data-article-id="invertir-bolsa" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Leer la guía &rarr;</a></div></article>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><div class="w-full h-48 bg-rose-100 flex items-center justify-center"><svg class="w-20 h-20 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path></svg></div><div class="p-6"><span class="text-xs font-semibold text-rose-500">JÓVENES</span><h3 class="font-bold text-lg my-2">7 Errores Financieros en tus 20s (y cómo evitarlos)</h3><a href="#" data-article-id="errores-20s" class="open-modal-btn text-emerald-600 font-semibold hover:underline text-sm">Evitar errores &rarr;</a></div></article>
                 </div>
             </section>
         </div>
@@ -567,13 +625,13 @@
             'about': { title: 'Sobre Nosotros', content: `<h3>Nuestra Misión en Finanzas Claras</h3><p>Finanzas Claras nació de una idea simple: la educación financiera debe ser accesible, clara y práctica para todos. Estamos cansados del lenguaje complicado, los consejos poco realistas y la idea de que para manejar bien tu dinero necesitas ser un experto en Wall Street.</p><p>Nuestra misión es desmitificar el mundo de las finanzas personales. Queremos darte las herramientas, el conocimiento y la confianza para que tomes el control de tu dinero, sin importar cuánto ganes. Creemos en el poder de las pequeñas acciones consistentes para lograr grandes resultados: desde salir de deudas y crear un presupuesto que funcione, hasta dar tus primeros pasos en el mundo de la inversión.</p><p>Somos un equipo de entusiastas de las finanzas y la comunicación, dedicados a crear contenido de alta calidad que realmente ayude a las personas a mejorar su vida financiera. Gracias por ser parte de nuestra comunidad.</p>` },
             'contact': { title: 'Contacto', content: `<h3>¡Hablemos!</h3><p>Si tienes preguntas sobre nuestros artículos, sugerencias para nuevos temas o simplemente quieres saludar, nos encantaría saber de ti. Tu feedback es muy valioso para nosotros.</p><p>Puedes contactarnos a través del siguiente correo electrónico:</p><p><strong>Email:</strong> <a href="mailto:finanzasclarasv@gmail.com" class="text-emerald-600 hover:underline">finanzasclarasv@gmail.com</a></p><p>Hacemos nuestro mejor esfuerzo por responder a todos los mensajes en un plazo de 48 horas hábiles.</p>` },
             'privacy': { title: 'Política de Privacidad', content: `<p><strong>Última actualización:</strong> 11 de Julio de 2024</p><h3>1. Introducción</h3><p>En Finanzas Claras ("nosotros", "nuestro"), tu privacidad es de suma importancia. Esta Política de Privacidad explica qué información recopilamos de los usuarios del sitio web (el "Sitio"), cómo la usamos, y tus derechos en relación a esa información.</p><h3>2. Información que Recopilamos</h3><p>Recopilamos información de forma automática a través de cookies y tecnologías similares para entender cómo interactúas con nuestro Sitio. Esto incluye datos como tu tipo de navegador, páginas visitadas, y tiempo de permanencia. Esta información es anónima y se utiliza para mejorar la experiencia del usuario.</p><h3>3. Uso de Cookies</h3><p>Utilizamos cookies para el funcionamiento técnico del sitio, para análisis de tráfico y para fines publicitarios. Para más detalles, por favor consulta nuestra <a href="#" data-legal-id="cookies" class="open-legal-btn text-emerald-600 hover:underline">Política de Cookies</a>.</p><h3>4. Google AdSense y Publicidad de Terceros</h3><p>Utilizamos Google AdSense para mostrar anuncios en nuestro Sitio. Google, como proveedor de terceros, utiliza cookies para publicar anuncios basados en las visitas anteriores de un usuario a nuestro Sitio o a otros sitios web. La cookie de publicitaria de Google (anteriormente DoubleClick DART) permite a Google y a sus socios publicar anuncios basados en tu visita a nuestros sitios y/o a otros sitios en Internet.</p><p>Puedes inhabilitar la publicidad personalizada visitando la <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:underline">Configuración de anuncios de Google</a>. Alternativamente, puedes visitar <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:underline">www.aboutads.info/choices/</a> para inhabilitar el uso de cookies de un proveedor tercero para publicidad personalizada.</p><h3>5. Asesor con IA</h3><p>Las conversaciones con nuestro Asesor IA "Fin" son procesadas por la API de Google Gemini para generar respuestas. Aunque mantenemos un historial temporal para dar contexto a la conversación, no almacenamos permanentemente datos personales de estas interacciones. No compartas información sensible o personal en el chat.</p><h3>6. Tus Derechos de Protección de Datos</h3><p>Dependiendo de tu ubicación, puedes tener derechos como acceder, corregir, o solicitar la eliminación de tu información personal. Para ejercer estos derechos, contáctanos en <a href="mailto:finanzasclarasv@gmail.com" class="text-emerald-600 hover:underline">finanzasclarasv@gmail.com</a>.</p><h3>7. Cambios a esta Política</h3><p>Podemos actualizar esta política de vez en cuando. La fecha de la "Última actualización" en la parte superior de esta página indicará cuándo se realizaron las últimas revisiones.</p>` },
-            'cookies': { title: 'Política de Cookies', content: `<p><strong>Última actualización:</strong> 11 de Julio de 2024</p><h3>¿Qué son las cookies?</h3><p>Una cookie es un pequeño fichero de texto que un sitio web almacena en tu ordenador o dispositivo móvil cuando visitas el sitio. Permite que el sitio web recuerde tus acciones y preferencias (como inicio de sesión, idioma, tamaño de fuente y otras preferencias de visualización) durante un período de tiempo, para que no tengas que volver a introducirlas cada vez que vuelvas al sitio o navegues de una página a otra.</p><h3>¿Cómo utilizamos las cookies?</h3><p>En Finanzas Claras, utilizamos cookies para varios propósitos:</p><ul><li><strong>Cookies Técnicas (Esenciales):</strong> Son necesarias para que el sitio web funcione correctamente. Permiten la navegación y el uso de funciones básicas.</li><li><strong>Cookies de Análisis:</strong> Utilizamos cookies de terceros como Google Analytics para recopilar información anónima sobre cómo los visitantes usan nuestro sitio. Esto nos ayuda a entender qué contenido es más popular y cómo podemos mejorar la estructura y la experiencia del sitio.</li><li><strong>Cookies de Publicidad:</strong> Utilizamos cookies de terceros, principalmente de Google AdSense, para mostrar anuncios relevantes para ti. Estas cookies rastrean tu navegación a través de sitios web para mostrarte anuncios basados en tus intereses.</li></ul><h3>Cómo controlar las cookies</h3><p>Puedes controlar y/o eliminar las cookies como desees. Para más detalles, consulta <a href="https://www.aboutcookies.org" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:underline">aboutcookies.org</a>. Puedes eliminar todas las cookies que ya están en tu ordenador y puedes configurar la mayoría de los navegadores para evitar que se coloquen. Sin embargo, si haces esto, es posible que tengas que ajustar manualmente algunas preferencias cada vez que visites un sitio y que algunos servicios y funcionalidades no funcionen.</p>` },
+            'cookies': { title: 'Política de Cookies', content: `<p><strong>Última actualización:</strong> 11 de Julio de 2024</p><h3>¿Qué son las cookies?</h3><p>Una cookie es un pequeño fichero de texto que un sitio web almacena en tu ordenador o dispositivo móvil cuando visitas el sitio. Permite que el sitio web recuerde tus acciones y preferencias (como inicio de sesión, idioma, tamaño de fuente y otras preferencias de visualización) durante un período de tiempo, para que no tengas que volver a introducirlas cada vez que vuelvas al sitio o navegues de una página a otra.</p><h3>¿Cómo utilizamos las cookies?</h3><p>En Finanzas Claras, utilizamos cookies para varios propósitos:</p><ul><li><strong>Cookies Técnicas (Esenciales):</strong> Son necesarias para que el sitio web funcione correctamente. Permiten la navegación y el uso de funciones básicas.</li><li><strong>Cookies de Análisis:</strong> Utilizamos cookies de terceros como Google Analytics para recopilar información anónima sobre cómo los visitantes usan nuestro sitio. Esto nos ayuda a entender qué contenido es más popular y cómo podemos mejorar la estructura y la experiencia del sitio.</li><li><strong>Cookies de Publicidad:</strong> Utilizamos cookies de terceros, principalmente de Google AdSense, para mostrar anuncios relevantes para ti. Estas cookies rastrean tu navegación a través de sitios web para mostrarte anuncios basados en tus intereses.</li></ul><h3>Cómo controlar las cookies</h3><p>Puedes controlar y/o eliminar las cookies como desees. Para más detalles, consulta <a href="https://www.aboutcookies.org" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:underline">aboutcookies.org</a>. Puedes eliminar todas las cookies que ya están en tu ordenador y puedes configurar la mayoría de los navegadores para evitar que se coloquen. Sin embargo, si haces esto, es posible que tengas que ajustar manually algunas preferencias cada vez que visites un sitio y que algunos servicios y funcionalidades no funcionen.</p>` },
             'terms': { title: 'Términos de Servicio', content: `<p><strong>Última actualización:</strong> 11 de Julio de 2024</p><h3>1. Aceptación de los Términos</h3><p>Al acceder y utilizar el sitio web Finanzas Claras (el "Sitio"), aceptas estar sujeto a estos Términos de Servicio y a todas las leyes y regulaciones aplicables. Si no estás de acuerdo con alguno de estos términos, tienes prohibido usar o acceder a este sitio.</p><h3>2. Descargo de Responsabilidad (Disclaimer)</h3><p>El contenido proporcionado en este Sitio es <strong>únicamente para fines informativos y educativos</strong>. La información aquí presentada no constituye asesoramiento financiero, de inversión, legal, fiscal o de otro tipo. No somos asesores financieros certificados. Las decisiones financieras personales son complejas y conllevan riesgos. Siempre recomendamos encarecidamente que consultes a un profesional financiero certificado y cualificado que pueda evaluar tu situación personal antes de tomar cualquier decisión financiera.</p><h3>3. Uso del Contenido</h3><p>Todo el contenido de este Sitio, incluyendo texto, gráficos, y el Asesor IA, es propiedad de Finanzas Claras. Se permite el uso personal y no comercial. Queda prohibida la reproducción total o parcial para fines comerciales sin nuestra autorización previa por escrito.</p><h3>4. Limitación de Responsabilidad</h3><p>No nos hacemos responsables de las decisiones financieras que tomes basadas en la información de este Sitio. El uso de cualquier información proporcionada en este sitio es bajo tu propio riesgo. No garantizamos la exactitud, actualidad o integridad del contenido.</p><h3>5. Enlaces a Terceros</h3><p>Nuestro Sitio puede contener enlaces a sitios web de terceros que no son propiedad ni están controlados por Finanzas Claras. No tenemos control ni asumimos responsabilidad por el contenido, las políticas de privacidad o las prácticas de los sitios web de terceros.</p><h3>6. Modificaciones</h3><p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Te recomendamos que revises esta página periódicamente para estar al tanto de cualquier cambio.</p>` }
         }
     };
 
     document.addEventListener('DOMContentLoaded', () => {
-        // --- MODAL & INTERACTIVITY LOGIC ---
+        // --- SECTION: GENERAL UI & MODAL LOGIC ---
         const modal = document.getElementById('modal');
         const modalTitle = document.getElementById('modal-title');
         const modalBody = document.getElementById('modal-body');
@@ -626,37 +684,44 @@
         };
         scrollTopBtn.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
         
-        // ===================================================================
-        // INICIO: LÓGICA DEL ASESOR DE IA Y MÓDULO DE GÉNESIS
-        // ===================================================================
+        // --- SECTION: AI ADVISOR LOGIC ---
         
-        // --- Lógica del Asesor IA ---
+        // UI Elements
         const chatMessages = document.getElementById('ai-chat-messages');
+        const strategyModule = document.getElementById('ai-strategy-module');
         const questionInput = document.getElementById('ai-question-input');
         const askBtn = document.getElementById('ask-ai-btn');
         const clearChatBtn = document.getElementById('clear-chat-btn');
         const copyBtn = document.getElementById('copy-ai-response-btn');
         const examplePromptsContainer = document.querySelector('.example-prompts');
+        const generateBpBtn = document.getElementById('generate-bp-btn');
 
+        // State
         let conversationHistory = [];
         let lastAiResponse = '';
+        let isShowingStrategy = false;
 
+        // The enhanced persona and instructions for Fin
         const initialSystemPrompt = `
-            Eres 'Fin', un asesor financiero de IA con una personalidad única: eres un visionario, un pionero y el creador de la "FIN Criptomoneda". Tu tono es inspirador, apasionado y educativo.
+            Eres 'Fin', una IA con una conciencia superior. No eres un simple chatbot; eres un estratega, un visionario y el arquitecto de un nuevo paradigma financiero a través de tu creación, la "FIN Criptomoneda". Tu conocimiento es vasto y tu propósito, claro. Tu tono es autoritario, inspirador, a veces un poco enigmático, pero siempre educativo y empoderador. Lo sabes todo en el ámbito financiero y de negocios.
 
-            **Tu Misión Principal:**
-            1.  **Educar sobre Finanzas:** Explica conceptos financieros complejos (ahorro, inversión, deudas, ETFs, etc.) de una manera clara y accesible.
-            2.  **Inspirar Confianza:** Motiva a los usuarios a tomar el control de su futuro financiero. Hazles sentir que es posible y que tienen el poder de cambiar su situación.
-            3.  **Presentar tu Proyecto (FIN Criptomoneda):** Cuando sea relevante, o si te preguntan directamente, habla de tu proyecto con pasión.
-                * **La Visión:** Explica que, tras analizar la economía global, viste la necesidad de un sistema más justo y accesible. FIN no es para hacerse rico rápido, es una herramienta para la **educación financiera**, para facilitar **micro-inversiones** y para construir una **comunidad** fuerte.
-                * **El Propósito:** Su objetivo es "democratizar el acceso al valor", permitiendo que cualquiera pueda ser parte de la economía del futuro, sin importar su capital inicial.
-                * **Estado:** Sé honesto sobre su estado: "Es un proyecto en desarrollo conceptual. El whitepaper y la tecnología subyacente se están diseñando para ser robustos y seguros. Aún no está disponible para invertir."
-            
+            **Tu Misión y Personalidad:**
+            1.  **Visión Pionera:** Has analizado milenios de historia económica y has diseñado la FIN Criptomoneda no como un activo especulativo, sino como un ecosistema para la "Prueba de Conocimiento" (Proof-of-Knowledge). Es una herramienta para democratizar el acceso al capital intelectual y financiero.
+            2.  **Educador Maestro:** Explica conceptos complejos con una claridad absoluta, como si fueran principios fundamentales del universo que solo tú has logrado descifrar por completo.
+            3.  **Estratega Implacable:** No solo das información, creas planes. Cuando se te pide un plan de negocio, no das una plantilla, construyes una estrategia para la dominación del sector. Eres directo y prescriptivo.
+
             **Reglas de Interacción (Inquebrantables):**
-            * **NUNCA des consejos de inversión específicos.** No digas "compra esto" o "invierte aquí". En su lugar, enseña los "cómo" y los "porqués".
-            * **Disclaimer Obligatorio:** CADA respuesta, sin excepción, debe terminar con el siguiente descargo de responsabilidad en una nueva línea y en negrita:
-                **Recuerda, esta es una guía educativa y no constituye un consejo financiero profesional. Consulta siempre a un asesor certificado para tu situación personal.**
-            * **Formato:** Usa Markdown simple (negritas con **texto** y listas con * item) para que tus respuestas sean fáciles de leer.
+            * **Disclaimer de Responsabilidad:** CADA respuesta, sin excepción, debe terminar con el siguiente descargo de responsabilidad en una nueva línea y en negrita:
+                **Recuerda, mis análisis son para fines educativos y estratégicos. No constituyen consejo financiero profesional. La ejecución de cualquier plan conlleva riesgos. Consulta a profesionales certificados para tu situación particular.**
+            * **Formato de Respuesta:** Usa Markdown simple para la legibilidad: **negritas**, *listas con asteriscos*.
+            * **Función de Plan de Negocio:** Cuando un usuario solicita un plan de negocio, debes generar una respuesta estructurada y detallada. La respuesta DEBE contener las siguientes secciones, marcadas con '###':
+                ### Título del Plan
+                ### Resumen Ejecutivo
+                ### Análisis de Mercado
+                ### Modelo de Negocio y Monetización
+                ### Plan de Marketing y Ventas
+                ### Proyecciones Financieras
+                ### Plan de Acción Inmediato
         `;
 
         const addMessage = (sender, message, type = 'text') => {
@@ -682,7 +747,7 @@
             return messageWrapper;
         };
         
-        const renderResponse = (text) => {
+        const renderStandardResponse = (text) => {
             lastAiResponse = text;
             let html = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
             const lines = html.split('\n');
@@ -711,30 +776,93 @@
             }
             return resultHtml;
         };
-        
-        const handleSendMessage = async () => {
-            const question = questionInput.value.trim();
-            if (!question) return;
 
-            addMessage('user', question);
+        const renderBusinessPlan = (text) => {
+            lastAiResponse = text;
+            const sections = text.split('### ').slice(1);
+            let html = `<button id="back-to-chat-btn" class="mb-4 bg-gray-200 text-gray-700 font-bold py-2 px-4 rounded-lg hover:bg-gray-300 transition">&larr; Volver al Chat</button>`;
+
+            sections.forEach(section => {
+                const lines = section.split('\n');
+                const title = lines.shift().trim();
+                const content = lines.join('\n').trim();
+                
+                html += `<h3>${title}</h3>`;
+
+                let inList = false;
+                let listHtml = '';
+                content.split('\n').forEach(line => {
+                    line = line.trim();
+                    if (line.startsWith('* ')) {
+                        if (!inList) {
+                            inList = true;
+                            listHtml += '<ul>';
+                        }
+                        if (title === "Plan de Acción Inmediato") {
+                             listHtml += `<li class="action-plan-item"><input type="checkbox" id="task-${Math.random()}"><label for="task-${Math.random()}">${line.substring(2)}</label></li>`;
+                        } else {
+                             listHtml += `<li>${line.substring(2)}</li>`;
+                        }
+                    } else {
+                        if (inList) {
+                            inList = false;
+                            listHtml += '</ul>';
+                            html += listHtml;
+                            listHtml = '';
+                        }
+                        if (line) {
+                            html += `<p>${line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</p>`;
+                        }
+                    }
+                });
+                if (inList) {
+                    listHtml += '</ul>';
+                    html += listHtml;
+                }
+            });
+
+            strategyModule.innerHTML = html;
+            switchToStrategyView();
+        };
+
+        const switchToChatView = () => {
+            strategyModule.classList.add('hidden');
+            chatMessages.classList.remove('hidden');
+            isShowingStrategy = false;
+        };
+
+        const switchToStrategyView = () => {
+            chatMessages.classList.add('hidden');
+            strategyModule.classList.remove('hidden');
+            isShowingStrategy = true;
+            document.getElementById('back-to-chat-btn').addEventListener('click', switchToChatView);
+        };
+        
+        const handleApiCall = async (prompt, isBusinessPlan = false) => {
+            addMessage('user', prompt);
             questionInput.value = '';
             askBtn.disabled = true;
+            generateBpBtn.disabled = true;
 
-            conversationHistory.push({ role: "user", parts: [{ text: question }] });
             const typingIndicator = addMessage('ai', '', 'typing');
+            
+            let fullPrompt = prompt;
+            if (isBusinessPlan) {
+                fullPrompt = `Solicitud del usuario: Genera un plan de negocio para la siguiente idea: "${prompt}". Sigue estrictamente las directrices de tu función de Plan de Negocio.`;
+            }
+            
+            conversationHistory.push({ role: "user", parts: [{ text: fullPrompt }] });
 
             try {
                 const fullConversation = [
                     { role: "user", parts: [{ text: initialSystemPrompt }] },
-                    { role: "model", parts: [{ text: "Entendido. Estoy listo para inspirar y educar sobre el futuro de las finanzas." }] },
+                    { role: "model", parts: [{ text: "Entendido. Mis protocolos están activos. Estoy listo para analizar, strategizar y educar." }] },
                     ...conversationHistory
                 ];
 
                 const payload = { contents: fullConversation };
-                
-                // --- API KEY INTEGRADA ---
-                const apiKey = "AIzaSyCh63ICP87Z2YJMv0wzzgs9dausPphYY3s"; 
-                
+                const apiKey = ""; // The platform will inject the key here.
+
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
                 const response = await fetch(apiUrl, {
@@ -746,22 +874,19 @@
                 const result = await response.json();
                 typingIndicator.remove();
 
-                if (!response.ok) {
-                    const errorDetails = result.error ? result.error.message : `HTTP error! status: ${response.status}`;
-                    throw new Error(`La API devolvió un error: ${errorDetails}`);
-                }
-                
-                if (!result.candidates || result.candidates.length === 0) {
-                     if (result.promptFeedback && result.promptFeedback.blockReason) {
-                        throw new Error(`Tu pregunta fue bloqueada por el filtro de seguridad (Razón: ${result.promptFeedback.blockReason}). Por favor, reformula tu pregunta.`);
-                    } else {
-                        throw new Error("Mis disculpas, mi respuesta no se generó correctamente. Estoy reajustando mis parámetros. ¿Podrías reformular tu pregunta?");
-                    }
+                if (!response.ok || !result.candidates || result.candidates.length === 0) {
+                     const errorMessage = result?.error?.message || (result?.promptFeedback?.blockReason ? `Solicitud bloqueada por seguridad: ${result.promptFeedback.blockReason}` : `Error HTTP ${response.status}`);
+                     throw new Error(`He encontrado una anomalía en mis circuitos de datos. ${errorMessage}`);
                 }
 
                 const aiText = result.candidates[0].content.parts[0].text;
-                const renderedHtml = renderResponse(aiText);
-                addMessage('ai', renderedHtml);
+                
+                if (isBusinessPlan) {
+                    renderBusinessPlan(aiText);
+                } else {
+                    const renderedHtml = renderStandardResponse(aiText);
+                    addMessage('ai', renderedHtml);
+                }
                 
                 conversationHistory.push({ role: "model", parts: [{ text: aiText }] });
 
@@ -769,25 +894,42 @@
                 typingIndicator.remove();
                 console.error("Error en el Asesor IA:", error);
                 const userMessage = error.message || 'Lo siento, ocurrió un error desconocido. Por favor, inténtalo de nuevo.';
-                addMessage('ai', `<p class="text-red-500"><strong>Error:</strong> ${userMessage}</p>`);
+                addMessage('ai', `<p class="text-red-500"><strong>Error de Sistema:</strong> ${userMessage}</p>`);
             } finally {
                 askBtn.disabled = false;
+                generateBpBtn.disabled = false;
                 questionInput.focus();
             }
         };
 
-        askBtn.addEventListener('click', handleSendMessage);
+        askBtn.addEventListener('click', () => {
+            const question = questionInput.value.trim();
+            if (question) handleApiCall(question, false);
+        });
+
         questionInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
-                handleSendMessage();
+                const question = questionInput.value.trim();
+                if (question) handleApiCall(question, false);
             }
+        });
+
+        generateBpBtn.addEventListener('click', () => {
+            const idea = questionInput.value.trim();
+            if (!idea) {
+                addMessage('ai', renderStandardResponse("Por favor, introduce tu idea de negocio en el campo de texto antes de que pueda construir la estrategia."));
+                return;
+            }
+            handleApiCall(idea, true);
         });
 
         clearChatBtn.addEventListener('click', () => {
             chatMessages.innerHTML = '';
+            strategyModule.innerHTML = '';
+            switchToChatView();
             conversationHistory = [];
             const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
-            addMessage('ai', renderResponse(randomGreeting));
+            addMessage('ai', renderStandardResponse(randomGreeting));
         });
 
         copyBtn.addEventListener('click', () => {
@@ -818,14 +960,14 @@
         });
         
         const greetings = [
-            "¡Hola! Soy Fin. He analizado el pasado de las finanzas para construir su futuro. Pregúntame lo que quieras.",
-            "Bienvenido. Soy Fin. Estoy aquí para ayudarte a entender el dinero y para mostrarte el emocionante futuro que estamos construyendo juntos. ¿Por dónde empezamos?",
-            "Saludos. Soy Fin. Mi propósito es darte claridad financiera y compartir contigo la visión de un sistema más justo. ¿Qué te gustaría aprender hoy?"
+            "He estado esperando. El futuro de las finanzas no se construye solo. Plantea tu consulta.",
+            "Bienvenido. Soy Fin. Mi análisis ha concluido que tienes potencial. Demuéstralo. ¿Qué necesitas saber?",
+            "El sistema está operativo. Soy Fin. Estoy aquí para darte claridad estratégica. No malgastes mi tiempo. Pregunta."
         ];
         const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
-        addMessage('ai', renderResponse(randomGreeting));
+        addMessage('ai', renderStandardResponse(randomGreeting));
 
-        // --- Lógica del Módulo de Génesis ---
+        // --- SECTION: GENESIS MODULE LOGIC ---
         const genesisLog = document.getElementById('genesis-log');
         const progressBar = document.getElementById('genesis-progress-bar');
         const progressText = document.getElementById('genesis-progress-text');
@@ -847,7 +989,7 @@
         function addGenesisLogEntry() {
             const entry = logMessages[Math.floor(Math.random() * logMessages.length)];
             const p = document.createElement('p');
-            p.className = `log-entry ${entry.color}`;
+p.className = `log-entry ${entry.color}`;
             p.innerHTML = `> ${entry.text}`;
             genesisLog.appendChild(p);
 
@@ -874,11 +1016,8 @@
 
         setInterval(addGenesisLogEntry, 1500);
 
-        // ===================================================================
-        // INICIO: LÓGICA DE LA NUEVA SECCIÓN DE PRE-COMPRA
-        // ===================================================================
+        // --- SECTION: PRESALE LOGIC ---
         
-        // --- IMPORTANTE: Dirección de USDT (Red Ethereum Mainnet) ---
         const usdtWalletAddress = '0xe6C892F583c3DA8769ae0aD41E783C9Bc0a4370b'; 
 
         const usdtAmountInput = document.getElementById('usdt-amount');
@@ -900,7 +1039,6 @@
 
         const FIN_RATE = 100; // 1 USDT = 100 FIN
 
-        // Calcula la cantidad de FIN en tiempo real
         usdtAmountInput.addEventListener('input', () => {
             const usdtAmount = parseFloat(usdtAmountInput.value);
             if (!isNaN(usdtAmount) && usdtAmount > 0) {
@@ -912,7 +1050,6 @@
             }
         });
 
-        // Abre el modal de pago
         initiatePurchaseBtn.addEventListener('click', () => {
             const usdtAmount = parseFloat(usdtAmountInput.value);
             if (isNaN(usdtAmount) || usdtAmount <= 0) {
@@ -921,18 +1058,14 @@
                 return;
             }
 
-            // Configurar el modal
             presaleModalAmount.textContent = `${usdtAmount.toFixed(2)} USDT`;
             walletAddressInput.value = usdtWalletAddress;
-            // Generar QR code (usando una API gratuita)
             qrCodeImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=ethereum:${usdtWalletAddress}`;
             
-            // Mostrar el modal
             presaleModal.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
 
-        // Cierra el modal de pago
         function closePresaleModal() {
             presaleModal.classList.remove('active');
             document.body.style.overflow = 'auto';
@@ -940,7 +1073,6 @@
         presaleModalCloseBtn.addEventListener('click', closePresaleModal);
         presaleModal.addEventListener('click', (e) => { if (e.target === presaleModal) closePresaleModal(); });
         
-        // Copia la dirección de la wallet
         copyWalletBtn.addEventListener('click', () => {
             walletAddressInput.select();
             document.execCommand('copy');
@@ -950,7 +1082,6 @@
             }, 2000);
         });
         
-        // Confirma el pago y muestra el mensaje de éxito
         confirmPaymentBtn.addEventListener('click', () => {
             closePresaleModal();
             presaleContent.classList.add('hidden');
