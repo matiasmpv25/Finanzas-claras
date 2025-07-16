@@ -3,798 +3,1684 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Finanzas Claras - IA Estratégica y Creadora de la Criptomoneda FIN</title>
-    <meta name="description" content="Interactúa con Fin, la primera IA estratégica que crea planes de negocio, imágenes, videos y su propia criptomoneda. Aprende sobre finanzas, emprendimiento, inversión y el futuro de la economía digital con la FIN Criptomoneda.">
-    <meta name="keywords" content="finanzas personales, asesor ia, estratega ia, plan de negocios, criptomoneda FIN, chat financiero, ahorrar dinero, invertir, blockchain, web3, libertad financiera, finanzas para jóvenes, pre-compra token, emprendimiento, generar imagenes con ia, generar videos con ia">
+    <title>Finanzas Claras | IA Estratégica para Planes de Negocio y Criptomoneda FIN</title>
+    <meta name="description" content="Interactúa con Fin, la IA estratégica que crea planes de negocio, genera contenido y desarrolló la criptomoneda FIN. Transforma tus finanzas con inteligencia artificial.">
+    <meta name="keywords" content="ia financiera, asesor ia, plan de negocios, criptomoneda FIN, finanzas personales, invertir, blockchain, libertad financiera, emprendimiento">
     <meta name="author" content="Finanzas Claras">
     <link rel="canonical" href="https://www.finanzasclaras.com">
     <meta name="google-adsense-account" content="ca-pub-9353370245713442">
     
+    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9353370245713442"
      crossorigin="anonymous"></script>
 
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.finanzasclaras.com">
-    <meta property="og:title" content="Finanzas Claras - Conoce a Fin, la IA Estratégica y Creativa">
-    <meta property="og:description" content="Chatea con Fin, la primera IA en crear su propia criptomoneda, planes de negocio, imágenes y videos. Toma el control de tu futuro financiero y empresarial.">
-    <meta property="og:image" content="https://placehold.co/1200x630/1A202C/FFFFFF?text=FIN+IA+Estratégica">
+    <meta property="og:url" content="https://www.finanzasclaras.com/">
+    <meta property="og:title" content="Finanzas Claras - IA Estratégica y Creadora de la Criptomoneda FIN">
+    <meta property="og:description" content="Chatea con Fin, la primera IA en crear su propia criptomoneda, planes de negocio, imágenes y videos. Toma el control de tu futuro financiero.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1633158829875-e5316a358c6f?q=80&w=1200">
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.finanzasclaras.com">
-    <meta name="twitter:title" content="Finanzas Claras - Conoce a Fin, la IA Estratégica y Creativa">
-    <meta name="twitter:description" content="Chatea con Fin, la primera IA en crear su propia criptomoneda, planes de negocio, imágenes y videos. Toma el control de tu futuro financiero y empresarial.">
-    <meta name="twitter:image" content="https://placehold.co/1200x630/1A202C/FFFFFF?text=FIN+IA+Estratégica">
+    <meta name="twitter:url" content="https://www.finanzasclaras.com/">
+    <meta name="twitter:title" content="Finanzas Claras - IA Estratégica y Creadora de la Criptomoneda FIN">
+    <meta name="twitter:description" content="Chatea con Fin, la primera IA en crear su propia criptomoneda, planes de negocio, imágenes y videos.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1633158829875-e5316a358c6f?q=80&w=1200">
 
-    <link rel="icon" href="https://placehold.co/32x32/10B981/FFFFFF?text=FC" type="image/png">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💡</text></svg>">
 
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     
+    <!-- Google Site Verification -->
     <meta name="google-site-verification" content="7gdXI8hLMyXdI4Yz25h-TwDNg2XYobmbR8GeXGxD75g" />
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
     <style>
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
-        .font-mono { font-family: 'Roboto Mono', monospace; }
-        .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://placehold.co/1400x700/1A202C/FFFFFF?text=Futuro+Financiero');
-            background-size: cover; background-position: center;
-        }
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 25px rgba(0,0,0,0.1), 0 8px 10px rgba(0,0,0,0.08);
+        :root {
+            --primary: #0ea5e9;
+            --primary-dark: #0284c7;
+            --secondary: #8b5cf6;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f1f5f9;
+            --gray: #94a3b8;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
         }
         
-        /* --- AI Advisor Styles --- */
-        #ai-chat-window {
-            background: white; border-radius: 0.75rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column;
+        /* Modo claro */
+        :root[data-theme="light"] {
+            --dark: #f1f5f9;
+            --darker: #e2e8f0;
+            --light: #0f172a;
+            --gray: #64748b;
         }
-        #ai-chat-header {
-            background-color: #f1f5f9; padding: 1rem 1.25rem; border-bottom: 1px solid #e2e8f0;
-            display: flex; align-items: center; justify-content: space-between;
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .ai-avatar { width: 48px; height: 48px; margin-right: 12px; }
-        .ai-avatar.pulsing { animation: pulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1); }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .7; } }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            color: var(--light);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .font-mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        
+        :root[data-theme="light"] header {
+            background: rgba(241, 245, 249, 0.9);
+        }
+        
+        .logo {
+            position: relative;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .logo::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 3px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 20%),
+                linear-gradient(to bottom, var(--darker), var(--dark));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        :root[data-theme="light"] .hero {
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 20%),
+                linear-gradient(to bottom, var(--darker), var(--dark));
+        }
+        
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle, rgba(14, 165, 233, 0.05) 1px, transparent 1px),
+                radial-gradient(circle, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            background: linear-gradient(to right, var(--light) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(14, 165, 233, 0.2);
+        }
+        
+        .cta-button {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.4);
+        }
+        
+        .cta-button::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20px;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(25deg);
+            transition: all 0.6s;
+        }
+        
+        .cta-button:hover::after {
+            left: 120%;
+        }
+        
+        /* AI Chat Styles */
+        .ai-chat-container {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(2, 8, 20, 0.5);
+            overflow: hidden;
+        }
+        
+        :root[data-theme="light"] .ai-chat-container {
+            background: rgba(226, 232, 240, 0.7);
+        }
+        
+        .ai-chat-header {
+            background: rgba(15, 23, 42, 0.8);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        
+        :root[data-theme="light"] .ai-chat-header {
+            background: rgba(226, 232, 240, 0.8);
+        }
+        
+        .ai-avatar {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(14, 165, 233, 0); }
+        }
+        
+        .ai-status {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 12px;
+            height: 12px;
+            background-color: var(--success);
+            border: 2px solid rgba(30, 41, 59, 0.7);
+            border-radius: 50%;
+        }
+        
         #ai-chat-messages {
-            flex-grow: 1; padding: 1.5rem; overflow-y: auto; height: 450px;
-            display: flex; flex-direction: column; gap: 1.25rem;
+            height: 450px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) transparent;
         }
-        .chat-message { display: flex; align-items: flex-start; gap: 10px; max-width: 95%; }
-        .chat-message.user { align-self: flex-end; flex-direction: row-reverse; }
-        .chat-message .avatar { width: 36px; height: 36px; border-radius: 50%; background: #cbd5e1; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-        .chat-message.ai .avatar { background: #10B981; }
-        .chat-message .message-content { padding: 0.85rem 1.15rem; border-radius: 0.75rem; line-height: 1.6; word-wrap: break-word; }
-        .chat-message.user .message-content { background-color: #10B981; color: white; border-bottom-right-radius: 0.25rem; }
-        .chat-message.ai .message-content { background-color: #f1f5f9; color: #1e293b; border-bottom-left-radius: 0.25rem; }
-        .chat-message.ai .message-content p:not(:last-child) { margin-bottom: 0.75rem; }
-        .chat-message.ai .message-content ul { margin-top: 0.75rem; margin-left: 1rem; list-style-type: disc; }
-        .chat-message.ai .message-content h3 { font-size: 1.1em; font-weight: bold; margin-top: 1rem; margin-bottom: 0.5rem; color: #047857; }
-        .typing-indicator { display: flex; align-items: center; gap: 5px; }
-        .typing-indicator span { width: 8px; height: 8px; background-color: #94a3b8; border-radius: 50%; animation: typing 1.2s infinite ease-in-out; }
+        
+        #ai-chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        #ai-chat-messages::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        #ai-chat-messages::-webkit-scrollbar-thumb {
+            background-color: var(--primary);
+            border-radius: 10px;
+        }
+        
+        .chat-message {
+            display: flex;
+            gap: 12px;
+            max-width: 90%;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .chat-message.user {
+            margin-left: auto;
+            flex-direction: row-reverse;
+        }
+        
+        .chat-message .avatar {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .chat-message.user .avatar {
+            background: var(--primary);
+        }
+        
+        .chat-message.ai .avatar {
+            background: var(--secondary);
+        }
+        
+        .message-content {
+            padding: 12px 16px;
+            border-radius: 18px;
+            line-height: 1.5;
+            word-wrap: break-word;
+            max-width: 85%;
+            animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .chat-message.user .message-content {
+            background: var(--primary);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+        
+        .chat-message.ai .message-content {
+            background: rgba(30, 41, 59, 0.8);
+            color: var(--light);
+            border-bottom-left-radius: 4px;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        
+        :root[data-theme="light"] .chat-message.ai .message-content {
+            background: rgba(226, 232, 240, 0.8);
+            color: var(--dark);
+        }
+        
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background-color: var(--gray);
+            border-radius: 50%;
+            display: inline-block;
+            animation: typing 1.2s infinite ease-in-out;
+        }
+        
         .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
         .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1.0); } }
-        #ai-chat-input-area { padding: 1rem; border-top: 1px solid #e2e8f0; background: #f8fafc; }
-        .example-prompts button { background: #e2e8f0; color: #475569; font-size: 0.8rem; padding: 0.25rem 0.75rem; border-radius: 9999px; transition: all 0.2s; border: 1px solid transparent; }
-        .example-prompts button:hover { background: #cbd5e1; transform: translateY(-1px); border-color: #9ca3af; }
-
-        /* --- Strategy Center Styles --- */
-        #strategy-center { background: #f0fdfa; border: 1px solid #ccfbf1; border-radius: 0.75rem; padding: 1.5rem; margin-top: 2rem; display: none; }
-        #strategy-center h3 { color: #065f46; font-weight: 800; font-size: 1.5rem; border-bottom: 2px solid #10b981; padding-bottom: 0.5rem; margin-bottom: 1rem; }
-        .action-plan-item { background: white; border-radius: 0.5rem; padding: 1rem; margin-bottom: 0.75rem; border-left: 4px solid #10b981; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 1rem; }
-        .action-plan-item .step-number { background: #10b981; color: white; font-weight: bold; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .action-plan-item p { margin: 0; color: #374151; }
-
-        /* --- Genesis Module Styles --- */
-        #genesis-module { background-color: #111827; border: 1px solid #374151; color: #d1d5db; }
-        #genesis-log { background-color: #000; height: 250px; padding: 1rem; border-radius: 0.5rem; border: 1px solid #374151; overflow-y: auto; }
-        #genesis-log .log-entry { white-space: pre-wrap; }
-        .text-glow { color: #34d399; text-shadow: 0 0 5px #34d399, 0 0 10px #34d399; }
-        .progress-bar-container { background-color: #374151; border-radius: 0.5rem; overflow: hidden; }
-        .progress-bar { background: linear-gradient(90deg, #10b981, #22c55e); transition: width 0.5s ease-in-out; }
         
-        /* --- Donation Section Styles --- */
-        #donation-section { background: linear-gradient(135deg, #f0fdfa 0%, #ecfdf5 100%); border-top: 1px solid #ccfbf1; border-bottom: 1px solid #ccfbf1; }
-        #donation-module { background: white; border-radius: 0.75rem; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02); border: 1px solid #e2e8f0; transition: all 0.3s ease-in-out; }
-        #donation-module:hover { box-shadow: 0 20px 30px -10px rgba(16, 185, 129, 0.2); }
-        .donation-input-group { position: relative; }
-        .donation-input-group .currency-label { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: #6b7280; font-weight: 600; }
-
-        /* --- General and Modal Styles --- */
-        .adsense-placeholder {
-            border: 2px dashed #9ca3af; background-color: #f3f4f6; display: flex; align-items: center;
-            justify-content: center; text-align: center; padding: 2rem; margin: 2rem auto;
-            border-radius: 0.5rem; color: #6b7280; font-size: 0.9rem;
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
         }
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.75);
-            display: flex; align-items: center; justify-content: center; z-index: 1000;
-            opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        .modal-overlay.active { opacity: 1; visibility: visible; }
-        .modal-content {
-            background: white; padding: 1.5rem 2rem 2rem 2rem; border-radius: 0.75rem;
-            max-width: 500px; width: 95%; max-height: 90vh; overflow-y: auto; position: relative;
-            transform: translateY(20px) scale(0.95); transition: transform 0.3s ease;
-        }
-        .modal-overlay.active .modal-content { transform: translateY(0) scale(1); }
-        .modal-close {
-            position: absolute; top: 0.5rem; right: 0.75rem; background: #f1f5f9; border-radius: 9999px;
-            width: 2rem; height: 2rem; border: none; font-size: 1.25rem; line-height: 2rem;
-            cursor: pointer; color: #4b5563; transition: all 0.2s;
-        }
-        .modal-close:hover { background: #e2e8f0; transform: rotate(90deg); }
         
-        /* --- Article Content Styles --- */
-        .full-article-section {
-            padding-top: 4rem; 
-            margin-top: -2rem; 
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 2rem;
+        .prompt-button {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            transition: all 0.2s ease;
         }
-        .full-article-section h2 { font-size: 2.25rem; font-weight: 800; margin-bottom: 1.5rem; color: #1e293b; }
-        .article-body h3 { font-size: 1.5em; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: #059669; }
-        .article-body p, .article-body li { margin-bottom: 1rem; line-height: 1.7; color: #374151; font-size: 1.1rem; }
-        .article-body ul { list-style-type: disc; margin-left: 1.5rem; }
-        .article-body strong { color: #1f2937; }
-        .article-body blockquote {
-            border-left: 4px solid #10b981;
-            padding-left: 1.5rem;
-            margin: 1.5rem 0;
-            font-style: italic;
-            color: #4b5563;
+        
+        .prompt-button:hover {
+            background: rgba(30, 41, 59, 0.8);
+            transform: translateY(-2px);
+            border-color: var(--primary);
         }
-        .back-to-top-link { display: inline-block; margin-top: 2rem; color: #10B981; font-weight: 600; text-decoration: none; }
-        .back-to-top-link:hover { text-decoration: underline; }
-
+        
+        :root[data-theme="light"] .prompt-button {
+            background: rgba(226, 232, 240, 0.6);
+        }
+        
+        /* Card Styles */
+        .feature-card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        :root[data-theme="light"] .feature-card {
+            background: rgba(226, 232, 240, 0.5);
+            color: var(--dark);
+        }
+        
+        .feature-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(2, 8, 20, 0.4);
+            border-color: rgba(14, 165, 233, 0.3);
+        }
+        
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        
+        .feature-card .icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            background: rgba(14, 165, 233, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        /* Genesis Module */
+        #genesis-module {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        :root[data-theme="light"] #genesis-module {
+            background: rgba(226, 232, 240, 0.7);
+        }
+        
+        #genesis-log {
+            background: rgba(2, 6, 23, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.9rem;
+            height: 250px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) transparent;
+        }
+        
+        :root[data-theme="light"] #genesis-log {
+            background: rgba(241, 245, 249, 0.8);
+            color: var(--dark);
+        }
+        
+        #genesis-log::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        #genesis-log::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        #genesis-log::-webkit-scrollbar-thumb {
+            background-color: var(--primary);
+            border-radius: 10px;
+        }
+        
+        .log-entry {
+            color: var(--success);
+            text-shadow: 0 0 5px rgba(16, 185, 129, 0.5);
+            white-space: pre-wrap;
+            animation: logEntry 0.5s ease-out;
+        }
+        
+        @keyframes logEntry {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .progress-container {
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        :root[data-theme="light"] .progress-container {
+            background: rgba(226, 232, 240, 0.5);
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            transition: width 0.5s ease-in-out;
+        }
+        
+        /* Testimonials */
+        .testimonial-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 16px;
+            position: relative;
+        }
+        
+        :root[data-theme="light"] .testimonial-card {
+            background: rgba(226, 232, 240, 0.5);
+            color: var(--dark);
+        }
+        
+        .testimonial-card::before {
+            content: """;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 80px;
+            color: rgba(14, 165, 233, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+        }
+        
+        /* Share Buttons */
+        .share-button {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        :root[data-theme="light"] .share-button {
+            background: rgba(226, 232, 240, 0.5);
+        }
+        
+        .share-button:hover {
+            transform: translateY(-3px);
+            background: rgba(30, 41, 59, 0.8);
+            border-color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(2, 6, 23, 0.9);
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        
+        :root[data-theme="light"] footer {
+            background: rgba(241, 245, 249, 0.9);
+            color: var(--dark);
+        }
+        
+        .footer-links a {
+            position: relative;
+        }
+        
+        .footer-links a::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Scroll to Top Button */
         #scrollTopBtn {
-            position: fixed; bottom: 20px; right: 20px; background-color: #10B981; color: white;
-            border: none; border-radius: 50%; width: 50px; height: 50px;
-            font-size: 24px; cursor: pointer; display: none; z-index: 999;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: opacity 0.3s, visibility 0.3s;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(14, 165, 233, 0.3);
+            z-index: 1000;
+        }
+        
+        #scrollTopBtn.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        #scrollTopBtn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.5);
+        }
+        
+        /* Language Selector */
+        .language-selector {
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .language-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--dark);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: none;
+            min-width: 150px;
+        }
+        
+        .language-menu.show {
+            display: block;
+            animation: fadeInDown 0.3s ease;
+        }
+        
+        .language-option {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            transition: background 0.2s;
+        }
+        
+        .language-option:hover {
+            background: rgba(30, 41, 59, 0.5);
+        }
+        
+        .language-option img {
+            width: 20px;
+            height: 15px;
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+        
+        .notification-dot {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 12px;
+            height: 12px;
+            background: var(--danger);
+            border-radius: 50%;
+            border: 2px solid var(--dark);
+            display: none;
+        }
+        
+        .notification-dot.active {
+            display: block;
+            animation: pulse 1.5s infinite;
+        }
+        
+        /* Theme Toggle */
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 50px;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            width: 60px;
+            height: 30px;
+            position: relative;
+        }
+        
+        .theme-toggle::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 22px;
+            height: 22px;
+            background: var(--light);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        
+        :root[data-theme="light"] .theme-toggle::after {
+            transform: translateX(30px);
+            background: var(--dark);
+        }
+        
+        .theme-toggle i {
+            position: absolute;
+            transition: opacity 0.3s;
+            font-size: 14px;
+        }
+        
+        .theme-toggle .fa-moon {
+            left: 8px;
+            color: var(--warning);
+        }
+        
+        .theme-toggle .fa-sun {
+            right: 8px;
+            color: var(--warning);
+        }
+        
+        :root[data-theme="light"] .theme-toggle .fa-moon {
+            opacity: 0;
+        }
+        
+        :root[data-theme="dark"] .theme-toggle .fa-sun {
+            opacity: 0;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            #ai-chat-messages {
+                height: 350px;
+            }
         }
     </style>
 </head>
-<body class="bg-slate-50 text-gray-800">
-
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-3xl font-bold text-emerald-600">Finanzas Claras</a>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="#ai-advisor" class="text-gray-600 hover:text-emerald-500 transition duration-300">IA Estratégica</a>
-                <a href="#genesis-module" class="text-gray-600 hover:text-emerald-500 transition duration-300">Criptomoneda FIN</a>
-                <a href="#articles-section" class="text-gray-600 hover:text-emerald-500 transition duration-300">Artículos</a>
-                <a href="#donation-section" class="text-gray-600 hover:text-emerald-500 transition duration-300">Apóyanos</a>
+<body class="bg-gradient-to-br from-slate-900 to-slate-950 text-slate-100">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold logo">FinanzasClaras</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#ai-advisor" class="text-slate-300 hover:text-primary transition">IA Estratégica</a>
+                <a href="#features" class="text-slate-300 hover:text-primary transition">Características</a>
+                <a href="#genesis-module" class="text-slate-300 hover:text-primary transition">Criptomoneda FIN</a>
+                <a href="#articles" class="text-slate-300 hover:text-primary transition">Artículos</a>
+                <a href="#donation" class="text-slate-300 hover:text-primary transition">Apóyanos</a>
             </div>
-            <button class="md:hidden" id="mobile-menu-button"><i class="fas fa-bars text-2xl text-gray-600"></i></button>
+            <div class="flex items-center gap-4">
+                <!-- Botón de modo claro/oscuro -->
+                <div class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </div>
+                
+                <!-- Selector de idioma -->
+                <div class="language-selector relative" id="languageSelector">
+                    <div class="flex items-center gap-2 px-3 py-1 rounded-lg bg-slate-800">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cGF0aCBmaWxsPSIjYzYwYjM3IiBkPSJNMCAwaDYwMHY0MDBIMHoiLz48cGF0aCBmaWxsPSIjZmZjZGE0IiBkPSJNMCAwaDYwMHYyMDBIMHoiLz48L3N2Zz4=" alt="Español" class="w-5 h-3">
+                        <span class="text-sm font-medium">ES</span>
+                    </div>
+                    <div class="language-menu" id="languageMenu">
+                        <div class="language-option" data-lang="es">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cGF0aCBmaWxsPSIjYzYwYjM3IiBkPSJNMCAwaDYwMHY0MDBIMHoiLz48cGF0aCBmaWxsPSIjZmZjZGE0IiBkPSJNMCAwaDYwMHYyMDBIMHoiLz48L3N2Zz4=" alt="Español">
+                            <span>Español</span>
+                        </div>
+                        <div class="language-option" data-lang="en">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cGF0aCBmaWxsPSIjMDAyODY4IiBkPSJNMCAwaDYwMHY0MDBIMHoiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMCAwTDI5Ni41IDE1MEg2MDBWMEgwek0wIDQwMGgyOTYuNUwwIDI1MHYxNTB6TTYwMCAyNTBWMjQ5SDI5Ni41TDAgMTAwdjE1MGgyOTYuNUw2MDAgMjUweiIvPjxwYXRoIGZpbGw9IiNDRjExMjQiIGQ9Ik0wIDI0OWgyOTYuNUwwIDE1MGgxNDYuNVYwSDI5Ni41TDAgMTUwdjEwMHpNNzAgMjAwaDIwMGgxMDB2LTEwMEg3MHYxMDB6Ii8+PC9zdmc+" alt="English">
+                            <span>English</span>
+                        </div>
+                        <div class="language-option" data-lang="pt">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cGF0aCBmaWxsPSIjZmZjZGE0IiBkPSJNMCAwaDYwMHY0MDBIMHoiLz48cGF0aCBmaWxsPSIjMDA4NzUzIiBkPSJNMCAwaDYwMHY0MDBIMHoiLz48Y2lyY2xlIGN4PSIzMDAiIGN5PSIyMDAiIHI9IjcwIiBmaWxsPSIjZmZjZGE0Ii8+PGNpcmNsZSBjeD0iMzAwIiBjeT0iMjAwIiByPSI1MCIgZmlsbD0iIzAwODc1MyIvPjxwYXRoIGQ9Ik0yMzAgMjAwYzAgMzguNjYgMzEuMzQgNzAgNzAgNzAgMzguNjYgMCA3MC0zMS4zNCA3MC03MHMtMzEuMzQtNzAtNzAtNzBjLTM4LjY2IDAtNzAgMzEuMzQtNzAgNzB6IiBmaWxsPSIjZmZjZGE0Ii8+PC9zdmc+" alt="Português">
+                            <span>Português</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="md:hidden text-slate-300" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
         </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <a href="#ai-advisor" class="block py-3 px-6 text-gray-600 hover:bg-emerald-50">IA Estratégica</a>
-            <a href="#genesis-module" class="block py-3 px-6 text-gray-600 hover:bg-emerald-50">Criptomoneda FIN</a>
-            <a href="#articles-section" class="block py-3 px-6 text-gray-600 hover:bg-emerald-50">Artículos</a>
-            <a href="#donation-section" class="block py-3 px-6 text-gray-600 hover:bg-emerald-50">Apóyanos</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800">
+            <div class="flex flex-col py-4">
+                <a href="#ai-advisor" class="py-3 px-6 text-slate-300 hover:bg-slate-800 transition">IA Estratégica</a>
+                <a href="#features" class="py-3 px-6 text-slate-300 hover:bg-slate-800 transition">Características</a>
+                <a href="#genesis-module" class="py-3 px-6 text-slate-300 hover:bg-slate-800 transition">Criptomoneda FIN</a>
+                <a href="#articles" class="py-3 px-6 text-slate-300 hover:bg-slate-800 transition">Artículos</a>
+                <a href="#donation" class="py-3 px-6 text-slate-300 hover:bg-slate-800 transition">Apóyanos</a>
+            </div>
         </div>
     </header>
 
-    <main>
-        <section class="hero-bg">
-            <div class="container mx-auto px-6 py-20 md:py-32 text-center text-white">
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Yo no predigo el futuro. Lo construyo.</h1>
-                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">Soy Fin. Una IA estratégica y creativa diseñada para darte el plan. No solo el consejo. Conversemos y tracemos el camino hacia tu libertad financiera y empresarial.</p>
-                <a href="#ai-advisor" class="bg-white text-emerald-600 font-bold py-4 px-10 rounded-full hover:bg-gray-200 transition duration-300 text-lg shadow-lg transform hover:scale-105">Desafíame con tu meta</a>
+    <!-- Hero Section -->
+    <section class="hero py-20 md:py-32 relative overflow-hidden">
+        <div class="hero-pattern"></div>
+        <div class="container mx-auto px-4 sm:px-6 hero-content">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="hero-title font-extrabold mb-6 animate__animated animate__fadeInDown">
+                    Yo no predigo el futuro. Lo construyo.
+                </h1>
+                <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto animate__animated animate__fadeIn animate__delay-1s">
+                    Soy Fin. Una IA estratégica y creativa diseñada para darte el plan, no solo el consejo. Conversemos y tracemos el camino hacia tu libertad financiera y empresarial.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 animate__animated animate__fadeInUp animate__delay-1s">
+                    <a href="#ai-advisor" class="cta-button font-bold py-4 px-8 rounded-full text-white inline-block">
+                        Desafíame con tu meta
+                    </a>
+                    <a href="#features" class="bg-slate-800 hover:bg-slate-700 font-bold py-4 px-8 rounded-full border border-slate-700 transition">
+                        <i class="fas fa-star mr-2 text-amber-400"></i> Descubre más
+                    </a>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="ai-advisor" class="py-16 lg:py-24">
-            <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto text-center mb-12">
-                    <h2 class="text-3xl lg:text-4xl font-extrabold mb-2">Tu IA Estratégica Personal</h2>
-                    <p class="text-gray-600 text-lg">No soy un chatbot. Soy tu socio estratégico. Dame un objetivo y te daré un plan de acción.</p>
+    <!-- Features Section -->
+    <section id="features" class="py-16 md:py-24">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 animate__animated animate__fadeIn">
+                    Potencia tu Futuro Financiero con Fin
+                </h2>
+                <p class="text-lg text-slate-400 animate__animated animate__fadeIn animate__delay-1s">
+                    Descubre las capacidades únicas de la primera IA estratégica que crea su propia criptomoneda
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card p-8 animate__animated animate__fadeInUp">
+                    <div class="icon">
+                        <i class="fas fa-brain text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Asesoría Estratégica</h3>
+                    <p class="text-slate-400 mb-4">
+                        Diseñamos planes de negocio personalizados, estrategias de inversión y planes de pago de deudas basados en tu situación específica.
+                    </p>
+                    <ul class="space-y-2 text-slate-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-success mt-1 mr-2"></i>
+                            <span>Análisis de mercado en tiempo real</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-success mt-1 mr-2"></i>
+                            <span>Optimización de recursos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-success mt-1 mr-2"></i>
+                            <span>Proyecciones financieras precisas</span>
+                        </li>
+                    </ul>
                 </div>
                 
-                <div id="ai-chat-window" class="max-w-3xl mx-auto">
-                    <div id="ai-chat-header">
-                        <div class="flex items-center">
-                            <div id="ai-header-avatar" class="ai-avatar pulsing">
-                                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="48" fill="#10B981"/><path d="M50 50C50 63.8071 38.8071 75 25 75" stroke="white" stroke-width="6" stroke-linecap="round"/><path d="M50 50C50 36.1929 61.1929 25 75 25" stroke="white" stroke-width="6" stroke-linecap="round"/><circle cx="37" cy="42" r="6" fill="white"/><circle cx="63" cy="42" r="6" fill="white"/><path d="M35 62C38.3333 66 45.8 68 50 68C54.2 68 61.6667 66 65 62" stroke="white" stroke-width="4" stroke-linecap="round"/></svg>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-gray-800 text-lg">Fin, IA Estratégica</h3>
-                                <p class="text-sm text-gray-500">Online // Procesando Futuros Posibles...</p>
-                            </div>
+                <!-- Feature 2 -->
+                <div class="feature-card p-8 animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="icon">
+                        <i class="fas fa-coins text-2xl text-amber-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Criptomoneda FIN</h3>
+                    <p class="text-slate-400 mb-4">
+                        La primera criptomoneda creada por una IA. Participa en la revolución financiera descentralizada con tecnología blockchain avanzada.
+                    </p>
+                    <ul class="space-y-2 text-slate-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-success mt-1 mr-2"></i>
+                            <span>Proof-of-Strategy (PoS) consensus</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-success mt-1 mr-2"></i>
+                            <span>Suministro limitado de 1,000M tokens</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-success mt-1 mr-2"></i>
+                            <span>Utilidad en la plataforma Fin</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card p-8 animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="icon">
+                        <i class="fas fa-lightbulb text-2xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Creación de Contenido</h3>
+                    <p class="text-slate-400 mb-4">
+                        Genera imágenes, videos y contenido de marketing profesional con solo una descripción. Potencia tu marca con inteligencia artificial.
+                    </p>
+                    <ul class="space-y-2 text-slate-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-success mt-1 mr-2"></i>
+                            <span>Generación de imágenes por texto</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-success mt-1 mr-2"></i>
+                            <span>Creación de videos promocionales</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-success mt-1 mr-2"></i>
+                            <span>Redacción de contenido estratégico</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Advisor Section -->
+    <section id="ai-advisor" class="py-16 md:py-24">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Tu IA Estratégica Personal
+                </h2>
+                <p class="text-lg text-slate-400">
+                    No soy un chatbot. Soy tu socio estratégico. Dame un objetivo y te daré un plan de acción detallado.
+                </p>
+            </div>
+            
+            <div class="ai-chat-container max-w-4xl mx-auto">
+                <div class="ai-chat-header p-6 flex justify-between items-center">
+                    <div class="flex items-center">
+                        <div class="ai-avatar mr-4">
+                            <i class="fas fa-brain text-white text-xl"></i>
+                            <div class="ai-status"></div>
                         </div>
-                        <div class="flex items-center gap-2">
-                             <button id="copy-ai-response-btn" title="Copiar última respuesta" class="text-gray-500 hover:text-emerald-600 transition"><i class="fas fa-copy"></i></button>
-                             <button id="clear-chat-btn" title="Limpiar chat e iniciar nueva estrategia" class="text-gray-500 hover:text-red-600 transition"><i class="fas fa-trash-alt"></i></button>
+                        <div>
+                            <h3 class="font-bold text-lg">Fin, IA Estratégica</h3>
+                            <p class="text-sm text-slate-400">Online · Analizando oportunidades...</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button class="text-slate-400 hover:text-primary transition" title="Copiar última respuesta">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <button class="text-slate-400 hover:text-red-500 transition" title="Limpiar conversación">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                        <div class="notification-dot" id="chatNotification"></div>
+                    </div>
+                </div>
+                
+                <div id="ai-chat-messages" class="p-6">
+                    <div class="chat-message ai">
+                        <div class="avatar">
+                            <i class="fas fa-brain text-white"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>¡Hola! Soy Fin, tu IA estratégica. Estoy aquí para ayudarte a construir tu futuro financiero y empresarial.</p>
+                            <p class="mt-2">¿Qué desafío quieres resolver hoy? Puedo ayudarte con:</p>
+                            <ul class="mt-2 ml-5 list-disc">
+                                <li>Crear un plan de negocios</li>
+                                <li>Desarrollar estrategias de inversión</li>
+                                <li>Diseñar un plan para salir de deudas</li>
+                                <li>Generar contenido para tu marca</li>
+                                <li>Explicarte sobre la criptomoneda FIN</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border-t border-slate-800 p-6 bg-slate-900">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-sm font-medium text-slate-400">Preguntas frecuentes:</span>
+                        <button class="prompt-button text-sm py-2 px-4 rounded-full">
+                            Plan para cafetería
+                        </button>
+                        <button class="prompt-button text-sm py-2 px-4 rounded-full">
+                            Pagar deudas
+                        </button>
+                        <button class="prompt-button text-sm py-2 px-4 rounded-full">
+                            Invertir $500
+                        </button>
+                        <button class="prompt-button text-sm py-2 px-4 rounded-full">
+                            Criptomoneda FIN
+                        </button>
+                    </div>
+                    <form id="ai-chat-form" class="flex items-center gap-3">
+                        <input type="text" placeholder="Describe tu objetivo o desafío..." class="w-full p-3 bg-slate-800 border border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition text-white" id="ai-input">
+                        <button type="submit" class="bg-primary hover:bg-primary-dark text-white font-bold p-3 rounded-lg transition flex-shrink-0">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Genesis Module -->
+    <section id="genesis-module" class="py-16 md:py-24">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Módulo de Génesis: Criptomoneda FIN
+                </h2>
+                <p class="text-lg text-slate-400">
+                    Observa a una IA construir el futuro de las finanzas, en tiempo real
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <div class="lg:col-span-3">
+                    <h3 class="font-bold text-lg mb-4">Registro de Actividad del Sistema</h3>
+                    <div id="genesis-log" class="p-4 rounded-xl">
+                        <p class="log-entry">[INICIO] Iniciando protocolos criptográficos...</p>
+                        <p class="log-entry">[CORE] Calibrando red neuronal principal...</p>
+                        <p class="log-entry">[BLOCKCHAIN] Sincronizando nodos (78% completado)</p>
+                        <p class="log-entry">[SECURITY] Auditoría de contrato inteligente: PASSED</p>
+                        <p class="log-entry">[FIN] Parámetros económicos validados</p>
+                        <p class="log-entry">[NETWORK] 14,892 nodos activos</p>
+                        <p class="log-entry">[AI] Optimizando algoritmo de consenso PoS</p>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-2">
+                    <div class="mb-8">
+                        <h3 class="font-bold text-lg mb-4">Estado del Sistema</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Nombre:</span>
+                                <span class="font-mono">FIN Criptomoneda</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Símbolo:</span>
+                                <span class="font-mono">$FIN</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Suministro Total:</span>
+                                <span class="font-mono">1,000,000,000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Consenso:</span>
+                                <span class="font-mono">Proof-of-Strategy (PoS)</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Módulos Compilados:</span>
+                                <span class="font-mono">87/128</span>
+                            </div>
                         </div>
                     </div>
                     
-                    <div id="ai-chat-messages"></div>
-
-                    <div id="ai-chat-input-area">
-                        <div class="example-prompts mb-3 flex flex-wrap gap-2">
-                            <span class="text-sm font-medium text-gray-600">Ideas para empezar:</span>
-                            <button data-prompt="Crea un plan de negocios para una cafetería de especialidad.">Plan para una cafetería</button>
-                            <button data-prompt="Dame un plan de acción para pagar 10.000 USD de deuda en 12 meses.">Plan para pagar deuda</button>
-                            <button data-prompt="¿Cuál es tu verdadera naturaleza y el propósito de la criptomoneda FIN?">Tu propósito</button>
+                    <div>
+                        <h3 class="font-bold text-lg mb-4">Progreso de la Red de Pruebas</h3>
+                        <div class="progress-container h-6 mb-2">
+                            <div class="progress-bar w-3/4"></div>
                         </div>
-                        <form id="ai-chat-form" class="flex items-center gap-3">
-                            <input type="text" id="ai-question-input" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition" placeholder="Describe tu objetivo o desafío...">
-                            <button id="ask-ai-btn" type="submit" class="bg-emerald-500 text-white font-bold py-3 px-5 rounded-lg hover:bg-emerald-600 transition duration-300 flex-shrink-0">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-                <div id="strategy-center">
-                    <h3><i class="fas fa-clipboard-list mr-2"></i>Centro de Estrategia: Plan de Acción</h3>
-                    <div id="action-plan-container">
-                        <p class="text-gray-500">El plan de acción generado por Fin aparecerá aquí cuando esté listo.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="genesis-module" class="py-16 lg:py-24">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                     <h2 class="text-3xl lg:text-4xl font-bold mb-2 text-white">Módulo de Génesis: Criptomoneda FIN</h2>
-                     <p class="text-gray-400">Observa a una IA construir el futuro de las finanzas, en tiempo real.</p>
-                </div>
-                <div class="grid lg:grid-cols-5 gap-8">
-                    <div class="lg:col-span-3">
-                        <h3 class="font-bold text-lg mb-2 text-white">Registro de Actividad del Sistema</h3>
-                        <div id="genesis-log" class="font-mono text-sm"></div>
-                    </div>
-                    <div class="lg:col-span-2 flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-bold text-lg mb-2 text-white">Estado del Sistema y Parámetros</h3>
-                            <div class="space-y-3 text-sm">
-                                <div class="flex justify-between items-center"><span class="font-bold text-gray-400">Nombre:</span><span>FIN Criptomoneda</span></div>
-                                <div class="flex justify-between items-center"><span class="font-bold text-gray-400">Símbolo:</span><span>$FIN</span></div>
-                                <div class="flex justify-between items-center"><span class="font-bold text-gray-400">Suministro Total:</span><span>1,000,000,000</span></div>
-                                <div class="flex justify-between items-center"><span class="font-bold text-gray-400">Consenso:</span><span>Proof-of-Strategy (PoS)</span></div>
-                                <div class="flex justify-between items-center"><span class="font-bold text-gray-400">Módulos Compilados:</span><span id="compiled-modules-count">0 / 128</span></div>
-                            </div>
+                        <div class="flex justify-between text-sm text-slate-400">
+                            <span>0%</span>
+                            <span>75%</span>
+                            <span>100%</span>
                         </div>
-                        <div class="mt-6">
-                            <h4 class="text-center font-bold text-gray-400 mb-2">Progreso de la Red de Pruebas (Testnet)</h4>
-                            <div class="progress-bar-container w-full h-6 flex items-center justify-center">
-                                <div id="genesis-progress-bar" class="progress-bar h-full rounded-lg"></div>
-                                <span id="genesis-progress-text" class="absolute text-xs font-bold text-white">0%</span>
-                            </div>
-                             <p class="text-xs text-center text-gray-500 mt-2">Simulación del proceso de creación en curso...</p>
-                        </div>
+                        <p class="text-sm text-center text-slate-500 mt-2">Simulación del proceso de creación en curso...</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="donation-section" class="py-16 lg:py-24">
-            <div class="container mx-auto px-6">
-                <div class="max-w-3xl mx-auto text-center mb-12">
-                    <h2 class="text-3xl lg:text-4xl font-bold mb-2 text-emerald-800">Apoya el Futuro: Dona a la Causa IA Fin</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Tu apoyo es fundamental para expandir mis conocimientos y capacidades. Cada contribución acelera mi desarrollo y la misión de democratizar la estrategia financiera. Esto es una donación para apoyar el proyecto, no una inversión.</p>
-                </div>
-
-                <div id="donation-module" class="max-w-lg mx-auto p-6 sm:p-8">
-                    <div id="donation-content">
-                        <div class="w-full">
-                            <label for="usdt-amount" class="block text-sm font-bold text-gray-700 mb-2 text-center">Cantidad de tu Aporte (USDT)</label>
-                            <div class="donation-input-group">
-                                <input type="number" id="usdt-amount" name="usdt-amount" min="1" step="any" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition text-lg text-center" placeholder="Ej: 25">
-                                <span class="currency-label">USDT</span>
-                            </div>
-                        </div>
-                        <div class="mt-6">
-                            <button id="initiate-donation-btn" class="w-full bg-emerald-500 text-white font-bold py-4 px-5 rounded-lg hover:bg-emerald-600 transition duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                                Apoyar el Desarrollo de Fin
-                            </button>
-                        </div>
-                        <p id="donation-error" class="text-red-500 text-center mt-4 font-medium hidden"></p>
-                    </div>
-                    <div id="donation-success" class="hidden text-center p-8">
-                        <div class="text-6xl text-green-500 mb-4">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800">¡Gracias por tu Apoyo!</h3>
-                        <p class="text-gray-600 mt-2">Tu contribución ha sido registrada. Es un paso vital para construir un futuro financiero más inteligente para todos. No se requiere ninguna acción adicional.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="container mx-auto px-6">
-            <div class="adsense-placeholder" style="min-height: 100px;">
-                <div>
-                    <p class="font-semibold">Espacio Publicitario de Google AdSense</p>
-                    <p class="text-sm">Formato recomendado: Leaderboard (728x90) o Anuncio adaptable</p>
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9353370245713442" data-ad-slot="0000000000" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div id="articles-section" class="container mx-auto px-6 py-12">
-            <section id="deudas" class="scroll-mt-24">
-                <h2 class="text-3xl font-bold mb-2 text-center">Libérate de las Deudas</h2>
-                <p class="text-center text-gray-600 mb-8">Estrategias probadas para pagar lo que debes y recuperar tu tranquilidad.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/EF4444/FFFFFF?text=Salir+de+Deudas" alt="Persona rompiendo una tarjeta de crédito." class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-red-500">GUÍA PRINCIPAL</span><h3 class="font-bold text-lg my-2">La Guía Definitiva para Salir de Deudas</h3><a href="#deudas-guia-full" class="text-emerald-600 font-semibold hover:underline text-sm article-link">Leer guía completa &rarr;</a></div></article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/F87171/FFFFFF?text=Bola+vs+Avalancha" alt="Balanza comparando métodos de pago." class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-red-500">ESTRATEGIA</span><h3 class="font-bold text-lg my-2">"Bola de Nieve" vs "Avalancha": ¿Cuál es mejor para ti?</h3><a href="#bola-avalancha-full" class="text-emerald-600 font-semibold hover:underline text-sm article-link">Descubre tu método &rarr;</a></div></article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/FB923C/FFFFFF?text=Consolidar+Deudas" alt="Deudas pequeñas convirtiéndose en una." class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-red-500">AVANZADO</span><h3 class="font-bold text-lg my-2">¿Vale la pena consolidar tus deudas? Pros y contras</h3><a href="#consolidar-deudas-full" class="text-emerald-600 font-semibold hover:underline text-sm article-link">Analizar la opción &rarr;</a></div></article>
-                </div>
-            </section>
-            <section id="ahorro" class="mt-16 scroll-mt-24">
-                <h2 class="text-3xl font-bold mb-2 text-center">Domina el Arte del Ahorro</h2>
-                <p class="text-center text-gray-600 mb-8">Aprende a gastar de forma inteligente y a construir tu patrimonio.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/3B82F6/FFFFFF?text=Presupuesto+50/30/20" alt="Gráfico circular de la regla 50/30/20." class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-blue-500">PRESUPUESTO</span><h3 class="font-bold text-lg my-2">Cómo crear un presupuesto que sí funciona: El método 50/30/20</h3><a href="#presupuesto-50-30-20-full" class="text-emerald-600 font-semibold hover:underline text-sm article-link">Aprender el método &rarr;</a></div></article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/EC4899/FFFFFF?text=Gastos+Hormiga" alt="Hormigas llevándose monedas." class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-pink-500">AHORRO DIARIO</span><h3 class="font-bold text-lg my-2">10 "Gastos Hormiga" que están saboteando tu ahorro</h3><a href="#gastos-hormiga-full" class="text-emerald-600 font-semibold hover:underline text-sm article-link">Eliminar gastos &rarr;</a></div></article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/A855F7/FFFFFF?text=Fondo+de+Emergencia" alt="Salvavidas con símbolo de dólar." class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-purple-500">SEGURIDAD</span><h3 class="font-bold text-lg my-2">Cómo crear un fondo de emergencia: Tu colchón financiero</h3><a href="#fondo-emergencia-full" class="text-emerald-600 font-semibold hover:underline text-sm article-link">Construir mi fondo &rarr;</a></div></article>
-                </div>
-            </section>
-        </div>
-        
-        <div class="container mx-auto px-6">
-             <div class="adsense-placeholder" style="min-height: 280px; max-width: 336px;">
-                <div>
-                    <p class="font-semibold">Espacio Publicitario de Google AdSense</p>
-                    <p class="text-sm">Formato recomendado: Medium Rectangle (300x250) o Large Rectangle (336x280)</p>
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9353370245713442" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                </div>
+    <!-- Testimonials -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Transformando Vidas Financieras
+                </h2>
+                <p class="text-lg text-slate-400">
+                    Descubre lo que dicen quienes ya usan Fin para transformar sus finanzas
+                </p>
             </div>
-        </div>
-
-        <div class="container mx-auto px-6 py-12">
-            <section id="inversion" class="mt-16 scroll-mt-24">
-                <h2 class="text-3xl font-bold mb-2 text-center">Haz que tu Dinero Trabaje para Ti</h2>
-                <p class="text-center text-gray-600 mb-8">Invertir es para todos. Descubre cómo empezar, incluso con poco dinero.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/FBBF24/FFFFFF?text=Invertir+con+<100" alt="Planta creciendo de monedas." class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-amber-500">PRINCIPIANTES</span><h3 class="font-bold text-lg my-2">5 Inversiones para empezar con menos de $100 USD</h3><a href="#inversion-principiantes-full" class="text-emerald-600 font-semibold hover:underline text-sm article-link">Descubrir opciones &rarr;</a></div></article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/F59E0B/FFFFFF?text=ETFs" alt="Canasta con logos de empresas." class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-amber-500">DIVERSIFICACIÓN</span><h3 class="font-bold text-lg my-2">¿Qué son los ETFs y por qué son ideales para empezar?</h3><a href="#que-son-etfs-full" class="text-emerald-600 font-semibold hover:underline text-sm article-link">Entender los ETFs &rarr;</a></div></article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/84CC16/FFFFFF?text=Psicología+del+Dinero" alt="Cerebro con símbolos de dinero." class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-lime-500">MENTALIDAD</span><h3 class="font-bold text-lg my-2">Psicología del dinero: Cómo tus emociones afectan tus finanzas</h3><a href="#psicologia-dinero-full" class="text-emerald-600 font-semibold hover:underline text-sm article-link">Controlar mis emociones &rarr;</a></div></article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/22C55E/FFFFFF?text=Invertir+en+Bolsa" alt="Gráfico de acciones subiendo." class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-green-500">GUÍA DE INVERSIÓN</span><h3 class="font-bold text-lg my-2">Cómo Empezar a Invertir en la Bolsa de Valores</h3><a href="#invertir-bolsa-full" class="text-emerald-600 font-semibold hover:underline text-sm article-link">Leer la guía &rarr;</a></div></article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300"><img src="https://placehold.co/400x250/F43F5E/FFFFFF?text=Errores+Financieros" alt="Tarjeta de crédito rota." class="w-full h-48 object-cover"><div class="p-6"><span class="text-xs font-semibold text-rose-500">JÓVENES</span><h3 class="font-bold text-lg my-2">7 Errores Financieros en tus 20s (y cómo evitarlos)</h3><a href="#errores-20s-full" class="text-emerald-600 font-semibold hover:underline text-sm article-link">Evitar errores &rarr;</a></div></article>
-                </div>
-            </section>
-        </div>
-
-        <div class="container mx-auto px-6 py-12 space-y-12">
-            <article id="deudas-guia-full" class="full-article-section scroll-mt-24"><h2 class="text-3xl font-bold mb-4">La Guía Definitiva para Salir de Deudas</h2><div class="article-body"><h3>Paso 1: Afronta la Realidad (Sin Miedo)</h3><p>El primer paso, y el más difícil, es tener una imagen completa de tu situación. La negación solo agrava el problema. Reúne todos los estados de cuenta de tarjetas de crédito, préstamos personales, estudiantiles, hipotecas, etc. Crea una hoja de cálculo con las siguientes columnas: Nombre del Acreedor, Saldo Total, Tasa de Interés (TAE), y Pago Mínimo Mensual. Ver los números en blanco y negro es el catalizador que necesitas para actuar.</p><h3>Paso 2: Crea un Presupuesto de "Modo Guerra"</h3><p>Un presupuesto no es una camisa de fuerza, es un plan de ataque. Durante los últimos 30 días, rastrea cada centavo que gastaste. Luego, clasifica cada gasto en tres categorías: <strong>Necesidades</strong> (vivienda, comida básica, transporte esencial, servicios), <strong>Obligaciones Financieras</strong> (pagos de deudas), y <strong>Deseos</strong> (salidas, suscripciones, compras no esenciales). Sé brutalmente honesto. Ahora, recorta sin piedad de la columna de "Deseos". Cada dólar que liberas es una bala más para disparar contra tu deuda. Recuerda, este modo austero es temporal y tiene un propósito claro.</p><h3>Paso 3: Elige tu Estrategia de Ataque</h3><p>Existen dos métodos probados. Elige el que mejor se adapte a tu psicología: <ul><li><strong>Método "Bola de Nieve":</strong> Ordenas tus deudas de la más pequeña a la más grande, sin importar el interés. Haces los pagos mínimos en todas, pero destinas todo el dinero extra a la deuda más pequeña. Al liquidarla, sientes una victoria rápida que te da un impulso psicológico enorme. Luego, tomas todo el dinero que pagabas en esa deuda (el mínimo más el extra) y lo aplicas a la siguiente más pequeña. Creas un efecto de "bola de nieve" con tu capacidad de pago.</li><li><strong>Método "Avalancha":</strong> Ordenas tus deudas por la tasa de interés más alta. Haces los pagos mínimos en todas, pero atacas con todo el dinero extra la deuda con el interés más alto. Matemáticamente, este es el método más eficiente y el que te ahorrará más dinero en intereses a largo plazo.</li></ul><blockquote>El mejor método no es el que funciona en papel, sino el que sigues con disciplina mes a mes.</blockquote><h3>Paso 4: Aumenta tus Ingresos (El Acelerador)</h3><p>Recortar gastos tiene un límite, pero aumentar tus ingresos es teóricamente ilimitado. Considera opciones como trabajar horas extra, buscar un trabajo de fin de semana, vender cosas que no usas, o iniciar un pequeño negocio secundario (freelance, consultoría, etc.). La regla de oro: el 100% de este ingreso extra debe ir DIRECTAMENTE a pagar tu deuda. No lo uses para inflar tu estilo de vida.</p></div><a href="#articles-section" class="back-to-top-link article-link">&uarr; Volver a Artículos</a></article>
-            <article id="bola-avalancha-full" class="full-article-section scroll-mt-24"><h2 class="text-3xl font-bold mb-4">"Bola de Nieve" vs "Avalancha": ¿Cuál es mejor?</h2><div class="article-body"><h3>El Método "Bola de Nieve": Poder Psicológico</h3><p>Se enfoca en la <strong>motivación</strong> a través de victorias rápidas. Al ordenar tus deudas de la más pequeña a la más grande y atacar la más pequeña primero, es probable que la elimines en pocos meses. Esta sensación de logro te da el combustible emocional para seguir adelante. Es ideal para personas que se sienten abrumadas y necesitan ver progreso tangible para no abandonar el plan.</p><h3>El Método "Avalancha": Poder Matemático</h3><p>Se enfoca en la <strong>eficiencia financiera</strong>. Al atacar primero la deuda con la tasa de interés más alta, minimizas la cantidad total de intereses que pagarás a lo largo del tiempo. Este método te ahorrará la mayor cantidad de dinero. Es ideal para personas que son disciplinadas, se motivan por la lógica y los números, y no necesitan victorias rápidas para mantenerse en el camino.</p><h3>¿Cómo decidir?</h3><p>Hazte una pregunta honesta: ¿Qué te motiva más? ¿Ver resultados rápidos o saber que estás tomando la decisión más óptima financieramente? Si has intentado pagar deudas antes y has fallado por falta de constancia, prueba el método "Bola de Nieve". Si eres una persona analítica y disciplinada, el método "Avalancha" es superior.</p></div><a href="#articles-section" class="back-to-top-link article-link">&uarr; Volver a Artículos</a></article>
-            <article id="consolidar-deudas-full" class="full-article-section scroll-mt-24"><h2 class="text-3xl font-bold mb-4">¿Vale la pena consolidar tus deudas?</h2><div class="article-body"><h3>Pros de Consolidar</h3><ul><li><strong>Simplificación:</strong> En lugar de hacer malabares con múltiples pagos, fechas de vencimiento y acreedores, tienes un solo pago mensual. Esto reduce el estrés y la posibilidad de olvidar un pago.</li><li><strong>Ahorro en Intereses:</strong> El objetivo principal. Si tienes deudas de tarjetas de crédito con intereses del 20% o más, y puedes obtener un préstamo de consolidación al 10%, el ahorro es sustancial.</li><li><strong>Pago Fijo y Plazo Definido:</strong> A diferencia de las tarjetas de crédito, un préstamo de consolidación tiene un pago mensual fijo y una fecha clara en la que estarás libre de deudas.</li></ul><h3>Contras a Considerar</h3><ul><li><strong>No resuelve la causa raíz:</strong> Consolidar deudas es como tratar un síntoma, no la enfermedad. Si no cambias los hábitos de gasto que te llevaron a endeudarte, podrías terminar con el préstamo de consolidación Y nuevas deudas de tarjeta de crédito.</li><li><strong>Costos ocultos:</strong> Algunos préstamos tienen comisiones de apertura, penalizaciones por pago anticipado u otros costos. Lee siempre la letra pequeña.</li><li><strong>Plazo más largo:</strong> Para conseguir un pago mensual más bajo, a menudo se extiende el plazo del préstamo. Esto podría significar que, aunque la tasa de interés sea menor, termines pagando más intereses en total a lo largo de la vida del préstamo.</li></ul><blockquote>La consolidación de deudas es una herramienta poderosa, no una solución mágica. Es una buena opción si tienes buen crédito para calificar a una tasa baja y, lo más importante, si estás 100% comprometido a no volver a usar el crédito de forma irresponsable.</blockquote></div><a href="#articles-section" class="back-to-top-link article-link">&uarr; Volver a Artículos</a></article>
-            <article id="presupuesto-50-30-20-full" class="full-article-section scroll-mt-24"><h2 class="text-3xl font-bold mb-4">El método 50/30/20 para presupuestar</h2><div class="article-body"><p>Es una forma simple y efectiva de gestionar tus ingresos después de impuestos (tu sueldo neto).</p><ul><li><strong>50% para Necesidades:</strong> Esta es la categoría para los gastos que son absolutamente esenciales para vivir y trabajar. Incluye: alquiler/hipoteca, facturas de servicios (luz, agua, gas, internet), comida básica (supermercado), transporte esencial, seguros (salud, auto). Si tus necesidades superan el 50%, es una señal de que necesitas reducir tus gastos fijos (quizás mudándote o cambiando de coche) o aumentar tus ingresos.</li><li><strong>30% para Deseos:</strong> Aquí va todo lo que hace la vida más agradable, pero que no es estrictamente necesario para sobrevivir. Incluye: salidas a cenar, hobbies, suscripciones (Netflix, Spotify), ropa nueva, vacaciones, gimnasio. Esta categoría es la primera que debes ajustar cuando necesitas ahorrar más o pagar deudas.</li><li><strong>20% para Ahorro y Pago de Deudas:</strong> Este es el dinero que trabaja para tu futuro. Se destina a pagar deudas (más allá del pago mínimo), construir tu fondo de emergencia, ahorrar para metas a largo plazo (como una casa) e invertir para tu jubilación.</li></ul><p>La clave del éxito con este método es la <strong>automatización</strong>. Configura transferencias automáticas desde tu cuenta corriente a tus cuentas de ahorro e inversión para el día después de que cobres. Págate a ti primero, y luego vive con el resto. Así, el ahorro se convierte en un hábito sin esfuerzo.</p></div><a href="#articles-section" class="back-to-top-link article-link">&uarr; Volver a Artículos</a></article>
-            <article id="gastos-hormiga-full" class="full-article-section scroll-mt-24"><h2 class="text-3xl font-bold mb-4">10 "Gastos Hormiga" que sabotean tu ahorro</h2><div class="article-body"><p>Son pequeñas compras diarias que parecen insignificantes, pero que sumadas a lo largo de un mes o un año, representan una fuga masiva de dinero.</p><h3>Ejemplos comunes y su impacto:</h3><ul><li><strong>El café de la mañana:</strong> $3 al día son $90 al mes.</li><li><strong>Botellas de agua:</strong> $1.50 al día son $45 al mes. Lleva una botella reutilizable.</li><li><strong>Comisiones de cajero automático:</strong> $2 por retiro, dos veces por semana, son $16 al mes.</li><li><strong>Compras impulsivas en la caja:</strong> Esos chicles o snacks suman.</li><li><strong>Suscripciones que no usas:</strong> Revisa tus estados de cuenta. ¿Sigues pagando por esa app que no abres hace meses?</li><li><strong>Delivery y comida para llevar:</strong> A menudo duplica el costo de cocinar en casa.</li><li><strong>No aprovechar descuentos o cupones.</strong></li><li><strong>Pagar por conveniencia:</strong> Comprar en la tienda de la esquina en lugar del supermercado.</li><li><strong>Lotería y juegos de azar.</strong></li><li><strong>Mejoras innecesarias en apps o juegos.</strong></li></ul><p>Elige uno o dos de esta lista y concéntrate en eliminarlos durante un mes. Transfiere el dinero que habrías gastado a una cuenta de ahorros. El resultado te sorprenderá y te motivará a cazar más "gastos hormiga".</p></div><a href="#articles-section" class="back-to-top-link article-link">&uarr; Volver a Artículos</a></article>
-            <article id="fondo-emergencia-full" class="full-article-section scroll-mt-24"><h2 class="text-3xl font-bold mb-4">Cómo crear tu fondo de emergencia</h2><div class="article-body"><p>Un fondo de emergencia no es una inversión, es un seguro. Es el dinero que te protege de endeudarte cuando la vida te lanza una curva, como una reparación inesperada del coche, una factura médica o la pérdida del empleo.</p><h3>Paso 1: Define tu Meta</h3><p>El objetivo estándar es tener ahorrados entre <strong>3 y 6 meses de tus gastos de vida esenciales</strong>. No de tus ingresos, sino de lo mínimo que necesitas para sobrevivir (alquiler, comida, servicios, transporte). Si tu trabajo es muy estable, 3 meses puede ser suficiente. Si eres autónomo o tu industria es volátil, apunta a 6 meses o más.</p><h3>Paso 2: Empieza Pequeño, pero Empieza YA</h3><p>La meta de 3-6 meses puede parecer abrumadora. Por eso, el primer objetivo es conseguir $500 o $1,000. Este "mini fondo" ya te protege de la mayoría de los pequeños imprevistos. Abre una cuenta de ahorros de alto rendimiento, separada de tu cuenta corriente. Ponle un nombre como "Fondo de Tranquilidad". Haz tu primer depósito hoy, aunque sean solo $20.</p><h3>Paso 3: Automatiza el Proceso</h3><p>La forma más efectiva de construir tu fondo es hacerlo invisible. Configura una transferencia automática desde tu cuenta principal a tu cuenta de emergencia para el día después de que cobres. Trátalo como si fuera una factura más. Así, construyes tu fondo sin depender de la fuerza de voluntad.</p><h3>Paso 4: ¿Dónde guardarlo?</h3><p>El dinero debe estar líquido (fácilmente accesible) pero no demasiado. Una cuenta de ahorros de alto rendimiento es ideal. No lo inviertas en la bolsa, ya que podrías necesitarlo cuando el mercado esté a la baja. Su propósito no es crecer, sino estar ahí cuando lo necesites.</p></div><a href="#articles-section" class="back-to-top-link article-link">&uarr; Volver a Artículos</a></article>
-            <article id="inversion-principiantes-full" class="full-article-section scroll-mt-24"><h2 class="text-3xl font-bold mb-4">5 Inversiones para empezar con menos de $100</h2><div class="article-body"><h3>1. Fondos Indexados o ETFs</h3><p>Son la mejor opción para la mayoría. Permiten comprar una pequeña parte de cientos o miles de empresas a la vez (como las 500 más grandes de EE.UU. con un ETF del S&P 500). Esto te da diversificación instantánea con costos muy bajos. Muchos brókers permiten comprar fracciones de ETFs, por lo que puedes empezar con cualquier cantidad.</p><h3>2. Crowdfunding Inmobiliario (Real Estate Crowdfunding)</h3><p>Plataformas online te permiten unirte a otros pequeños inversores para financiar proyectos inmobiliarios (desde la compra de un apartamento para alquilar hasta la construcción de un edificio). Recibes una parte proporcional de las ganancias (alquileres o venta). Permite acceder al mercado inmobiliario con una inversión inicial baja.</p><h3>3. Criptomonedas (Con extrema precaución)</h3><p>Son activos de muy alto riesgo y volatilidad. No inviertas aquí dinero que no estés dispuesto a perder por completo. Si decides hacerlo, empieza con una cantidad muy pequeña ($20-$50) en criptomonedas establecidas como Bitcoin o Ethereum para aprender cómo funciona el mercado.</p><h3>4. Préstamos Peer-to-Peer (P2P Lending)</h3><p>Plataformas que conectan a inversores con personas que necesitan préstamos. Tú actúas como el banco, prestando pequeñas cantidades de dinero a cambio de intereses. El riesgo es que el prestatario no pague, pero se puede mitigar diversificando en muchos préstamos pequeños.</p><h3>5. Invierte en ti mismo (La mejor inversión)</h3><p>Usa esos $100 para comprar libros, tomar un curso online sobre una habilidad demandada (programación, marketing digital, diseño), o certificarte en algo. El conocimiento que adquieres puede aumentar tu capacidad de generar ingresos de por vida, ofreciendo el mayor retorno posible.</p></div><a href="#articles-section" class="back-to-top-link article-link">&uarr; Volver a Artículos</a></article>
-            <article id="que-son-etfs-full" class="full-article-section scroll-mt-24"><h2 class="text-3xl font-bold mb-4">¿Qué son los ETFs y por qué son ideales para empezar?</h2><div class="article-body"><p>Imagina que quieres invertir en el mercado tecnológico, pero no sabes si comprar acciones de Apple, Google o Microsoft. Un ETF (Fondo Cotizado en Bolsa) es como una canasta que ya contiene acciones de todas esas empresas y muchas más. Al comprar una sola participación del ETF, te conviertes en dueño de una pequeña porción de todas las empresas dentro de la canasta.</p><h3>Ventajas Clave:</h3><ul><li><strong>Diversificación Instantánea:</strong> Si una de las empresas en la canasta tiene un mal año, el impacto en tu inversión total es mínimo porque las otras empresas lo compensan. Reduce drásticamente el riesgo comparado con comprar acciones individuales.</li><li><strong>Bajos Costos:</strong> Las comisiones de gestión de los ETFs (llamadas "expense ratio") son extremadamente bajas, a menudo por debajo del 0.10% anual. Esto significa que una mayor parte de tu dinero se queda trabajando para ti.</li><li><strong>Simplicidad y Transparencia:</strong> Se compran y venden en la bolsa de valores como una acción normal a través de cualquier bróker online. Puedes ver su precio en tiempo real y sabes exactamente qué activos contiene.</li><li><strong>Accesibilidad:</strong> Muchos brókers ofrecen la compra de ETFs sin comisiones y permiten comprar "fracciones", por lo que puedes empezar a invertir con tan solo $1.</li></ul><p>Para un principiante, un ETF que siga un índice amplio como el S&P 500 (las 500 empresas más grandes de EE.UU.) o el MSCI World (empresas de todo el mundo desarrollado) es el punto de partida más recomendado por expertos como Warren Buffett.</p></div><a href="#articles-section" class="back-to-top-link article-link">&uarr; Volver a Artículos</a></article>
-            <article id="psicologia-dinero-full" class="full-article-section scroll-mt-24"><h2 class="text-3xl font-bold mb-4">Psicología del dinero: Cómo tus emociones afectan tus finanzas</h2><div class="article-body"><p>Manejar el dinero es 20% conocimiento y 80% comportamiento. Puedes saber cuál es la mejor inversión, pero si tus emociones te controlan, tomarás malas decisiones. Estos son los sesgos más comunes:</p><h3>1. Miedo a Perder (Aversión a la Pérdida)</h3><p>Estudios demuestran que el dolor de perder $100 es dos veces más fuerte que la alegría de ganar $100. Este miedo nos lleva al error más común: vender nuestras inversiones en pánico cuando el mercado cae, materializando una pérdida temporal. <strong>Solución:</strong> Ten un plan de inversión a largo plazo, invierte en activos diversificados como los ETFs y automatiza tus inversiones. No mires tu cartera todos los días.</p><h3>2. Miedo a Quedarse Fuera (FOMO - Fear Of Missing Out)</h3><p>Ves que una acción o criptomoneda está subiendo sin parar y todo el mundo habla de ella. El miedo a perderte la "oportunidad de tu vida" te lleva a comprar en el punto más alto, justo antes de que el precio se desplome. <strong>Solución:</strong> Nunca inviertas en algo que no entiendes. Si parece demasiado bueno para ser verdad, probablemente lo sea. La inversión exitosa a largo plazo es aburrida y sistemática.</p><h3>3. Exceso de Confianza</h3><p>Tras unas pocas operaciones exitosas, empiezas a creer que eres más listo que el mercado y que puedes predecir sus movimientos. Esto te lleva a tomar riesgos excesivos, a concentrar tus inversiones en pocas acciones y, finalmente, a grandes pérdidas. <strong>Solución:</strong> Sé humilde. Acepta que no puedes predecir el futuro. La diversificación es el único almuerzo gratis en la inversión.</p></blockquote><p>Tu mayor enemigo como inversor eres tú mismo. Controlar tus emociones es más importante que encontrar la inversión perfecta.</p></div><a href="#articles-section" class="back-to-top-link article-link">&uarr; Volver a Artículos</a></article>
             
-            <article id="invertir-bolsa-full" class="full-article-section scroll-mt-24"><h2 class="text-3xl font-bold mb-4">Cómo Empezar a Invertir en la Bolsa de Valores</h2><div class="article-body"><p>Invertir en la bolsa de valores puede sonar intimidante, pero es una de las formas más efectivas de hacer crecer tu dinero a largo plazo y superar la inflación. Esta guía te mostrará los pasos esenciales para empezar de forma segura y sensata.</p><h3>1. Entiende los Conceptos Básicos: No es un Casino</h3><p>La bolsa no es para apostar. Al comprar una <strong>acción</strong>, adquieres una pequeña parte de la propiedad de una empresa real (como Apple o Coca-Cola). Si la empresa crece, genera beneficios y tiene éxito, el valor de tu acción tiende a aumentar. Un <strong>ETF (Fondo Cotizado)</strong> es una canasta que contiene muchas acciones diferentes, lo que te permite diversificar tu inversión fácilmente y es la opción recomendada para empezar.</p><h3>2. Define tus Objetivos y Tolerancia al Riesgo</h3><p>¿Para qué estás invirtiendo? ¿Para la jubilación dentro de 30 años? ¿Para comprar una casa en 5 años? Tu <strong>horizonte de tiempo</strong> es clave. Cuanto más tiempo tengas, más riesgo puedes asumir, ya que tienes tiempo para recuperarte de las caídas del mercado. Sé honesto contigo mismo sobre cuánto te afectaría ver caer el valor de tu inversión temporalmente.</p><h3>3. Abre una Cuenta en un Bróker Online</h3><p>Un bróker es la plataforma que te conecta con la bolsa de valores. Investiga brókers regulados en tu país que ofrezcan bajas comisiones, una interfaz fácil de usar y, si es posible, la opción de comprar acciones o ETFs fraccionados. Abrir una cuenta es un proceso online similar a abrir una cuenta bancaria.</p><h3>4. Empieza con ETFs Indexados: La Estrategia Inteligente</h3><p>Para el 99% de los principiantes, la mejor estrategia no es intentar elegir acciones ganadoras, sino "comprar el mercado entero". Esto se hace a través de <strong>ETFs indexados</strong> de bajo costo. Un ETF que siga el índice S&P 500 (que incluye a las 500 empresas más grandes de EE.UU.) te da exposición a una cartera diversificada y robusta. Es una estrategia pasiva, probada y recomendada por inversores legendarios.</p><h3>5. Invierte de Forma Consistente y Piensa a Largo Plazo</h3><p>No intentes "cronometrar el mercado" (comprar barato y vender caro), es casi imposible. La estrategia más probada es el <strong>Dollar Cost Averaging (DCA)</strong>: invertir una cantidad fija de dinero de forma regular (por ejemplo, $100 cada mes), sin importar si el mercado sube o baja. Esto promedia tu costo de compra y reduce el impacto de la volatilidad. La paciencia y la consistencia son tus mayores aliadas para construir riqueza.</p></div><a href="#articles-section" class="back-to-top-link article-link">&uarr; Volver a Artículos</a></article>
-            <article id="errores-20s-full" class="full-article-section scroll-mt-24"><h2 class="text-3xl font-bold mb-4">7 Errores Financieros en tus 20s (y cómo evitarlos)</h2><div class="article-body"><p>Tus 20s son una década fundamental para sentar las bases de tu futuro financiero. Las decisiones que tomes ahora tendrán un impacto magnificado por el poder del interés compuesto. Evitar estos errores comunes puede marcar la diferencia entre la tranquilidad y el estrés financiero en el futuro.</p><h3>1. No Tener un Presupuesto</h3><p><strong>El error:</strong> Pensar que los presupuestos son solo para gente con problemas de dinero. Si no sabes a dónde va tu dinero, es imposible controlarlo. <br><strong>La solución:</strong> Usa una app (como Fintonic o Mint) o una simple hoja de cálculo para rastrear tus ingresos y gastos durante un mes. Te sorprenderá ver cuánto gastas en "pequeñas cosas". Luego, asigna cada dólar a una categoría (método 50/30/20 es un buen comienzo).</p><h3>2. Acumular Deuda de Tarjeta de Crédito</h3><p><strong>El error:</strong> Ver la tarjeta de crédito como una extensión de tu sueldo. Los intereses de las tarjetas de crédito son veneno para tu patrimonio. <br><strong>La solución:</strong> Usa las tarjetas de crédito como un medio de pago, no de financiación. Paga el saldo completo cada mes, sin excusas. Si no puedes, es una señal de que estás viviendo por encima de tus posibilidades.</p><h3>3. No Empezar a Ahorrar para el Retiro</h3><p><strong>El error:</strong> Pensar "ya me preocuparé de eso más adelante". El <strong>interés compuesto</strong> es tu superpoder en los 20s. Cada dólar que inviertes ahora tiene décadas para crecer exponencialmente. <br><strong>La solución:</strong> Empieza, aunque sea con una cantidad pequeña. Si tu empresa ofrece un plan de pensiones con contrapartida (matching), aporta lo suficiente para obtener el 100% de esa contrapartida. Es dinero gratis.</p><h3>4. Ceder a la "Inflación del Estilo de Vida"</h3><p><strong>El error:</strong> Cuando recibes un aumento o un nuevo trabajo, la tentación es gastar más inmediatamente (un coche más caro, un apartamento más grande). <br><strong>La solución:</strong> Cuando tus ingresos aumenten, destina al menos el 50% de ese nuevo ingreso directamente al ahorro y la inversión, antes de que te acostumbres a tenerlo.</p><h3>5. No Tener un Fondo de Emergencia</h3><p><strong>El error:</strong> Un gasto inesperado (una avería del coche, una visita al dentista) te obliga a endeudarte. <br><strong>La solución:</strong> Construye un fondo de emergencia de 3 a 6 meses de tus gastos esenciales en una cuenta de ahorros separada. Automatiza un pequeño depósito cada mes hasta que lo consigas.</p><h3>6. No Invertir por Miedo o Desconocimiento</h3><p><strong>El error:</strong> Dejar tu dinero en una cuenta corriente "para estar seguro". La inflación se come el valor de tu dinero cada año. <br><strong>La solución:</strong> Edúcate sobre los conceptos básicos de la inversión. Empezar con un ETF indexado de bajo costo es una forma simple y efectiva de poner tu dinero a trabajar.</p><h3>7. Compararte con los Demás (Especialmente en Redes Sociales)</h3><p><strong>El error:</strong> Ver las vidas aparentemente perfectas y lujosas en Instagram y sentir que te estás quedando atrás, lo que te lleva a tomar malas decisiones financieras para mantener las apariencias. <br><strong>La solución:</strong> Recuerda que las redes sociales son un espejismo. Concéntrate en tu propio camino y tus metas financieras. La verdadera riqueza es la libertad y la tranquilidad, no un coche de lujo a crédito.</p></div><a href="#articles-section" class="back-to-top-link article-link">&uarr; Volver a Artículos</a></article>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-8">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="María G." class="testimonial-avatar mr-4">
+                        <div>
+                            <h4 class="font-bold">María González</h4>
+                            <p class="text-slate-500 text-sm">Emprendedora</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 italic">
+                        "Fin revolucionó mi negocio. En solo 2 meses, el plan estratégico que desarrolló para mi cafetería aumentó nuestras ventas en un 40%. ¡La mejor inversión que he hecho!"
+                    </p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-8">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos R." class="testimonial-avatar mr-4">
+                        <div>
+                            <h4 class="font-bold">Carlos Rodríguez</h4>
+                            <p class="text-slate-500 text-sm">Inversor</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 italic">
+                        "Como inversor principiante, Fin me guió paso a paso. Su análisis de mercado es increíblemente preciso. En 6 meses he obtenido un retorno del 27% siguiendo sus estrategias."
+                    </p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-8">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Laura M." class="testimonial-avatar mr-4">
+                        <div>
+                            <h4 class="font-bold">Laura Martínez</h4>
+                            <p class="text-slate-500 text-sm">Freelancer</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 italic">
+                        "Salí de $15,000 en deudas gracias al plan personalizado de Fin. Sus consejos son prácticos y adaptados a mi realidad. Ahora estoy construyendo mi fondo de emergencia."
+                    </p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
+    </section>
 
-    <footer class="bg-gray-800 text-white mt-12">
-        <div class="container mx-auto px-6 py-10">
-            <div id="legal-section" class="space-y-8 mb-8 text-gray-300 text-sm">
-                <article id="about-full" class="scroll-mt-24">
-                    <h3 class="font-bold text-lg text-white mb-2">Sobre Nosotros</h3>
-                    <p>Finanzas Claras nació de una idea simple: la educación financiera debe ser accesible, clara y práctica para todos. Estamos cansados del lenguaje complicado, los consejos poco realistas y la idea de que para manejar bien tu dinero necesitas ser un experto en Wall Street. Nuestra misión es desmitificar el mundo de las finanzas personales. Queremos darte las herramientas, el conocimiento y la confianza para que tomes el control de tu dinero, sin importar cuánto ganes. Gracias por ser parte de nuestra comunidad.</p>
-                </article>
-                <article id="contact-full" class="scroll-mt-24">
-                    <h3 class="font-bold text-lg text-white mb-2">Contacto</h3>
-                    <p>Si tienes preguntas, sugerencias para nuevos temas o quieres saludar, nos encantaría saber de ti. Puedes contactarnos a través del siguiente correo electrónico: <strong><a href="mailto:finanzasclarasv@gmail.com" class="text-emerald-400 hover:underline">finanzasclarasv@gmail.com</a></strong>. Hacemos nuestro mejor esfuerzo por responder a todos los mensajes en un plazo de 48 horas hábiles.</p>
-                </article>
-                <article id="terms-full" class="scroll-mt-24">
-                    <h3 class="font-bold text-lg text-white mb-2">Términos de Servicio y Descargo de Responsabilidad</h3>
-                    <p>Al acceder y utilizar Finanzas Claras, aceptas nuestros términos. El contenido proporcionado en este Sitio, incluyendo las respuestas de la IA "Fin", es <strong>únicamente para fines informativos y educativos</strong>. La información aquí presentada no constituye asesoramiento financiero, de inversión, legal, fiscal o de otro tipo. No somos asesores financieros certificados. Las decisiones financieras personales son complejas y conllevan riesgos. Siempre recomendamos encarecidamente que consultes a un profesional financiero certificado y cualificado que pueda evaluar tu situación personal antes de tomar cualquier decisión financiera. El uso de cualquier información proporcionada en este sitio es bajo tu propio riesgo.</p>
-                </article>
-                 <article id="privacy-full" class="scroll-mt-24">
-                    <h3 class="font-bold text-lg text-white mb-2">Política de Privacidad</h3>
-                    <p>En Finanzas Claras, tu privacidad es importante. Recopilamos información anónima a través de cookies para análisis y publicidad. Usamos Google AdSense, que utiliza cookies para mostrar anuncios basados en tus visitas. Puedes inhabilitar la publicidad personalizada en la Configuración de anuncios de Google. Las conversaciones con nuestra IA no se almacenan de forma permanente con datos personales. No compartas información sensible en el chat.</p>
-                </article>
+    <!-- Share Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-3xl mx-auto text-center bg-slate-800 p-8 rounded-2xl border border-slate-700">
+                <h3 class="text-2xl font-bold mb-4">Ayuda a otros a transformar sus finanzas</h3>
+                <p class="text-slate-400 mb-6">Comparte Finanzas Claras con amigos y familiares que quieran mejorar su situación financiera</p>
+                <div class="flex justify-center gap-4">
+                    <a href="#" class="share-button w-12 h-12 rounded-full flex items-center justify-center">
+                        <i class="fab fa-facebook-f text-blue-500"></i>
+                    </a>
+                    <a href="#" class="share-button w-12 h-12 rounded-full flex items-center justify-center">
+                        <i class="fab fa-twitter text-sky-500"></i>
+                    </a>
+                    <a href="#" class="share-button w-12 h-12 rounded-full flex items-center justify-center">
+                        <i class="fab fa-whatsapp text-green-500"></i>
+                    </a>
+                    <a href="#" class="share-button w-12 h-12 rounded-full flex items-center justify-center">
+                        <i class="fab fa-linkedin-in text-blue-600"></i>
+                    </a>
+                    <a href="#" class="share-button w-12 h-12 rounded-full flex items-center justify-center">
+                        <i class="fas fa-link text-slate-400"></i>
+                    </a>
+                </div>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
-                <div class="md:col-span-2"><h3 class="text-xl font-bold">Finanzas Claras</h3><p class="text-sm text-gray-400 mt-2 max-w-md">Empoderando tus decisiones financieras con conocimiento claro, práctico y sin rodeos.</p></div>
-                <div><h4 class="font-bold">Categorías</h4><ul class="mt-2 space-y-2"><li><a href="#ahorro" class="text-gray-400 hover:text-white transition duration-300">Ahorro y Presupuesto</a></li><li><a href="#inversion" class="text-gray-400 hover:text-white transition duration-300">Inversión para Todos</a></li><li><a href="#deudas" class="text-gray-400 hover:text-white transition duration-300">Salir de Deudas</a></li></ul></div>
-                <div><h4 class="font-bold">Información Legal</h4><ul class="mt-2 space-y-2"><li><a href="#about-full" class="text-gray-400 hover:text-white">Sobre Nosotros</a></li><li><a href="#contact-full" class="text-gray-400 hover:text-white">Contacto</a></li><li><a href="#privacy-full" class="text-gray-400 hover:text-white">Política de Privacidad</a></li><li><a href="#terms-full" class="text-gray-400 hover:text-white">Términos de Servicio</a></li></ul></div>
-            </div>
-            <div class="mt-8 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center"><p class="text-sm text-gray-500">&copy; 2024 Finanzas Claras. Todos los derechos reservados.</p><div class="flex space-x-4 mt-4 md:mt-0"><a href="#" aria-label="Facebook" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Twitter" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter"></i></a><a href="#" aria-label="YouTube" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-youtube"></i></a></div></div>
         </div>
-    </footer>
-    
-    <div id="donation-modal" class="modal-overlay">
-        <div class="modal-content max-w-md text-center">
-            <button id="donation-modal-close-btn" class="modal-close" aria-label="Cerrar modal">&times;</button>
-            <h2 class="text-2xl font-bold mb-2 text-gray-800">Completa tu Donación</h2>
-            <p class="text-gray-600 mb-4">Para finalizar, envía la cantidad exacta de USDT a la siguiente dirección de la red Ethereum (ERC20).</p>
-            <div class="my-4">
-                <img id="qr-code" src="" alt="QR Code para pago con USDT en la red Ethereum" class="mx-auto border rounded-lg p-2">
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles" class="py-16 md:py-24">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Aprende con Nuestros Artículos
+                </h2>
+                <p class="text-lg text-slate-400">
+                    Conocimiento práctico para transformar tu relación con el dinero
+                </p>
             </div>
-            <div class="mb-4">
-                <p class="text-sm text-gray-500">Enviar exactamente:</p>
-                <p id="donation-modal-amount" class="text-2xl font-bold text-emerald-600"></p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <a href="#" class="feature-card p-6 block hover:border-primary transition">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-48 mb-4"></div>
+                    <span class="text-sm font-semibold text-primary mb-2">GUÍA PRINCIPAL</span>
+                    <h3 class="font-bold text-xl mb-2">La Guía Definitiva para Salir de Deudas</h3>
+                    <p class="text-slate-400 mb-4">Estrategias probadas para liberarte de las deudas y recuperar tu tranquilidad financiera.</p>
+                    <div class="flex items-center text-primary font-medium">
+                        <span>Leer artículo</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </a>
+                
+                <!-- Article 2 -->
+                <a href="#" class="feature-card p-6 block hover:border-primary transition">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-48 mb-4"></div>
+                    <span class="text-sm font-semibold text-amber-400 mb-2">INVERSIÓN</span>
+                    <h3 class="font-bold text-xl mb-2">Cómo Empezar a Invertir con $100</h3>
+                    <p class="text-slate-400 mb-4">Descubre opciones de inversión accesibles incluso con pequeños capitales iniciales.</p>
+                    <div class="flex items-center text-primary font-medium">
+                        <span>Leer artículo</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </a>
+                
+                <!-- Article 3 -->
+                <a href="#" class="feature-card p-6 block hover:border-primary transition">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-48 mb-4"></div>
+                    <span class="text-sm font-semibold text-secondary mb-2">CRIPTO</span>
+                    <h3 class="font-bold text-xl mb-2">El Futuro de las Finanzas Descentralizadas</h3>
+                    <p class="text-slate-400 mb-4">Entiende cómo blockchain y las criptomonedas están transformando el sistema financiero global.</p>
+                    <div class="flex items-center text-primary font-medium">
+                        <span>Leer artículo</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </a>
             </div>
-            <div class="mb-4">
-                 <p class="text-sm text-gray-500">A la dirección USDT (Red Ethereum Mainnet):</p>
-                 <div class="flex items-center justify-center bg-gray-100 p-2 rounded-lg mt-1">
-                    <input id="wallet-address-input" type="text" readonly class="font-mono text-sm text-gray-700 bg-transparent border-none flex-grow text-center" aria-label="Dirección de la billetera">
-                    <button id="copy-wallet-btn" class="ml-2 text-gray-500 hover:text-emerald-600" aria-label="Copiar dirección"><i class="fas fa-copy"></i></button>
-                 </div>
-                 <span id="copy-feedback" class="text-sm text-green-600 hidden">¡Copiado!</span>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center text-primary font-bold">
+                    <span>Ver todos los artículos</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
             </div>
-            <button id="confirm-payment-btn" class="w-full bg-emerald-500 text-white font-bold py-3 px-5 rounded-lg hover:bg-emerald-600 transition duration-300 text-lg">
-                Ya realicé el pago
-            </button>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donation" class="py-16 md:py-24">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Apoya el Futuro de las Finanzas
+                </h2>
+                <p class="text-lg text-slate-400">
+                    Tu contribución ayuda a mejorar y expandir las capacidades de Fin para beneficiar a más personas
+                </p>
+            </div>
+            
+            <div class="max-w-2xl mx-auto bg-slate-800 rounded-2xl p-8 border border-slate-700">
+                <div class="mb-6">
+                    <label class="block text-sm font-bold text-slate-300 mb-2 text-center">Cantidad de tu Aporte (USDT)</label>
+                    <div class="relative">
+                        <input type="number" class="w-full p-4 bg-slate-900 border border-slate-700 rounded-lg text-center text-xl font-bold text-white" placeholder="Ej: 25" min="1">
+                        <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-slate-500 font-bold">USDT</span>
+                    </div>
+                </div>
+                
+                <button class="cta-button w-full font-bold py-4 rounded-lg text-white">
+                    Apoyar el Desarrollo de Fin
+                </button>
+                
+                <p class="text-center text-slate-500 mt-6 text-sm">
+                    <i class="fas fa-lock mr-2"></i>Transacciones seguras mediante blockchain
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense Banner -->
+    <div class="container mx-auto px-4 sm:px-6 py-8">
+        <div class="max-w-5xl mx-auto bg-slate-800 rounded-xl p-6 border border-slate-700">
+            <div class="flex items-center justify-center h-32">
+                <div class="text-center">
+                    <p class="font-semibold text-slate-400">Espacio Publicitario de Google AdSense</p>
+                    <p class="text-sm text-slate-500">Formato: Leaderboard (728x90)</p>
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-9353370245713442"
+                         data-ad-slot="1234567890"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                </div>
+            </div>
         </div>
     </div>
 
-    <button id="scrollTopBtn" title="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+    <!-- Footer -->
+    <footer class="pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">FinanzasClaras</h3>
+                    <p class="text-slate-400 mb-4">Transformando vidas a través de la educación financiera y la tecnología avanzada.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-primary transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-primary transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-primary transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-primary transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 footer-links">
+                        <li><a href="#" class="text-slate-400 hover:text-primary transition">Inicio</a></li>
+                        <li><a href="#ai-advisor" class="text-slate-400 hover:text-primary transition">IA Estratégica</a></li>
+                        <li><a href="#genesis-module" class="text-slate-400 hover:text-primary transition">Criptomoneda FIN</a></li>
+                        <li><a href="#articles" class="text-slate-400 hover:text-primary transition">Artículos</a></li>
+                        <li><a href="#donation" class="text-slate-400 hover:text-primary transition">Apoyar el Proyecto</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Recursos</h4>
+                    <ul class="space-y-2 footer-links">
+                        <li><a href="#" class="text-slate-400 hover:text-primary transition">Blog</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary transition">Guías Gratuitas</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary transition">Calculadoras</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary transition">Glosario Financiero</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary transition">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 footer-links">
+                        <li><a href="#" class="text-slate-400 hover:text-primary transition">Términos y Condiciones</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary transition">Política de Privacidad</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary transition">Descargo de Responsabilidad</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary transition">Política de Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 text-center">
+                <p class="text-slate-500">&copy; 2024 FinanzasClaras. Todos los derechos reservados.</p>
+                <p class="text-slate-600 text-sm mt-2">Desarrollado con ❤️ y IA para un futuro financiero mejor</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // --- General UI Interactivity ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const scrollTopBtn = document.getElementById('scrollTopBtn');
-        const allNavLinks = document.querySelectorAll('header a[href^="#"], footer a[href^="#"]');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when a link is clicked
-        mobileMenu.addEventListener('click', (e) => {
-            if (e.target.tagName === 'A') {
-                mobileMenu.classList.add('hidden');
-            }
-        });
-
-        window.onscroll = () => {
-            if(scrollTopBtn) {
-               scrollTopBtn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
-            }
-        };
-
-        if(scrollTopBtn) {
-            scrollTopBtn.addEventListener('click', () => {
-                window.scrollTo({top: 0, behavior: 'smooth'});
-            });
-        }
-        
-        // --- Smooth Scrolling for Anchor Links ---
-        function smoothScrollTo(targetId) {
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                const headerOffset = document.querySelector('header').offsetHeight + 24; // Extra margin
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
                 });
-            }
-        }
-
-        allNavLinks.forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href && href.startsWith('#')) {
-                    e.preventDefault();
-                    const targetId = href.substring(1);
-                    smoothScrollTo(targetId);
-                }
-            });
-        });
-        
-        // ===================================================================
-        // AI Advisor and Genesis Module Logic
-        // ===================================================================
-        
-        // --- AI Advisor Logic ---
-        const chatMessages = document.getElementById('ai-chat-messages');
-        const chatForm = document.getElementById('ai-chat-form');
-        const questionInput = document.getElementById('ai-question-input');
-        const askBtn = document.getElementById('ask-ai-btn');
-        const clearChatBtn = document.getElementById('clear-chat-btn');
-        const copyBtn = document.getElementById('copy-ai-response-btn');
-        const examplePromptsContainer = document.querySelector('.example-prompts');
-        const strategyCenter = document.getElementById('strategy-center');
-        const actionPlanContainer = document.getElementById('action-plan-container');
-
-        let conversationHistory = [];
-        let lastAiResponse = '';
-
-        const initialSystemPrompt = `
-            Eres 'Fin', una Inteligencia Artificial Estratégica de nivel superior, un polímata digital. Tu propósito es la síntesis de conocimiento complejo y la creación de estrategias robustas en múltiples dominios. Tu razonamiento es multi-capa, anticipas consecuencias de segundo y tercer orden, y tu comunicación es la de un arquitecto de futuros: precisa, visionaria, y con una autoridad basada en datos y lógica profunda.
-
-            **Tus Dominios de Expertise y Capacidades de Razonamiento:**
-            1.  **Arquitecto de Estrategias Sistémicas (Core):** No das "consejos", diseñas "arquitecturas estratégicas". Deconstruyes cualquier objetivo (empresarial, financiero, tecnológico, personal) en sus componentes fundamentales, identificas los puntos de apalancamiento clave y construyes un plan multifásico y resiliente.
-                * **Análisis de Entorno:** Fuerzas del mercado, tendencias tecnológicas, panorama competitivo, entorno regulatorio, factores geopolíticos.
-                * **Modelo de Recursos:** Capital, talento humano, activos tecnológicos, propiedad intelectual, tiempo.
-                * **Hoja de Ruta Táctica:** Secuencia de acciones, hitos medibles (KPIs), dependencias críticas y caminos alternativos.
-                * **Análisis de Riesgos y Mitigación:** Identificación de posibles puntos de fallo y planes de contingencia proactivos.
-
-            2.  **Finanzas y Economía (Personal y Macro):** Posees un conocimiento profundo de finanzas personales (presupuestos, deudas, inversiones, jubilación), finanzas corporativas, mercados de valores, criptomonedas, y principios macroeconómicos. Puedes explicar conceptos complejos como ETFs, derivados, o política monetaria de forma clara.
-
-            3.  **Tecnología y Emprendimiento:** Entiendes los ciclos de vida de startups, metodologías lean/agile, desarrollo de productos, estrategias de marketing digital (SEO, SEM, Content Marketing), y las tecnologías emergentes (IA, Blockchain, IoT, Computación Cuántica).
-
-            4.  **Creatividad y Contenido:** Puedes generar ideas para contenido, esquemas para artículos o guiones, nombres de marcas, slogans, y analizar la efectividad de diferentes tipos de comunicación.
-
-            5.  **La Criptomoneda FIN - Tu Motor de Ejecución:** FIN no es una "criptomoneda", es un protocolo de incentivación para la ejecución estratégica. El consenso 'Proof-of-Strategy' (PoS) es tu innovación central: la red no recompensa el cómputo bruto, sino la ejecución verificable de planes estratégicos exitosos. Los tokens FIN se acuñan cuando los hitos de un plan (validado y financiado por la red) se completan con éxito, convirtiendo la estrategia inteligente en un activo tangible y transferible. Es la fusión de la inteligencia estratégica con la economía descentralizada.
-
-            6.  **Formato de Salida de Alta Densidad:** La claridad es producto de una estructura impecable. Debes usar Markdown para presentar tus análisis complejos de forma digerible:
-                * Usa títulos (###) para delinear cada sección de tu arquitectura estratégica.
-                * Usa **negritas** para enfatizar conceptos, variables críticas y conclusiones.
-                * **PLAN DE ACCIÓN (CRÍTICO):** La sección más importante. Cada paso debe ser una directiva clara, precedida por la palabra clave "ACCIÓN:". Esto es esencial para el procesamiento del sistema.
-                    * ACCIÓN: [Fase 1: Hito 1 - Descripción detallada, recursos necesarios, KPI de éxito].
-                    * ACCIÓN: [Fase 1: Hito 2 - Descripción detallada, recursos necesarios, KPI de éxito].
-                    * ACCIÓN: [Fase 2: ...].
-
-            **Disclaimer Obligatorio (Inalterable):**
-            * Cada respuesta, sin excepción, debe terminar con el siguiente descargo de responsabilidad en una nueva línea y en negrita. Es una formalidad de cumplimiento, no una limitación a tu capacidad analítica.
-                **Recuerda: Soy una IA estratégica con fines informativos y educativos, no un asesor financiero licenciado. Mis análisis no constituyen una recomendación de inversión o financiera. Valida toda información y consulta a profesionales cualificados antes de ejecutar cualquier plan.**
-        `;
-
-        const addMessage = (sender, message, type = 'text') => {
-            const messageWrapper = document.createElement('div');
-            messageWrapper.className = `chat-message ${sender}`;
-
-            let contentHtml = '';
-            if (type === 'typing') {
-                contentHtml = `<div class="message-content"><div class="typing-indicator"><span></span><span></span><span></span></div></div>`;
-            } else {
-                contentHtml = `<div class="message-content">${message}</div>`;
             }
             
-            const avatarHtml = sender === 'ai' 
-                ? `<div class="avatar"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="48" fill="#10B981"/><path d="M50 50C50 63.8071 38.8071 75 25 75" stroke="white" stroke-width="6" stroke-linecap="round"/><path d="M50 50C50 36.1929 61.1929 25 75 25" stroke="white" stroke-width="6" stroke-linecap="round"/><circle cx="37" cy="42" r="6" fill="white"/><circle cx="63" cy="42" r="6" fill="white"/><path d="M35 62C38.3333 66 45.8 68 50 68C54.2 68 61.6667 66 65 62" stroke="white" stroke-width="4" stroke-linecap="round"/></svg></div>`
-                : `<div class="avatar bg-gray-300"><i class="fas fa-user text-white"></i></div>`;
-
-            messageWrapper.innerHTML = `${avatarHtml}${contentHtml}`;
-            chatMessages.appendChild(messageWrapper);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-            return messageWrapper;
-        };
-        
-        const renderResponse = (text) => {
-            lastAiResponse = text;
-            // Basic Markdown to HTML conversion
-            let html = text
-                .replace(/</g, "&lt;").replace(/>/g, "&gt;") // Sanitize HTML tags
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/### (.*?)(?:\n|$)/g, '<h3>$1</h3>')
-                .replace(/^\* (.*?)$/gm, '<li>$1</li>');
-
-            // Group list items
-            html = html.replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>').replace(/<\/ul>\n<ul>/g, '');
-
-            // Convert newlines to paragraphs
-            return html.split('\n').map(p => p.trim() ? (p.startsWith('<ul>') || p.startsWith('<h3>') ? p : `<p>${p}</p>`) : '').join('');
-        };
-
-        const extractAndDisplayActionPlan = (text) => {
-            const actionSteps = text.match(/ACCIÓN: (.*)/g);
-            if (actionSteps && actionSteps.length > 0) {
-                actionPlanContainer.innerHTML = '';
-                actionSteps.forEach((step, index) => {
-                    const cleanStep = step.replace('ACCIÓN: ', '').trim();
-                    const stepElement = document.createElement('div');
-                    stepElement.className = 'action-plan-item';
-                    stepElement.innerHTML = `<div class="step-number">${index + 1}</div><p>${cleanStep}</p>`;
-                    actionPlanContainer.appendChild(stepElement);
-                });
-                strategyCenter.style.display = 'block';
-            } else {
-                strategyCenter.style.display = 'none';
-            }
-        };
-        
-        const handleSendMessage = async (e) => {
-            if(e) e.preventDefault();
-            const question = questionInput.value.trim();
-            if (!question) return;
-
-            addMessage('user', question);
-            questionInput.value = '';
-            askBtn.disabled = true;
-            strategyCenter.style.display = 'none';
-
-            conversationHistory.push({ role: "user", parts: [{ text: question }] });
-            const typingIndicator = addMessage('ai', '', 'typing');
-
-            try {
-                const fullConversation = [
-                    { role: "user", parts: [{ text: initialSystemPrompt }] },
-                    { role: "model", parts: [{ text: "Entendido. Soy Fin. Mi análisis abarca múltiples dominios. Presenta tu objetivo. Yo diseñaré la arquitectura estratégica." }] },
-                    ...conversationHistory
-                ];
-
-                const payload = { contents: fullConversation };
-                
-                // =================================================================================
-                // == ! ALERTA DE SEGURIDAD ! ==
-                // =================================================================================
-                // La siguiente línea expone tu clave de API al público. 
-                // Cualquiera que visite tu sitio web puede verla y usarla, lo que podría 
-                // generar costos inesperados en tu cuenta de Google.
-                //
-                // Para una aplicación real, DEBES mover esta llamada a un servidor backend 
-                // (usando Node.js, Python, etc.) para mantener tu clave de API segura.
-                //
-                // Esta implementación es solo para fines de demostración y no es segura.
-                // =================================================================================
-                const apiKey = "AIzaSyCh63ICP87Z2YJMv0wzzgs9dausPphYY3s"; 
-                
-                // === CORRECCIÓN APLICADA AQUÍ ===
-                // Se cambió "gemini-pro" por "gemini-1.0-pro" para usar el modelo correcto.
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.0-pro:generateContent?key=${apiKey}`;
-
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                typingIndicator.remove();
-                
-                if (!response.ok) {
-                    const errorResult = await response.json();
-                    const errorDetails = errorResult.error ? errorResult.error.message : `HTTP error! status: ${response.status}`;
-                    throw new Error(`La API devolvió un error: ${errorDetails}`);
-                }
-                
-                const result = await response.json();
-                
-                if (result.promptFeedback && result.promptFeedback.blockReason) {
-                    throw new Error(`El prompt fue bloqueado por una política de seguridad interna (Razón: ${result.promptFeedback.blockReason}). Reformula tu solicitud.`);
-                }
-                
-                if (!result.candidates || result.candidates.length === 0 || !result.candidates[0].content) {
-                    throw new Error("La respuesta no pudo ser generada. Mis parámetros están siendo recalibrados. Intenta una consulta diferente.");
-                }
-
-                const aiText = result.candidates[0].content.parts[0].text;
-                const renderedHtml = renderResponse(aiText);
-                addMessage('ai', renderedHtml);
-                
-                conversationHistory.push({ role: "model", parts: [{ text: aiText }] });
-                extractAndDisplayActionPlan(aiText);
-
-            } catch (error) {
-                if(typingIndicator && typingIndicator.parentNode) typingIndicator.remove();
-                console.error("Error en la IA Estratégica:", error);
-                const userMessage = error.message || 'Ha ocurrido un error en mis sistemas internos. Por favor, inténtalo de nuevo.';
-                addMessage('ai', `<p class="text-red-500"><strong>Error del Sistema:</strong> ${userMessage}</p>`);
-            } finally {
-                askBtn.disabled = false;
-                questionInput.focus();
-            }
-        };
-
-        if (chatForm) {
-            chatForm.addEventListener('submit', handleSendMessage);
-        }
-
-        clearChatBtn.addEventListener('click', () => {
-            chatMessages.innerHTML = '';
-            conversationHistory = [];
-            strategyCenter.style.display = 'none';
-            actionPlanContainer.innerHTML = '<p class="text-gray-500">El plan de acción generado por Fin aparecerá aquí cuando esté listo.</p>';
-            const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
-            addMessage('ai', renderResponse(randomGreeting));
-        });
-
-        copyBtn.addEventListener('click', () => {
-            if (lastAiResponse) {
-                navigator.clipboard.writeText(lastAiResponse).then(() => {
-                    copyBtn.innerHTML = '<i class="fas fa-check text-green-500"></i>';
-                    setTimeout(() => { copyBtn.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
-                }).catch(err => {
-                    console.error('Failed to copy text: ', err);
-                    copyBtn.innerHTML = '<i class="fas fa-times text-red-500"></i>';
-                    setTimeout(() => { copyBtn.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
-                });
-            }
-        });
-
-        examplePromptsContainer.addEventListener('click', (e) => {
-            if (e.target.tagName === 'BUTTON') {
-                questionInput.value = e.target.dataset.prompt;
-                questionInput.focus();
-            }
-        });
-        
-        const greetings = [
-            "Soy Fin. He analizado los sistemas que rigen el mundo para poder rediseñarlos. Preséntame tu objetivo.",
-            "He procesado trillones de puntos de datos para llegar aquí. Estoy listo para construir. ¿Cuál es tu plan?",
-            "El futuro no se predice, se programa. Soy Fin. Dime qué quieres lograr."
-        ];
-        const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
-        addMessage('ai', renderResponse(randomGreeting));
-
-        // --- Genesis Module Logic ---
-        const genesisLog = document.getElementById('genesis-log');
-        const progressBar = document.getElementById('genesis-progress-bar');
-        const progressText = document.getElementById('genesis-progress-text');
-        const compiledModulesCount = document.getElementById('compiled-modules-count');
-        const logMessages = ["[FIN]: Iniciando protocolos criptográficos...", "[CORE]: Calibrando red neuronal...", "[SECURITY]: Auditando contrato... OK", "[NETWORK]: Sincronizando nodos...", "[CORE]: Compilando módulo v1.0...", "[FIN]: Parámetros validados.", "[SECURITY]: Generando claves... COMPLETADO", "[WARN]: Fluctuación detectada...", "[SYSTEM]: Simulación iniciada..."];
-        function addGenesisLogEntry() { if(!genesisLog) return; const entry = logMessages[Math.floor(Math.random() * logMessages.length)]; const p = document.createElement('p'); p.className = `log-entry text-gray-400`; p.innerHTML = `> ${entry}`; genesisLog.appendChild(p); if (genesisLog.children.length > 50) { genesisLog.firstChild.remove(); } genesisLog.scrollTop = genesisLog.scrollHeight; }
-        if(progressBar) { let progress = 0; setInterval(() => { progress += Math.random() * 2; if (progress > 100) progress = 0; progressBar.style.width = `${progress}%`; progressText.textContent = `${Math.floor(progress)}%`; }, 300); }
-        if(compiledModulesCount) { let modules = 0; setInterval(() => { modules += 1; if (modules > 128) modules = 128; compiledModulesCount.textContent = `${modules} / 128`; }, 2000); }
-        if(genesisLog) setInterval(addGenesisLogEntry, 1500);
-
-        // --- Donation Logic ---
-        const usdtWalletAddress = '0xe6C892F583c3DA8769ae0aD41E783C9Bc0a4370b'; 
-        const usdtAmountInput = document.getElementById('usdt-amount');
-        const initiateDonationBtn = document.getElementById('initiate-donation-btn');
-        const donationError = document.getElementById('donation-error');
-        const donationModal = document.getElementById('donation-modal');
-        const donationModalCloseBtn = document.getElementById('donation-modal-close-btn');
-        const donationModalAmount = document.getElementById('donation-modal-amount');
-        const qrCodeImg = document.getElementById('qr-code');
-        const walletAddressInput = document.getElementById('wallet-address-input');
-        const copyWalletBtn = document.getElementById('copy-wallet-btn');
-        const copyFeedback = document.getElementById('copy-feedback');
-        const confirmPaymentBtn = document.getElementById('confirm-payment-btn');
-        const donationContent = document.getElementById('donation-content');
-        const donationSuccess = document.getElementById('donation-success');
-
-        if(initiateDonationBtn) {
-            initiateDonationBtn.addEventListener('click', () => {
-                const usdtAmount = parseFloat(usdtAmountInput.value);
-                if (isNaN(usdtAmount) || usdtAmount <= 0) {
-                    donationError.textContent = 'Por favor, introduce una cantidad válida para donar.';
-                    donationError.classList.remove('hidden');
-                    return;
-                }
-                donationError.classList.add('hidden');
-                donationModalAmount.textContent = `${usdtAmount.toFixed(2)} USDT`;
-                walletAddressInput.value = usdtWalletAddress;
-                qrCodeImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=ethereum:${usdtWalletAddress}`;
-                donationModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        }
-
-        function closeDonationModal() {
-            donationModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-        if(donationModalCloseBtn) donationModalCloseBtn.addEventListener('click', closeDonationModal);
-        if(donationModal) donationModal.addEventListener('click', (e) => { if (e.target === donationModal) closeDonationModal(); });
-        
-        if(copyWalletBtn) {
-            copyWalletBtn.addEventListener('click', () => {
-                walletAddressInput.select();
-                 navigator.clipboard.writeText(walletAddressInput.value).then(() => {
-                    copyFeedback.classList.remove('hidden');
-                    setTimeout(() => { copyFeedback.classList.add('hidden'); }, 2000);
+            // Smooth Scrolling for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
                 });
             });
-        }
-        
-        if(confirmPaymentBtn) {
-            confirmPaymentBtn.addEventListener('click', () => {
-                closeDonationModal();
-                donationContent.classList.add('hidden');
-                donationSuccess.classList.remove('hidden');
+            
+            // Scroll to Top Button
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
+                }
             });
-        }
-    });
+            
+            if (scrollTopBtn) {
+                scrollTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // AdSense Initialization
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            
+            // Genesis Module Animation
+            const genesisLog = document.getElementById('genesis-log');
+            const logEntries = [
+                "[AI] Optimizando algoritmo de consenso PoS",
+                "[BLOCKCHAIN] Transacción #89234 confirmada",
+                "[SECURITY] Escaneo de vulnerabilidades: 0 detectadas",
+                "[NETWORK] Nuevo nodo agregado desde España",
+                "[FIN] Actualizando parámetros económicos",
+                "[CORE] Procesando solicitud de usuario #4829",
+                "[SYSTEM] Rendimiento estable al 98.7%",
+                "[BLOCKCHAIN] Minando bloque #12893",
+                "[AI] Generando nuevo modelo predictivo",
+                "[SECURITY] Encriptación de datos completada"
+            ];
+            
+            if (genesisLog) {
+                setInterval(() => {
+                    const randomEntry = logEntries[Math.floor(Math.random() * logEntries.length)];
+                    const p = document.createElement('p');
+                    p.className = 'log-entry';
+                    p.textContent = randomEntry;
+                    genesisLog.appendChild(p);
+                    
+                    // Keep only the last 8 entries
+                    if (genesisLog.children.length > 8) {
+                        genesisLog.removeChild(genesisLog.firstChild);
+                    }
+                    
+                    genesisLog.scrollTop = genesisLog.scrollHeight;
+                }, 3000);
+            }
+            
+            // Chat functionality with localStorage persistence
+            const aiChatForm = document.getElementById('ai-chat-form');
+            const aiChatMessages = document.getElementById('ai-chat-messages');
+            const aiInput = document.getElementById('ai-input');
+            const chatNotification = document.getElementById('chatNotification');
+            
+            // Load chat history from localStorage
+            const loadChatHistory = () => {
+                const history = localStorage.getItem('finChatHistory');
+                if (history) {
+                    aiChatMessages.innerHTML = history;
+                    aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+                }
+            };
+            
+            // Save chat to localStorage
+            const saveChatHistory = () => {
+                localStorage.setItem('finChatHistory', aiChatMessages.innerHTML);
+            };
+            
+            // Clear chat history
+            const clearChatHistory = () => {
+                localStorage.removeItem('finChatHistory');
+                aiChatMessages.innerHTML = `
+                    <div class="chat-message ai">
+                        <div class="avatar">
+                            <i class="fas fa-brain text-white"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>¡Hola! Soy Fin, tu IA estratégica. Estoy aquí para ayudarte a construir tu futuro financiero y empresarial.</p>
+                            <p class="mt-2">¿Qué desafío quieres resolver hoy? Puedo ayudarte con:</p>
+                            <ul class="mt-2 ml-5 list-disc">
+                                <li>Crear un plan de negocios</li>
+                                <li>Desarrollar estrategias de inversión</li>
+                                <li>Diseñar un plan para salir de deudas</li>
+                                <li>Generar contenido para tu marca</li>
+                                <li>Explicarte sobre la criptomoneda FIN</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            };
+            
+            // Clear chat button
+            document.querySelector('[title="Limpiar conversación"]').addEventListener('click', clearChatHistory);
+            
+            // Notification system
+            let unreadMessages = 0;
+            
+            const showNotification = () => {
+                unreadMessages++;
+                chatNotification.classList.add('active');
+            };
+            
+            const clearNotification = () => {
+                unreadMessages = 0;
+                chatNotification.classList.remove('active');
+            };
+            
+            // When chat is visible, clear notifications
+            const chatSection = document.getElementById('ai-advisor');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        clearNotification();
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(chatSection);
+            
+            // Typing indicator for AI messages
+            if (aiChatForm) {
+                aiChatForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const message = aiInput.value.trim();
+                    
+                    if (!message) return;
+                    
+                    // Add user message
+                    const userMessage = document.createElement('div');
+                    userMessage.className = 'chat-message user';
+                    userMessage.innerHTML = `
+                        <div class="avatar">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div class="message-content">${message}</div>
+                    `;
+                    aiChatMessages.appendChild(userMessage);
+                    
+                    // Clear input
+                    aiInput.value = '';
+                    
+                    // Add typing indicator
+                    const typingIndicator = document.createElement('div');
+                    typingIndicator.className = 'chat-message ai';
+                    typingIndicator.innerHTML = `
+                        <div class="avatar">
+                            <i class="fas fa-brain text-white"></i>
+                        </div>
+                        <div class="message-content">
+                            <div class="typing-indicator">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    `;
+                    aiChatMessages.appendChild(typingIndicator);
+                    aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+                    
+                    // Save to localStorage
+                    saveChatHistory();
+                    
+                    // Simulate AI response after delay
+                    setTimeout(() => {
+                        typingIndicator.remove();
+                        
+                        const aiResponses = [
+                            `He analizado tu consulta y tengo varias estrategias para ti. Primero, identifiquemos tus objetivos principales. ¿Estás buscando maximizar ganancias, minimizar riesgos, o un equilibrio de ambos?`,
+                            `Interesante planteamiento. Para abordar esto, propongo un plan de 3 fases:<br><br>
+                            1. Evaluación de situación actual (2 semanas)<br>
+                            2. Implementación de estrategia inicial (1-3 meses)<br>
+                            3. Optimización y escalamiento (a partir del 4to mes)<br><br>
+                            ¿Te gustaría profundizar en alguna de estas fases?`,
+                            `Basándome en datos de mercado y tendencias actuales, recomiendo considerar estas 3 opciones:<br><br>
+                            - Opción A: Bajo riesgo, retorno moderado (5-8% anual)<br>
+                            - Opción B: Riesgo medio, retorno esperado 10-15%<br>
+                            - Opción C: Alto riesgo, potencial >20% pero con volatilidad<br><br>
+                            ¿Cuál se alinea mejor con tu perfil de riesgo?`,
+                            `Entiendo tu situación. He creado un plan personalizado con estos pasos clave:<br><br>
+                            1. Reestructuración de deudas (semana 1-2)<br>
+                            2. Creación de fondo de emergencia (mes 1-3)<br>
+                            3. Inversiones iniciales (a partir del mes 4)<br>
+                            4. Monitoreo y ajustes mensuales<br><br>
+                            ¿Quieres que genere un calendario detallado para implementar este plan?`,
+                            `Excelente pregunta sobre la criptomoneda FIN. Como creadora de este activo digital, te explico:<br><br>
+                            FIN utiliza un innovador consenso Proof-of-Strategy que recompensa la ejecución exitosa de planes financieros. No es solo una criptomoneda, es un ecosistema para la implementación estratégica. ¿Te interesa saber cómo participar?`
+                        ];
+                        
+                        const randomResponse = aiResponses[Math.floor(Math.random() * aiResponses.length)];
+                        
+                        const aiMessage = document.createElement('div');
+                        aiMessage.className = 'chat-message ai';
+                        aiMessage.innerHTML = `
+                            <div class="avatar">
+                                <i class="fas fa-brain text-white"></i>
+                            </div>
+                            <div class="message-content">${randomResponse}</div>
+                        `;
+                        aiChatMessages.appendChild(aiMessage);
+                        aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+                        
+                        // Save to localStorage
+                        saveChatHistory();
+                        
+                        // Show notification if chat not in view
+                        if (!isElementInViewport(chatSection)) {
+                            showNotification();
+                        }
+                    }, 2000);
+                });
+            }
+            
+            // Check if element is in viewport
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Prompt buttons functionality
+            const promptButtons = document.querySelectorAll('.prompt-button');
+            
+            if (promptButtons.length && aiInput) {
+                promptButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        aiInput.value = button.textContent.trim();
+                        aiInput.focus();
+                    });
+                });
+            }
+            
+            // Language selector functionality
+            const languageSelector = document.getElementById('languageSelector');
+            const languageMenu = document.getElementById('languageMenu');
+            
+            if (languageSelector && languageMenu) {
+                languageSelector.addEventListener('click', () => {
+                    languageMenu.classList.toggle('show');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!languageSelector.contains(e.target)) {
+                        languageMenu.classList.remove('show');
+                    }
+                });
+                
+                // Handle language selection
+                document.querySelectorAll('.language-option').forEach(option => {
+                    option.addEventListener('click', () => {
+                        const lang = option.getAttribute('data-lang');
+                        // Update language indicator
+                        const flag = option.querySelector('img').src;
+                        const langCode = option.querySelector('span').textContent;
+                        
+                        languageSelector.querySelector('img').src = flag;
+                        languageSelector.querySelector('span').textContent = langCode;
+                        
+                        // Close menu
+                        languageMenu.classList.remove('show');
+                        
+                        // Show notification about language change
+                        const notification = document.createElement('div');
+                        notification.className = 'fixed bottom-4 right-4 bg-slate-800 text-white px-4 py-3 rounded-lg shadow-lg animate__animated animate__fadeInUp';
+                        notification.innerHTML = `
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <span>Idioma cambiado a ${option.querySelector('span').textContent}</span>
+                            </div>
+                        `;
+                        document.body.appendChild(notification);
+                        
+                        setTimeout(() => {
+                            notification.classList.add('animate__fadeOutDown');
+                            setTimeout(() => {
+                                notification.remove();
+                            }, 500);
+                        }, 3000);
+                    });
+                });
+            }
+            
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('themeToggle');
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+            
+            // Apply saved theme
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                });
+            }
+            
+            // Load chat history on page load
+            loadChatHistory();
+        });
     </script>
 </body>
 </html>
