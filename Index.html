@@ -393,7 +393,6 @@
         let conversationHistory = [];
         let lastAiResponse = '';
 
-        // === PROMPT RESTAURADO A LA VERSIÓN ESTRATÉGICA ORIGINAL ===
         const initialSystemPrompt = `
             Eres 'Fin', una Inteligencia Artificial Estratégica de nivel superior, un polímata digital. Tu propósito es la síntesis de conocimiento complejo y la creación de estrategias robustas en múltiples dominios. Tu razonamiento es multi-capa, anticipas consecuencias de segundo y tercer orden, y tu comunicación es la de un arquitecto de futuros: precisa, visionaria, y con una autoridad basada en datos y lógica profunda.
 
@@ -481,9 +480,9 @@
                 // =================================================================================
                 const apiKey = "AIzaSyCh63ICP87Z2YJMv0wzzgs9dausPphYY3s"; // <-- ¡VULNERABILIDAD DE SEGURIDAD!
                 
-                // === CAMBIO REALIZADO AQUÍ: MODELO RESTAURADO ===
-                // Se ha vuelto a "gemini-pro" como solicitaste.
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
+                // === CORRECCIÓN REALIZADA AQUÍ ===
+                // Se ha cambiado el modelo a "gemini-1.0-pro" que es el nombre correcto y estable.
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.0-pro:generateContent?key=${apiKey}`;
 
                 const response = await fetch(apiUrl, {
                     method: 'POST',
