@@ -478,11 +478,9 @@
                 // Esta implementación es solo para fines de demostración y NO ES SEGURA para producción.
                 // ¡PROCEDE CON EXTREMA PRECAUCIÓN!
                 // =================================================================================
-                const apiKey = "AIzaSyCh63ICP87Z2YJMv0wzzgs9dausPphYY3s"; // <-- ¡VULNERABILIDAD DE SEGURIDAD!
+                const apiKey = "AIzaSyCh63ICP87Z2YJMv0wzzgs9dausPphYY3s"; // <-- ¡CLAVE INTEGRADA!
                 
-                // === CORRECCIÓN DEFINITIVA REALIZADA AQUÍ ===
-                // Se utiliza el endpoint estable v1 y el modelo gemini-1.0-pro. Esta es la combinación correcta.
-                const apiUrl = `https://generativelanguage.googleapis.com/v1/models/gemini-1.0-pro:generateContent?key=${apiKey}`;
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
 
                 const response = await fetch(apiUrl, {
                     method: 'POST',
