@@ -1386,9 +1386,24 @@
                 ];
 
                 const payload = { contents: fullConversation };
-                // **FIXED** API Key is left empty, Canvas will inject it at runtime.
-                const apiKey = ""; 
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+                
+                // ===================================================================
+                // !! ADVERTENCIA DE SEGURIDAD IMPORTANTE !!
+                // Exponer tu clave de API directamente en el código del lado del cliente (como en este archivo HTML)
+                // es extremadamente riesgoso. Cualquiera puede verla y usarla, lo que podría generar costos
+                // inesperados en tu cuenta de Google.
+                //
+                // SOLUCIÓN RECOMENDADA: Para un sitio web en producción, debes crear un intermediario
+                // (un "backend" o una "función serverless") que guarde la clave de forma segura y haga la
+                // llamada a la API de Gemini por ti. El navegador se comunicaría con tu intermediario,
+                // no directamente con Google.
+                //
+                // He insertado la clave aquí para que el chat funcione como solicitaste, pero por favor,
+                // investiga cómo protegerla adecuadamente antes de lanzar tu sitio al público.
+                // ===================================================================
+                const apiKey = "AIzaSyCh63ICP87Z2YJMv0wzzgs9dausPphYY3s"; // **FIXED** API Key inserted here.
+                
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
 
                 let response;
                 let result;
@@ -1409,7 +1424,10 @@
                             throw new Error('Rate limit hit');
                         }
                         if (!response.ok) {
-                            throw new Error(`HTTP error! status: ${response.status}`);
+                            // Intenta obtener el mensaje de error del cuerpo de la respuesta
+                            const errorBody = await response.json();
+                            const errorMessage = errorBody?.error?.message || `HTTP error! status: ${response.status}`;
+                            throw new Error(errorMessage);
                         }
 
                         result = await response.json();
@@ -1470,7 +1488,7 @@
                     showCustomModal('Copiado', 'La última respuesta de la IA ha sido copiada al portapapeles.');
                 } catch (err) {
                     console.error('Fallo al copiar: ', err);
-                    showCustomModal('Error al Copiar', 'No se pudo copiar la respuesta. Por favor, inténtalo manually.');
+                    showCustomModal('Error al Copiar', 'No se pudo copiar la respuesta. Por favor, inténtalo manualmente.');
                 } finally {
                     document.body.removeChild(textarea);
                 }
